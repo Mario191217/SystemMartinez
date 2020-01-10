@@ -20,10 +20,9 @@ textarea {
     margin: 0;
     padding: 0;
     list-style: none;
-    font-family: 'Ubuntu', sans-serif;
     box-sizing: border-box;
     text-decoration: none;
-    font-family: 'Lobster', cursive;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
