@@ -4,8 +4,8 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
 
+<br />
 <p>
     @Html.ActionLink("Agregar", "Create", null, new { @class = "fa fa-clone   btn btn-info" })
 </p>
@@ -22,27 +22,27 @@
             <th>
                 @Html.DisplayNameFor(model => model.Telefono)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Dui)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Nit)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Email)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Genero)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.FechaNacimiento)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Direccion)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.EstadoEliminar)
-            </th>
+            </th>*@
             <th></th>
         </tr>
     </thead>
@@ -59,30 +59,30 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Telefono)
                 </td>
-                <td>
+                @*<td>
                     @Html.DisplayFor(modelItem => item.Dui)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Nit)
-                </td>
+                </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.Email)
                 </td>
-                <td>
+                @*<td>
                     @Html.DisplayFor(modelItem => item.Genero)
-                </td>
+                </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.FechaNacimiento)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Direccion)
                 </td>
-                <td>
+                @*<td>
                     @Html.DisplayFor(modelItem => item.EstadoEliminar)
-                </td>
+                </td>*@
                 <td>
-                    @Html.ActionLink("Editar", "Edit", new { id = item.IdEmpleado }, new { @class = "fas fa-edit   btn btn-info", title = "Editar" }) |
-                    @Html.ActionLink("Detalles", "Details", new { id = item.IdEmpleado }, new { @class = "fas fa-eye  btn btn-success", title = "Editar" }) |
+                    @Html.ActionLink("Editar", "Edit", new { id = item.IdEmpleado }, new { @class = "fas fa-edit   btn btn-info", title = "Editar" })
+                    @Html.ActionLink("Detalles", "Details", new { id = item.IdEmpleado }, new { @class = "fas fa-eye  btn btn-success", title = "Editar" })
                     @Html.ActionLink("Eliminar", "Delete", new { id = item.IdEmpleado }, new { @class = "fas fa-trash-alt   btn btn-danger", title = "Eliminar" })
                 </td>
             </tr>

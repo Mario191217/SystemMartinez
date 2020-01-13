@@ -19,6 +19,7 @@ namespace SystemMartinezCV.Models
         public string Nit { get; set; }
         public string Email { get; set; }
         public string Genero { get; set; }
+        [DataType(DataType.Date)]
         public DateTime FechaNacimiento { get; set; }
         public string Direccion { get; set; }
         public string EstadoEliminar { get; set; }

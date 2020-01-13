@@ -11,104 +11,84 @@
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
 </head>
 <body>
-
     <div class="wrapper">
-        <div class="top_navbar">
-
-            <div class="top_menu">
-                <div class="home_link">
+        <div class="sidebar">
+            <div class="bg_shadow"></div>
+            <div class="sidebar__inner">
+                <div class="close">
                 </div>
-                <div class="wrapper">
-          
-                </div>
-                <!--<div class="right_info">
-                    <div class="icon_wrap">
-                        <div class="icon">
-                            <i class="fas fa-bell"></i>
-                        </div>
+                <div class="LogoSM">
+                    <div class="img">
+                        <img src="~/Content/LogoSM.jpeg">
                     </div>
-                    <div class="icon_wrap">
-                        <div class="icon">
-                            <i class="fas fa-cog"></i>
-                        </div>
-                    </div>-->
-                <div class="menu">
-                    <div class="home_link">
+                </div>
+                <ul class="siderbar_menu">
+                    <li>
                         <a href="#">
-                            <span><i class="far fa-user"></i></span>
-                            <span>Iniciar Sesion</span>
+                            <div class="icon"><i class="fab fa-product-hunt"></i></div>
+                            <div class="title">Productos</div>
                         </a>
-                    </div>
-                </div>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="icon"><i class="fas fa-cart-arrow-down"></i></div>
+                            <div class="title">Compras</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="title">Ventas</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="icon"><i class="fas fa-border-all"></i></div>
+                            <div class="title">Proyectos</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="icon"><i class="fas fa-users"></i></div>
+                            <div class="title">Empleados</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="icon"><i class="fas fa-paste"></i></div>
+                            <div class="title">Reportes</div>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
-
-
-        <div class="main_body">
-
-            <div class="sidebar_menu">
-                <div class="inner__sidebar_menu">
-                    <div class="logo">
-                        <a href="#">
-                            <span><img src="~/Content/LogoSM.jpeg" width="160" height="70" /></span>
-
-                        </a>
+        <div class="main_container">
+            <div class="top_navbar">
+                <div class="hamburger">
+                    <div class="hamburger__inner">
+                        <i class="fas fa-bars"></i>
                     </div>
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <span class="icon">
-                                    <i class="fab fa-product-hunt"></i>
-                                </span>
-                                <span class="list">Productos</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
-                                <span class="list">Compras</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="icon"><i class="fas fa-chalkboard-teacher"></i></span>
-                                <span class="list">Proyectos</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="icon"><i class="fas fa-file-invoice-dollar"></i></span>
-                                <span class="list">Ventas</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="icon"><i class="fa fa-users" aria-hidden="true"></i></span>
-                                <span class="list">Empleados</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="icon"><i class="fa fa-folder-open" aria-hidden="true"></i></span>
-                                <span class="list">Reportes</span>
-                            </a>
-                        </li>
-
-
-                    </ul>
-
                 </div>
+                <ul class="menu">
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+                <ul class="right_bar">
+                    <li><i class="fas fa-bell"></i></li>
+                    <li><i class="fas fa-users"></i></li>
+                </ul>
             </div>
             <div class="container">
-                <div>
+                <div class="row">
                     <center>
                         <h1>Highway to hell</h1>
                     </center>
                 </div>
             </div>
-            <div class="container">
-                @RenderBody()
-            </div>
+                <div>
+                    @RenderBody()
+                </div>
         </div>
     </div>
 
