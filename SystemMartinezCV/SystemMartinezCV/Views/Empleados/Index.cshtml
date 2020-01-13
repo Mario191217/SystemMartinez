@@ -7,7 +7,7 @@
 
 <br />
 <p>
-    @Html.ActionLink("Agregar", "Create", null, new { @class = "fa fa-clone   btn btn-info" })
+    @Html.ActionLink("Agregar", "Create", null, new { @class = "btn btn-info" })
 </p>
 
 <table class="table table-striped table-hover">
@@ -43,7 +43,9 @@
             @*<th>
                 @Html.DisplayNameFor(model => model.EstadoEliminar)
             </th>*@
-            <th></th>
+            <th>
+               Funciones
+            </th>
         </tr>
     </thead>
 
@@ -81,9 +83,11 @@
                     @Html.DisplayFor(modelItem => item.EstadoEliminar)
                 </td>*@
                 <td>
-                    @Html.ActionLink("Editar", "Edit", new { id = item.IdEmpleado }, new { @class = "fas fa-edit   btn btn-info", title = "Editar" })
-                    @Html.ActionLink("Detalles", "Details", new { id = item.IdEmpleado }, new { @class = "fas fa-eye  btn btn-success", title = "Editar" })
-                    @Html.ActionLink("Eliminar", "Delete", new { id = item.IdEmpleado }, new { @class = "fas fa-trash-alt   btn btn-danger", title = "Eliminar" })
+
+                    @Html.ActionLink("Editar", "Edit", new { id = item.IdEmpleado }, new { @class = "btn btn-info"})
+                    @Html.ActionLink("Detalles", "Details", new { id = item.IdEmpleado }, new { @class = "btn btn-success"})
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.IdEmpleado }, new { @class = "btn btn-danger"})
+                     
                 </td>
             </tr>
         }
