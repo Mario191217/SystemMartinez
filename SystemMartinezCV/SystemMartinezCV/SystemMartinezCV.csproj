@@ -250,6 +250,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Migrations\202001091642313_InitialCreate.cs" />
+    <Compile Include="Migrations\202001091642313_InitialCreate.designer.cs">
+      <DependentUpon>202001091642313_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001132050569_alv.cs" />
+    <Compile Include="Migrations\202001132050569_alv.designer.cs">
+      <DependentUpon>202001132050569_alv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Contexto.cs" />
     <Compile Include="Controllers\EmpleadosController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
@@ -282,6 +291,14 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202001091642313_InitialCreate.resx">
+      <DependentUpon>202001091642313_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001132050569_alv.resx">
+      <DependentUpon>202001132050569_alv.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
