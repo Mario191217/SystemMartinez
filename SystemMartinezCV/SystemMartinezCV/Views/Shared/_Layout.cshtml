@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -41,60 +42,70 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="#">
-                            <i class="fas fa-cart-arrow-down"></i>
-                            Compras
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                            <i class="fas fa-file-alt"></i>
-                            Ventas
-                        </a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
-                            <li>
-                                <a href="#">Page 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 3</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fas fa-border-all"></i>
-                            Proyectos
-                        </a>
-                    </li>
-                    @if (Session["Rol"].ToString() == "Admin")
+                    @try
                     {
+                        if (Session["Rol"].ToString() == "Admin")
+                        {
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-cart-arrow-down"></i>
+                                    Compras
+                                </a>
+                            </li>
+                        }
+                        <li>
+                            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                                <i class="fas fa-file-alt"></i>
+                                Ventas
+                            </a>
+                            <ul class="collapse list-unstyled" id="pageSubmenu">
+                                <li>
+                                    <a href="#">Page 1</a>
+                                </li>
+                                <li>
+                                    <a href="#">Page 2</a>
+                                </li>
+                                <li>
+                                    <a href="#">Page 3</a>
+                                </li>
+                            </ul>
+                        </li>
                         <li>
                             <a href="#">
-                                <i class="fas fa-users"></i>
-                                Empleados
+                                <i class="fas fa-border-all"></i>
+                                Proyectos
                             </a>
                         </li>
+                        if (Session["Rol"].ToString() == "Admin")
+                        {
+                            <li>
+                                <a href="@Url.Action("Index","Empleados")">
+                                    <i class="fas fa-users"></i>
+                                    Empleados
+                                </a>
+                            </li>
+                        }
+                        if (Session["Rol"].ToString() == "Admin")
+                        {
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-paste"></i>
+                                    Reportes
+                                </a>
+                            </li>
+                        }
                     }
-                    @if (Session["Rol"].ToString() == "Admin")
+                    catch (Exception e)
                     {
-                        <li>
-                            <a href="#">
-                                <i class="fas fa-paste"></i>
-                                Reportes
-                            </a>
-                        </li>
+
                     }
-                        <li>
-                            <a href="@Url.Action("CerrarSesion","Home")">
-                                <i class="fas fa-product-hunt"></i>
-                                Cerrar Sesion
-                            </a>
-                        </li>
-                    </ul>
+                    <li>
+                        <a href="@Url.Action("CerrarSesion","Home")">
+                            <i class="fas fa-product-hunt"></i>
+                            Cerrar Sesion
+                        </a>
+                    </li>
+                </ul>
             </div>
         </nav>
 
