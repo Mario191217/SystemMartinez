@@ -79,10 +79,21 @@
                         if (Session["Rol"].ToString() == "Admin")
                         {
                             <li>
-                                <a href="@Url.Action("Index","Empleados")">
-                                    <i class="fas fa-users"></i>
+                                <a href="#EmpSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                                    <i class="fas fa-file-alt"></i>
                                     Empleados
                                 </a>
+                                <ul class="collapse list-unstyled" id="EmpSubmenu">
+                                    <li>
+                                        <a href="@Url.Action("Index","Empleados")">Empleados</a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Index","Usuarios")">Usuarios</a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Index","Roles")">Roles</a>
+                                    </li>
+                                </ul>
                             </li>
                         }
                         if (Session["Rol"].ToString() == "Admin")
@@ -101,7 +112,7 @@
                     }
                     <li>
                         <a href="@Url.Action("CerrarSesion","Home")">
-                            <i class="fas fa-product-hunt"></i>
+                            <i class="fas fa-paste"></i>
                             Cerrar Sesion
                         </a>
                     </li>
@@ -114,10 +125,10 @@
             @RenderBody()
         </div>
     </div>
-        <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
 
-            <script src="~/Scripts/jquery-3.4.1.min.js"></script>
-            <script src="~/Scripts/bootstrap.min.js"></script>
-        <script src="~/Scripts/main.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/main.js"></script>
 </body>
 </html>
