@@ -21,6 +21,7 @@ namespace SystemMartinezCV.Models
         public string Email { get; set; }
         public string Genero { get; set; }
         [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime FechaNacimiento { get; set; }
         public string Direccion { get; set; }
         public string EstadoEliminar { get; set; }

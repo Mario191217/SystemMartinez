@@ -6,93 +6,107 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="sidebar">
-            <div class="bg_shadow"></div>
-            <div class="sidebar__inner">
-                <div class="close">
-                </div>
-                <div class="LogoSM">
-                    <div class="img">
-                        <img src="~/Content/LogoSM.jpeg">
-                    </div>
-                </div>
-                <ul class="siderbar_menu">
-                    <li>
-                        <a href="#">
-                            <div class="icon"><i class="fab fa-product-hunt"></i></div>
-                            <div class="title">Productos</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <div class="icon"><i class="fas fa-cart-arrow-down"></i></div>
-                            <div class="title">Compras</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <div class="icon"><i class="fas fa-file-alt"></i></div>
-                            <div class="title">Ventas</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <div class="icon"><i class="fas fa-border-all"></i></div>
-                            <div class="title">Proyectos</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <div class="icon"><i class="fas fa-users"></i></div>
-                            <div class="title">Empleados</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <div class="icon"><i class="fas fa-paste"></i></div>
-                            <div class="title">Reportes</div>
-                        </a>
-                    </li>
-                </ul>
+
+    <div class="wrapper d-flex align-items-stretch side">
+        <nav id="sidebar">
+            <div class="custom-menu">
+                <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                    <i class="fa fa-bars"></i>
+                    <span class="sr-only">Toggle Menu</span>
+                </button>
             </div>
-        </div>
-        <div class="main_container">
-            <div class="top_navbar">
-                <div class="hamburger">
-                    <div class="hamburger__inner">
-                        <i class="fas fa-bars"></i>
-                    </div>
-                </div>
-                <ul class="menu">
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                </ul>
-                <ul class="right_bar">
-                    <li><i class="fas fa-bell"></i></li>
-                    <li><i class="fas fa-users"></i></li>
-                </ul>
+            <div class="p-4 pt-5">
+                <h1><a href="index.html" class="logo">Martinez</a></h1>
+                <ul class="list-unstyled components mb-5">
+                    <li class="active">
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                            <i class="fab fa-product-hunt"></i>
+                            Productos
+                        </a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li>
+                                <a href="#">Home 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Home 2</a>
+                            </li>
+                            <li>
+                                <a href="#">Home 3</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-cart-arrow-down"></i>
+                            Compras
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                            <i class="fas fa-file-alt"></i>
+                            Ventas
+                        </a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                            <li>
+                                <a href="#">Page 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Page 2</a>
+                            </li>
+                            <li>
+                                <a href="#">Page 3</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-border-all"></i>
+                            Proyectos
+                        </a>
+                    </li>
+                    @if (Session["Rol"].ToString() == "Admin")
+                    {
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-users"></i>
+                                Empleados
+                            </a>
+                        </li>
+                    }
+                    @if (Session["Rol"].ToString() == "Admin")
+                    {
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-paste"></i>
+                                Reportes
+                            </a>
+                        </li>
+                    }
+                        <li>
+                            <a href="@Url.Action("CerrarSesion","Home")">
+                                <i class="fas fa-product-hunt"></i>
+                                Cerrar Sesion
+                            </a>
+                        </li>
+                    </ul>
             </div>
-            <div class="container">
-                <div class="row">
-                    <center>
-                        <h1>Highway to hell</h1>
-                    </center>
-                </div>
-            </div>
-                <div class="container">
-                    @RenderBody()
-                </div>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5 pt-5">
+            @RenderBody()
         </div>
     </div>
+        <script src="~/Scripts/popper.min.js"></script>
 
             <script src="~/Scripts/jquery-3.4.1.min.js"></script>
             <script src="~/Scripts/bootstrap.min.js"></script>
+        <script src="~/Scripts/main.js"></script>
 </body>
 </html>

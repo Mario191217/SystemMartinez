@@ -18,6 +18,10 @@ namespace SystemMartinezCV.Controllers
         // GET: Usuarios
         public ActionResult Index()
         {
+            if (Session["User"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             var usuarios = db.Usuarios.Include(u => u.Empleados).Include(u => u.Roles);
             return View(usuarios.ToList());
         }
@@ -25,6 +29,10 @@ namespace SystemMartinezCV.Controllers
         // GET: Usuarios/Details/5
         public ActionResult Details(int? id)
         {
+            if (Session["User"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -40,6 +48,10 @@ namespace SystemMartinezCV.Controllers
         // GET: Usuarios/Create
         public ActionResult Create()
         {
+            if (Session["User"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             ViewBag.IdEmpleado = new SelectList(db.Empleados, "IdEmpleado", "Nombre");
             ViewBag.IdRol = new SelectList(db.Roles, "IdRol", "Rol");
             return View();
@@ -54,6 +66,7 @@ namespace SystemMartinezCV.Controllers
         {
             if (ModelState.IsValid)
             {
+                usuarios.Clave = usuarios.Clave.GetHashCode().ToString();
                 db.Usuarios.Add(usuarios);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -67,6 +80,10 @@ namespace SystemMartinezCV.Controllers
         // GET: Usuarios/Edit/5
         public ActionResult Edit(int? id)
         {
+            if (Session["User"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -102,6 +119,10 @@ namespace SystemMartinezCV.Controllers
         // GET: Usuarios/Delete/5
         public ActionResult Delete(int? id)
         {
+            if (Session["User"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

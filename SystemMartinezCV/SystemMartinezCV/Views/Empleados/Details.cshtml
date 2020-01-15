@@ -7,7 +7,6 @@
 <h2>Details</h2>
 
 <div>
-    <div class="container jumbotron"
     <h4>Empleados</h4>
     <hr />
     <dl class="dl-horizontal">
@@ -92,9 +91,8 @@
         </dd>
 
     </dl>
-    <div>
-        @Html.ActionLink("Editar", "Edit", new { id = Model.IdEmpleado }, new { @class = "btn btn-success"}) 
-        @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-danger" })
-    </div>
 </div>
-   
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdEmpleado }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
