@@ -369,6 +369,10 @@
     <Compile Include="Migrations\202001200150597_prov.designer.cs">
       <DependentUpon>202001200150597_prov.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001211936382_model.cs" />
+    <Compile Include="Migrations\202001211936382_model.designer.cs">
+      <DependentUpon>202001211936382_model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Contexto.cs" />
     <Compile Include="Controllers\RolesController.cs" />
@@ -421,6 +425,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001200150597_prov.resx">
       <DependentUpon>202001200150597_prov.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001211936382_model.resx">
+      <DependentUpon>202001211936382_model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -15,7 +15,11 @@ namespace SystemMartinezCV.Models
         public string Direccion { get; set; }
         public string NIT { get; set; }
         public string NRC { get; set; }
+        public string Email { get; set; }
         public string NumeroCuenta { get; set; }
         public string Observacion { get; set; }
+        public string Telefono { get; set; }
+        public string TelefonoRepresentante { get; set; }
+        public string EstadoEliminar { get; set; }
     }
 }
