@@ -1,0 +1,82 @@
+﻿@model SystemMartinezCV.Models.Proveedores
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Proveedores</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.RazonSocial)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.RazonSocial)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Representante)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Representante)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Direccion)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Direccion)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.NIT)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NIT)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.NRC)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NRC)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.NumeroCuenta)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NumeroCuenta)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Observacion)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Observacion)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.IdProveedor }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

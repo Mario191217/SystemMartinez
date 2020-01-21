@@ -11,127 +11,107 @@ using SystemMartinezCV.Models;
 
 namespace SystemMartinezCV.Controllers
 {
-    public class EmpleadosController : Controller
+    public class ProveedoresController : Controller
     {
         private Contexto db = new Contexto();
 
-        // GET: Empleados
+        // GET: Proveedores
         public ActionResult Index()
         {
-            if (Session["User"] == null)
-            {
-                return RedirectToAction("Index", "Home");
-            }
-            return View(db.Empleados.ToList());
+            return View(db.Proveedores.ToList());
         }
 
-        // GET: Empleados/Details/5
+        // GET: Proveedores/Details/5
         public ActionResult Details(int? id)
         {
-            if (Session["User"] == null)
-            {
-                return RedirectToAction("Index", "Home");
-            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Empleados empleados = db.Empleados.Find(id);
-            if (empleados == null)
+            Proveedores proveedores = db.Proveedores.Find(id);
+            if (proveedores == null)
             {
                 return HttpNotFound();
             }
-            return View(empleados);
+            return View(proveedores);
         }
 
-        // GET: Empleados/Create
+        // GET: Proveedores/Create
         public ActionResult Create()
         {
-            if (Session["User"] == null)
-            {
-                return RedirectToAction("Index", "Home");
-            }
             return View();
         }
 
-        // POST: Empleados/Create
+        // POST: Proveedores/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Empleados empleados)
+        public ActionResult Create([Bind(Include = "IdProveedor,RazonSocial,Representante,Direccion,NIT,NRC,NumeroCuenta,Observacion")] Proveedores proveedores)
         {
             if (ModelState.IsValid)
             {
-                db.Empleados.Add(empleados);
+                db.Proveedores.Add(proveedores);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(empleados);
+            return View(proveedores);
         }
 
-        // GET: Empleados/Edit/5
+        // GET: Proveedores/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (Session["User"] == null)
-            {
-                return RedirectToAction("Index", "Home");
-            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Empleados empleados = db.Empleados.Find(id);
-            if (empleados == null)
+            Proveedores proveedores = db.Proveedores.Find(id);
+            if (proveedores == null)
             {
                 return HttpNotFound();
             }
-            return View(empleados);
+            return View(proveedores);
         }
 
-        // POST: Empleados/Edit/5
+        // POST: Proveedores/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Empleados empleados)
+        public ActionResult Edit([Bind(Include = "IdProveedor,RazonSocial,Representante,Direccion,NIT,NRC,NumeroCuenta,Observacion")] Proveedores proveedores)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(empleados).State = EntityState.Modified;
+                db.Entry(proveedores).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(empleados);
+            return View(proveedores);
         }
 
-        // GET: Empleados/Delete/5
+        // GET: Proveedores/Delete/5
         public ActionResult Delete(int? id)
         {
-            if (Session["User"] == null)
-            {
-                return RedirectToAction("Index", "Home");
-            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Empleados empleados = db.Empleados.Find(id);
-            if (empleados == null)
+            Proveedores proveedores = db.Proveedores.Find(id);
+            if (proveedores == null)
             {
                 return HttpNotFound();
             }
-            return View(empleados);
+            return View(proveedores);
         }
 
-        // POST: Empleados/Delete/5
+        // POST: Proveedores/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Empleados empleados = db.Empleados.Find(id);
-            db.Empleados.Remove(empleados);
+            Proveedores proveedores = db.Proveedores.Find(id);
+            db.Proveedores.Remove(proveedores);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

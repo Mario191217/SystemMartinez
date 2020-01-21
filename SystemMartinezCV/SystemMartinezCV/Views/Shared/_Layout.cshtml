@@ -1,4 +1,6 @@
-﻿
+﻿@{ 
+    var roles = new List<string>() { "Admin", "Empleado" };
+}
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +15,7 @@
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
 </head>
 <body>
-
+    
     <div class="wrapper d-flex align-items-stretch side">
         <nav id="sidebar">
             <div class="custom-menu">
@@ -44,6 +46,7 @@
                     </li>
                     @try
                     {
+                        //if (roles.Contains(Session["Rol"].ToString()) == true)
                         if (Session["Rol"].ToString() == "Admin")
                         {
                             <li>

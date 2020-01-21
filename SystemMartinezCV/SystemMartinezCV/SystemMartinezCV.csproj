@@ -360,12 +360,23 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\EmpleadosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProveedoresController.cs" />
+    <Compile Include="Migrations\202001150750240_InitialCreate.cs" />
+    <Compile Include="Migrations\202001150750240_InitialCreate.designer.cs">
+      <DependentUpon>202001150750240_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001200150597_prov.cs" />
+    <Compile Include="Migrations\202001200150597_prov.designer.cs">
+      <DependentUpon>202001200150597_prov.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Contexto.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Proveedores.cs" />
     <Compile Include="Models\Roles.cs" />
     <Compile Include="Models\Empleados.cs" />
     <Compile Include="Models\Usuarios.cs" />
@@ -383,6 +394,11 @@
     <Content Include="Views\Empleados\Index.cshtml" />
     <Content Include="Views\Home\Bienvenida.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Proveedores\Create.cshtml" />
+    <Content Include="Views\Proveedores\Delete.cshtml" />
+    <Content Include="Views\Proveedores\Details.cshtml" />
+    <Content Include="Views\Proveedores\Edit.cshtml" />
+    <Content Include="Views\Proveedores\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -398,6 +414,14 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202001150750240_InitialCreate.resx">
+      <DependentUpon>202001150750240_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001200150597_prov.resx">
+      <DependentUpon>202001200150597_prov.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
