@@ -19,7 +19,7 @@ namespace SystemMartinezCV.Controllers
         [HttpPost]
         public ActionResult Index(string user, string pass)
         {
-            pass = pass.GetHashCode().ToString();
+            //pass = pass.GetHashCode().ToString();
             try
             {
                 var login = from x in db.Usuarios

@@ -1,0 +1,80 @@
+*{
+    font-family: 'Ubuntu', sans-serif;
+    text-decoration: none;
+
+}
+body
+{
+	background:#e1ecf2;
+	background-size: cover;
+}
+
+.main-section{
+    margin:0 auto;
+    margin-top:25%;
+    padding: 0;
+}
+
+.modal-content{
+    background-color: #000;
+    opacity: .85;
+    padding: 0 20px;
+    box-shadow: 0px 0px 3px #848484;
+}
+.user-img{
+    margin-top: -50px;
+    margin-bottom: 35px;
+}
+
+.user-img img{
+    width: 100xp;
+    height: 100px; 
+}
+
+.form-group input{
+    height: 42px;
+    font-size: 18px;
+    border:0;
+    padding-left: 54px;
+	border-radius: 5px;
+	background: #ffffff;
+	color: #F62104;
+}
+.form-group ::placeholder{
+	color: #000;
+	
+}
+.form-group::before{
+    font-family: "Font Awesome\ 5 Free";
+    position: absolute;
+    left: 28px;
+    font-size: 22px;
+    padding-top:4px;
+}
+
+.form-group#user-group::before{
+	content: "\f007";
+	color: #000;
+}
+
+.form-group#contrasena-group::before{
+	content: "\f023";
+	color: #000;
+}
+
+button{
+    width: 60%;
+    margin: 5px 0 25px;
+}
+
+.forgot{
+    padding: 5px 0;
+}
+
+.forgot a{
+    color: white;
+}
+h5
+{
+    color: #ffffff;
+}

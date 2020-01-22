@@ -1,5 +1,6 @@
 ﻿
 
+
 @{
     Layout = null;
 }
@@ -8,85 +9,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Login V9</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="~/Content/images/icons/favicon.ico" />
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/Content/vendor/bootstrap/css/bootstrap.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/Content/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/Content/fonts/iconic/css/material-design-iconic-font.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/Content/vendor/animate/animate.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/Content/vendor/css-hamburgers/hamburgers.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/Content/vendor/animsition/css/animsition.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/Content/vendor/select2/select2.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/Content/vendor/daterangepicker/daterangepicker.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/Content/css/util.css">
-    <link rel="stylesheet" type="text/css" href="~/Content/css/main.css">
-    <!--===============================================================================================-->
+    <title>Login</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+
+    <!--JQUERY-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Los iconos tipo Solid de Fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <!-- Nuestro css-->
+    <link rel="stylesheet" type="text/css" href="~/Content/Login.css">
 </head>
 <body>
-
-
-    <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
-        <div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
-            <form class="login100-form validate-form" method="post" action="@Url.Action("Index","Home")">
-                <span class="login100-form-title p-b-37">
-                    Iniciar Sesion
-                </span>
-
-                <div class="wrap-input100 validate-input m-b-20" data-validate="Enter username or email">
-                    <input class="input100" type="text" name="user" placeholder="Usuario">
-                    <span class="focus-input100"></span>
+    <div class="modal-dialog text-center">
+        <div class="col-sm-8 main-section">
+            <div class="modal-content">
+                <div class="col-12 user-img">
+                    <img @*src="De.png"*@ />
                 </div>
-
-                <div class="wrap-input100 validate-input m-b-25" data-validate="Enter password">
-                    <input class="input100" type="password" name="pass" placeholder="Contraseña">
-                    <span class="focus-input100"></span>
+                <form class="col-12" method="post" action="@Url.Action("Index","Home")">
+                    <div class="form-group" id="user-group">
+                        <input type="text" class="form-control" placeholder="Ingrese usuario" name="user" />
+                    </div>
+                    <div class="form-group" id="contrasena-group">
+                        <input type="password" class="form-control" placeholder="Ingrese contraseña" name="pass" />
+                    </div>
+                    <button type="submit" class="btn btn-success"><i class="fas fa-sign-in-alt"></i>  Ingresar </button>
+                </form>
+                <div class="col-12 forgot">
+                    <a href="#">Recordar contraseña</a>
                 </div>
-
-                <div class="container-login100-form-btn">
-                    <button class="login100-form-btn">
-                        Entrar
-                    </button>
-                </div>
-
-                
-            </form>
-
-
+            </div>
         </div>
     </div>
-
-
-
-    <div id="dropDownSelect1"></div>
-
-    <!--===============================================================================================-->
-    <script src="~/Content/vendor/jquery/jquery-3.2.1.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="~/Content/vendor/animsition/js/animsition.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="~/Content/vendor/bootstrap/js/popper.js"></script>
-    <script src="~/Content/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="~/Content/vendor/select2/select2.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="~/Content/vendor/daterangepicker/moment.min.js"></script>
-    <script src="~/Content/vendor/daterangepicker/daterangepicker.js"></script>
-    <!--===============================================================================================-->
-    <script src="~/Content/vendor/countdowntime/countdowntime.js"></script>
-    <!--===============================================================================================-->
-    <script src="~/Content/js/main.js"></script>
-
 </body>
 </html>
