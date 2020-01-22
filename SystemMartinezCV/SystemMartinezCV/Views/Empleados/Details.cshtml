@@ -4,127 +4,154 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+    <style>
+        .row{
+            width:100%;
+        }
+        .col-sm-3{
+            display:inline-flex;
+        }
+        .col-sm-3 .jumbotron{
+            font-size:85%;
+            width:100%;
+        }
+    </style>
 
-<div>
-    <h4>Empleados</h4>
-    <hr />
-    <dl class="dl-horizontal jumbotron">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
+<h2>Detalles</h2>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Apellido)
-        </dt>
+<h4>Empleados</h4>
+<hr />
+<div class="row">
+    <div class="col-sm-3">
+        <dl class="dl-horizontal jumbotron" style="background:#2C3E50; color: #fff">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Apellido)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Nombre)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Telefono)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Telefono)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Apellido)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Dui)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Telefono)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Dui)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Telefono)
+            </dd>
+        </dl>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Nit)
-        </dt>
+    <div class="col-sm-3">
+        <dl class="jumbotron" style="background:#2C3E50; color: #fff">
+            <dt>
+                @Html.DisplayNameFor(model => model.Dui)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nit)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Dui)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Seguro)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Nit)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Seguro)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Nit)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Seguro)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AFP)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Seguro)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.AFP)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.AFP)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TelefonoEmergencia)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.AFP)
+            </dd>
+        </dl>
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.TelefonoEmergencia)
-        </dd>
+    <div class="col-sm-3">
+        <dl class="dl-horizontal jumbotron" style="background:#2C3E50; color: #fff">
+            <dt>
+                @Html.DisplayNameFor(model => model.TelefonoEmergencia)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.TelefonoEmergencia)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Genero)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Genero)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Genero)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FechaNacimiento)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Genero)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.FechaNacimiento)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.FechaNacimiento)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Direccion)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.FechaNacimiento)
+            </dd>
+        </dl>
+    </div>
+    <div class="col-sm-3">
+        <dl class="dl-horizontal jumbotron" style="background:#2C3E50; color: #fff">
+            <dt>
+                @Html.DisplayNameFor(model => model.Direccion)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Direccion)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Direccion)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Observaciones)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Observaciones)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Observaciones)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Observaciones)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.EstadoEliminar)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.EstadoEliminar)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.EstadoEliminar)
-        </dd>
-
-    </dl>
+            <dd>
+                @Html.DisplayFor(model => model.EstadoEliminar)
+            </dd>
+        </dl>
+    </div>
 </div>
+
+
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IdEmpleado }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.IdEmpleado }, new { @class = "btn btn-success" }) |
+    @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-danger" })
 </p>
