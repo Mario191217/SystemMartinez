@@ -294,6 +294,11 @@
     <Content Include="Content\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap.min.css.map" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
+    <Content Include="Scripts\inputmask\bindings\inputmask.binding.js" />
+    <Content Include="Scripts\inputmask\inputmask.js" />
+    <Content Include="Scripts\inputmask\inputmask.min.js" />
+    <Content Include="Scripts\inputmask\jquery.inputmask.js" />
+    <Content Include="Scripts\inputmask\jquery.inputmask.min.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
     <Content Include="Scripts\jquery-3.0.0.slim.js" />
@@ -428,6 +433,7 @@
       <DependentUpon>202001211936382_model.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Categorias.cs" />
     <Compile Include="Models\Contexto.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
