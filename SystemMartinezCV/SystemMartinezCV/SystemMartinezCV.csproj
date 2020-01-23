@@ -441,6 +441,10 @@
     <Compile Include="Migrations\202001231550185_bug.designer.cs">
       <DependentUpon>202001231550185_bug.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001231617254_modelProductos.cs" />
+    <Compile Include="Migrations\202001231617254_modelProductos.designer.cs">
+      <DependentUpon>202001231617254_modelProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Categorias.cs" />
     <Compile Include="Models\Contexto.cs" />
@@ -505,6 +509,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001231550185_bug.resx">
       <DependentUpon>202001231550185_bug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001231617254_modelProductos.resx">
+      <DependentUpon>202001231617254_modelProductos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
