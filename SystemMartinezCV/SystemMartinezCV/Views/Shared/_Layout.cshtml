@@ -1,140 +1,454 @@
-﻿@{ 
-    var roles = new List<string>() { "Admin", "Empleado" };
-}
+﻿
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/jquery-ui.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-    <script src="~/Scripts/modernizr-2.8.3.js"></script>
-</head>
-<body>
-    
-    <div class="wrapper d-flex align-items-stretch side">
-        <nav id="sidebar">
-            <div class="custom-menu">
-                <button type="button" id="sidebarCollapse" class="btn btn-primary">
-                    <i class="fa fa-bars"></i>
-                    <span class="sr-only">Toggle Menu</span>
-                </button>
-            </div>
-            <div class="p-4 pt-5">
-                <h1><a href="index.html" class="logo">Martinez</a></h1>
-                <ul class="list-unstyled components mb-5">
-                    <li class="active">
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                            <i class="fab fa-product-hunt"></i>
-                            Productos
-                        </a>
-                        <ul class="collapse list-unstyled" id="homeSubmenu">
-                            <li>
-                                <a href="#">Home 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Home 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Home 3</a>
-                            </li>
-                        </ul>
-                    </li>
-                    @try
-                    {
-                        //if (roles.Contains(Session["Rol"].ToString()) == true)
-                        if (Session["Rol"].ToString() == "Admin")
-                        {
-                            <li>
-                                <a href="#">
-                                    <i class="fas fa-cart-arrow-down"></i>
-                                    Compras
-                                </a>
-                            </li>
-                        }
-                        <li>
-                            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                                <i class="fas fa-file-alt"></i>
-                                Ventas
-                            </a>
-                            <ul class="collapse list-unstyled" id="pageSubmenu">
-                                <li>
-                                    <a href="#">Page 1</a>
-                                </li>
-                                <li>
-                                    <a href="#">Page 2</a>
-                                </li>
-                                <li>
-                                    <a href="#">Page 3</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fas fa-border-all"></i>
-                                Proyectos
-                            </a>
-                        </li>
-                        if (Session["Rol"].ToString() == "Admin")
-                        {
-                            <li>
-                                <a href="#EmpSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                                    <i class="fas fa-file-alt"></i>
-                                    Empleados
-                                </a>
-                                <ul class="collapse list-unstyled" id="EmpSubmenu">
-                                    <li>
-                                        <a href="@Url.Action("Index","Empleados")">Empleados</a>
-                                    </li>
-                                    <li>
-                                        <a href="@Url.Action("Index","Usuarios")">Usuarios</a>
-                                    </li>
-                                    <li>
-                                        <a href="@Url.Action("Index","Roles")">Roles</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        }
-                        if (Session["Rol"].ToString() == "Admin")
-                        {
-                            <li>
-                                <a href="#">
-                                    <i class="fas fa-paste"></i>
-                                    Reportes
-                                </a>
-                            </li>
-                        }
-                    }
-                    catch (Exception e)
-                    {
 
-                    }
-                    <li>
-                        <a href="@Url.Action("CerrarSesion","Home")">
-                            <i class="fas fa-paste"></i>
-                            Cerrar Sesion
-                        </a>
-                    </li>
-                </ul>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>System</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome JS -->
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+    <!--Jquery-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+}
+@@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #fff;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 10px 10px;
+    background: #010846;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+.navbar ul li a{
+    color: #fff;
+    padding: 10px;
+    min-width: 135px;
+}
+.navbar ul li a:hover {
+    background: #17a2b8;
+    color: #fff;
+    padding: 10px;
+}
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+a{
+    text-decoration: none;
+
+}
+.LogoSM {
+    padding: 0px 0px;
+  }
+img {
+    width: 200px;
+    height: 75px;
+    margin: 0px auto 0px;
+  }
+.icon{
+    font-size: 20px;
+    line-height: 19px;
+}
+
+.icon.i{
+    float:right ;
+    margin-left: 10px;
+}
+.icon.d{
+    float:left ;
+    margin-right: 10px;
+}
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: #010846;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #010846;
+}
+
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a { 
+    padding: 25px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    background: #1d4c9e;
+    color: #9AD701;
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: #010846;
+    min-width: 100px;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+    
+}
+
+.menu ul{
+    display: none;
+}
+
+/*btn boostrap bell*/
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+[type=reset], [type=submit], button, html [type=button] {
+    -webkit-appearance: button;
+}
+.btn-group-sm>.btn, .btn-sm {
+    padding: 7px 10px;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+}
+.btn-warning {
+    color: #fff;
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+
+.btn-warning:hover {
+    color: #fff;
+    background-color: #e0a800;
+    border-color: #d39e00;
+}
+
+/*Desplegable de usuario Navbar*/
+.navbar-nav .dropdown-menu {
+    position: static;
+    float: none;
+}
+.dropdown-menu.show {
+    display: block;
+}
+.dropdown-menu{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    min-width: 130px;
+    padding: .5rem 0;
+    margin: .125rem;
+    font-size: 1rem;
+    color: #010846;
+    text-align: left;
+    list-style: none;
+    background-color: #010846;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+}
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: 100%;
+    padding: 0px;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}
+
+
+
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <div class="LogoSM">
+                    <div class="img">
+                        <img src="~/Content/LogoSM.png">
+                    </div>
+                </div>
             </div>
+
+            <ul class="menu">
+                <li>
+                    <a>
+                        <i class="icon d fab fa-product-hunt"></i>   Productos<i class="icon i fas fa-chevron-down"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="#">Producto 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Producto2</a>
+                        </li>
+                        <li>
+                            <a href="#">Producto3</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="activado">
+                    <a href="#">
+                        <i class="icon d fas fa-cart-arrow-down"></i>   Compras<i class="icon i fas fa-chevron-down"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="#">Compras</a>
+                        </li>
+                        <li>
+                            <a href="#">Compras</a>
+                        </li>
+                        <li>
+                            <a href="#">Compras</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="activado">
+                    <a href="#">
+                        <i class="icon d fas fa-file-alt"></i>   Ventas<i class="icon i fas fa-chevron-down"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="#">Ventas</a>
+                        </li>
+                        <li>
+                            <a href="#">Ventas</a>
+                        </li>
+                        <li>
+                            <a href="#">Ventas</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="activado">
+                    <a href="#">
+                        <i class="icon d fab fa-buffer"></i>   Proyectos<i class="icon i fas fa-chevron-down"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="#">Proyectos</a>
+                        </li>
+                        <li>
+                            <a href="#">Proyectos</a>
+                        </li>
+                        <li>
+                            <a href="#">Proyectos</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!--<li class="activado">
+                    <a href="#">
+                        <i class="icon d fas fa-address-book"></i>  Empleados<i class="icon i fas fa-chevron-down"></i></a>
+                    <ul >
+                        <li>
+                            <a href="#"><i class="icon d fas fa-users"></i>Empleados</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="icon d fas fa-user-shield"></i>Usuarios</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="icon d fas fa-address-card"></i>Roles</a>
+                        </li>
+                    </ul>
+                </li>-->
+
+
+
+                <li>
+                    <a href=""><i class="icon fas fa-power-off"></i>   Salir</a>
+                </li>
+            </ul>
         </nav>
 
         <!-- Page Content  -->
-        <div id="content" class="p-4 p-md-5 pt-5">
-            @RenderBody()
-        </div>
-    </div>
-    <script src="~/Scripts/popper.min.js"></script>
+        <div id="content">
 
-    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
-    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/Scripts/main.js"></script>
-    @RenderSection("datepicker", false);
+            <nav class="navbar navbar-expand-lg ">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fa fa-bars"></i>
+
+
+                    </button>
+                    <button class="btn btn-info d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                        <ul class="menu nav navbar-nav ml-auto">
+                            <li class=" nav-item">
+                                <button type="button" class="btn btn-warning btn-sm"><i class="icon fas fa-bell"></i></button>
+
+                            <li class=" nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="icon fas fa-users"></i>Usuario
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Gestion Usuario</a>
+                                    <a class="dropdown-item" href="#">Gestion Roles</a>
+                                    <a class="dropdown-item" href="#">Salir</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!--<h2>Collapsible Sidebar Using Bootstrap 4</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                    <div class="line"></div>
+
+                    <h2>Lorem Ipsum Dolor</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                    <div class="line"></div>
+
+                    <h2>Lorem Ipsum Dolor</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                    <div class="line"></div>
+
+                    <h3>Lorem Ipsum Dolor</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>-->
+            <div id="content" class="p-4 p-md-5 pt-5">
+                @RenderBody()
+            </div>
+
+            <script src="~/Scripts/popper.min.js"></script>
+
+            <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+            <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+            <script src="~/Scripts/bootstrap.min.js"></script>
+            <script src="~/Scripts/main.js"></script>
+            @RenderSection("datepicker", false);
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $('#sidebarCollapse').on('click', function () {
+                        $('#sidebar').classList.toggle('active');
+                    });
+
+
+                    $('.menu li:has(ul)').click(function(e){
+        e.preventDefault();
+
+        if ($(this).hasClass('activado')) {
+            $(this).removeClass('activado');
+            $(this).children('ul').slideUp();
+            
+        } else {
+            $('.menu li ul').slideUp();
+            $('.menu li').removeClass('activado');
+            $(this).addClass('activado');
+            $(this).children('ul').slideDown();
+            
+        }
+
+
+
+
+    });
+                });
+            </script>
+            </div>
+        </div>
 </body>
+
 </html>

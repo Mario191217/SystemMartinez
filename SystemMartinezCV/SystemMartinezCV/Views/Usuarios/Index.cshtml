@@ -4,10 +4,9 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Agerga", "Create", null, new {@class = "btn btn-info" })
 </p>
 <table class="table jumbotron table-bordered">
     <tr>
@@ -35,9 +34,9 @@
             @Html.DisplayFor(modelItem => item.Usuario)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdUsuario }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdUsuario }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdUsuario })
+            @Html.ActionLink("Editar", "Edit", new { id=item.IdUsuario },new {@class = "btn btn-warning" }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.IdUsuario },new {@class = "btn btn-success" }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.IdUsuario },new {@class = "btn btn-danger" })
         </td>
     </tr>
 }
