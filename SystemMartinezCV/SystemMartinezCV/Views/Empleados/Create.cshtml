@@ -82,7 +82,7 @@
                     </div>
                 </div>
                 <div class="form-group col-md-4 mb-6">
-                    @Html.LabelFor(model => model.TelefonoEmergencia, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <label for="TelefonoEmergencia">Telefono de Emergencia</label>
                     <div>
                         @Html.EditorFor(model => model.TelefonoEmergencia, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.TelefonoEmergencia, "", new { @class = "text-danger" })
@@ -108,7 +108,7 @@
                 </div>
 
                 <div class="form-group col-md-4 mb-3">
-                    @Html.LabelFor(model => model.FechaNacimiento, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <label for="FechaNacimiento">Fecha de Nacimiento</label>
                     <div>
                         @Html.EditorFor(model => model.FechaNacimiento, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.FechaNacimiento, "", new { @class = "text-danger" })

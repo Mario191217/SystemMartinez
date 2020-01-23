@@ -25,7 +25,6 @@ namespace SystemMartinezCV.Models
         public DateTime FechaNacimiento { get; set; }
         public string Direccion { get; set; }
         public string Telefono { get; set; }
-        [Display(Name ="Telefono Emergencia")]
         public string TelefonoEmergencia { get; set; }
         public string EstadoEliminar { get; set; }
         public string Observaciones { get; set; }
