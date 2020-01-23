@@ -4,47 +4,67 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<style>
+    .row {
+        width: 100%;
+    }
+
+    .col-sm-3 {
+        display: inline-flex;
+    }
+
+        .col-sm-3 .jumbotron {
+            font-size: 85%;
+            width: 100%;
+        }
+</style>
+
 
 <div>
-    <h4>Usuarios</h4>
-    <hr />
-    <dl class="dl-horizontal jumbotron">
-        <dt>
-            @Html.DisplayNameFor(model => model.Empleados.Nombre)
-        </dt>
+    
+    <div class="row">
+    <div class="col-sm-3">
+        <dl class="dl-horizontal jumbotron" style="background:#2C3E50; color: #fff">
+            <h4>Usuarios</h4>
+            <hr />
+            <dt>
+                @Html.DisplayNameFor(model => model.Empleados.Nombre)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Empleados.Nombre)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Empleados.Nombre)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Roles.Rol)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Roles.Rol)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Roles.Rol)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Roles.Rol)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Usuario)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Usuario)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Usuario)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Usuario)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Clave)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Clave)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Clave)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Clave)
+            </dd>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IdUsuario }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+        </dl>
+    </div>
+    </div>
+    </div>
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.IdUsuario }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
