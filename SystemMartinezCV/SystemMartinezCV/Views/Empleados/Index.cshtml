@@ -73,7 +73,7 @@
 {
     <div class="col-sm-6">
         <div class="jumbotron" style="background-color: #2C3E50; color: #fff">
-            <p style="font-size: 26px">@lista[i].Nombre</p>
+            <p style="font-size: 26px">@lista[i].Nombre @lista[i].Apellido</p>
             @Html.ActionLink("Editar", "Edit", new { id = lista[i].IdEmpleado }, new {@class="btn btn-warning" }) |
             @Html.ActionLink("Detalles", "Details", new { id = lista[i].IdEmpleado }, new {@class = "btn btn-success" }) |
             @Html.ActionLink("Eliminar", "Delete", new { id = lista[i].IdEmpleado }, new {@class = "btn btn-danger" })
