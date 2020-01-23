@@ -63,6 +63,7 @@ namespace SystemMartinezCV.Controllers
         {
             if (ModelState.IsValid)
             {
+                empleados.FechaRegistro = DateTime.Now;
                 db.Empleados.Add(empleados);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -99,6 +100,7 @@ namespace SystemMartinezCV.Controllers
         {
             if (ModelState.IsValid)
             {
+                empleados.FechaRegistro = DateTime.Now;
                 db.Entry(empleados).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

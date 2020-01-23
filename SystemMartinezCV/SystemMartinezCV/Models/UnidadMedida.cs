@@ -6,11 +6,11 @@ using System.Web;
 
 namespace SystemMartinezCV.Models
 {
-    public class Categorias
+    public class UnidadMedida
     {
         [Key]
-        public int IdCategoria { get; set; }
-        public string Categoria { get; set; }
+        public int IdUnidadMedida { get; set; }
+        public string Unidad { get; set; }
         public string Descripcion { get; set; }
 
         public virtual List<Productos> Productos { get; set; }

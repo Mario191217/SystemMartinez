@@ -13,5 +13,9 @@ namespace SystemMartinezCV
         public DbSet<Roles> Roles { get; set; }
         public DbSet<Empleados> Empleados { get; set; }
         public DbSet<Proveedores> Proveedores { get; set; }
+
+        public DbSet<UnidadMedida> unidadMedida { get; set; }
+        public DbSet<Productos> Productos { get; set; }
+        public DbSet<Categorias> Categorias { get; set; }
     }
 }

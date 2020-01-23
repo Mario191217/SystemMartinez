@@ -29,6 +29,7 @@ namespace SystemMartinezCV.Models
         public string TelefonoEmergencia { get; set; }
         public string EstadoEliminar { get; set; }
         public string Observaciones { get; set; }
+        public DateTime FechaRegistro { get; set; }
 
         public virtual List<Usuarios> Usuarios { get; set; }
     }

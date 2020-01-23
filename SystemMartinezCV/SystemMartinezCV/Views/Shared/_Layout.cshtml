@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
 
     <!-- Font Awesome JS -->
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
@@ -23,227 +25,239 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="main.js"></script>
     <style>
-        *{
-    margin: 0;
-    padding: 0;
-}
-@@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
-body {
-    font-family: 'Poppins', sans-serif;
-    background: #fafafa;
-}
+                * {
+                    margin: 0;
+                    padding: 0;
+                }
 
-p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1em;
-    font-weight: 300;
-    line-height: 1.7em;
-    color: #fff;
-}
+                @@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
-a,
-a:hover,
-a:focus {
-    color: inherit;
-    text-decoration: none;
-    transition: all 0.3s;
-}
+                body {
+                    font-family: 'Poppins', sans-serif;
+                    background: #fafafa;
+                }
 
-.navbar {
-    padding: 10px 10px;
-    background: #010846;
-    border: none;
-    border-radius: 0;
-    margin-bottom: 40px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-}
-.navbar ul li a{
-    color: #fff;
-    padding: 10px;
-    min-width: 135px;
-}
-.navbar ul li a:hover {
-    background: #17a2b8;
-    color: #fff;
-    padding: 10px;
-}
-.navbar-btn {
-    box-shadow: none;
-    outline: none !important;
-    border: none;
-}
+                p {
+                    font-family: 'Poppins', sans-serif;
+                    font-size: 1.1em;
+                    font-weight: 300;
+                    line-height: 1.7em;
+                    color: #fff;
+                }
 
-.line {
-    width: 100%;
-    height: 1px;
-    border-bottom: 1px dashed #ddd;
-    margin: 40px 0;
-}
+                a,
+                a:hover,
+                a:focus {
+                    color: inherit;
+                    text-decoration: none;
+                    transition: all 0.3s;
+                }
 
-/* ---------------------------------------------------
-    SIDEBAR STYLE
------------------------------------------------------ */
-a{
-    text-decoration: none;
+                .navbar {
+                    padding: 10px 10px;
+                    background: #010846;
+                    border: none;
+                    border-radius: 0;
+                    margin-bottom: 40px;
+                    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+                }
 
-}
-.LogoSM {
-    padding: 0px 0px;
-  }
-img {
-    width: 200px;
-    height: 75px;
-    margin: 0px auto 0px;
-  }
-.icon{
-    font-size: 20px;
-    line-height: 19px;
-}
+                    .navbar ul li a {
+                        color: #fff;
+                        padding: 10px;
+                        min-width: 135px;
+                    }
 
-.icon.i{
-    float:right ;
-    margin-left: 10px;
-}
-.icon.d{
-    float:left ;
-    margin-right: 10px;
-}
-.wrapper {
-    display: flex;
-    width: 100%;
-    align-items: stretch;
-}
+                        .navbar ul li a:hover {
+                            background: #17a2b8;
+                            color: #fff;
+                            padding: 10px;
+                        }
 
-#sidebar {
-    min-width: 250px;
-    max-width: 250px;
-    background: #010846;
-    color: #fff;
-    transition: all 0.3s;
-}
+                .navbar-btn {
+                    box-shadow: none;
+                    outline: none !important;
+                    border: none;
+                }
 
+                .line {
+                    width: 100%;
+                    height: 1px;
+                    border-bottom: 1px dashed #ddd;
+                    margin: 40px 0;
+                }
 
+                /* ---------------------------------------------------
+            SIDEBAR STYLE
+        ----------------------------------------------------- */
+                a {
+                    text-decoration: none;
+                }
 
-#sidebar.active {
-    margin-left: -250px;
-}
+                .LogoSM {
+                    padding: 0px 0px;
+                }
 
-#sidebar .sidebar-header {
-    padding: 20px;
-    background: #010846;
-}
+                img {
+                    width: 200px;
+                    height: 75px;
+                    margin: 0px auto 0px;
+                }
 
+                .icon {
+                    font-size: 20px;
+                    line-height: 19px;
+                }
 
-#sidebar ul p {
-    color: #fff;
-    padding: 10px;
-}
+                    .icon.i {
+                        float: right;
+                        margin-left: 10px;
+                    }
 
-#sidebar ul li a { 
-    padding: 25px;
-    font-size: 1.1em;
-    display: block;
-}
+                    .icon.d {
+                        float: left;
+                        margin-right: 10px;
+                    }
 
-#sidebar ul li a:hover {
-    background: #1d4c9e;
-    color: #9AD701;
-}
+                .wrapper {
+                    display: flex;
+                    width: 100%;
+                    align-items: stretch;
+                }
 
-#sidebar ul li.active>a,
-a[aria-expanded="true"] {
-    color: #010846;
-    min-width: 100px;
-}
-
-a[data-toggle="collapse"] {
-    position: relative;
-    
-}
-
-.menu ul{
-    display: none;
-}
-
-/*btn boostrap bell*/
-.btn:not(:disabled):not(.disabled) {
-    cursor: pointer;
-}
-[type=reset], [type=submit], button, html [type=button] {
-    -webkit-appearance: button;
-}
-.btn-group-sm>.btn, .btn-sm {
-    padding: 7px 10px;
-    font-size: .875rem;
-    line-height: 1.5;
-    border-radius: .2rem;
-}
-.btn-warning {
-    color: #fff;
-    background-color: #ffc107;
-    border-color: #ffc107;
-}
-
-.btn-warning:hover {
-    color: #fff;
-    background-color: #e0a800;
-    border-color: #d39e00;
-}
-
-/*Desplegable de usuario Navbar*/
-.navbar-nav .dropdown-menu {
-    position: static;
-    float: none;
-}
-.dropdown-menu.show {
-    display: block;
-}
-.dropdown-menu{
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
-    float: left;
-    min-width: 130px;
-    padding: .5rem 0;
-    margin: .125rem;
-    font-size: 1rem;
-    color: #010846;
-    text-align: left;
-    list-style: none;
-    background-color: #010846;
-    background-clip: padding-box;
-    border: 1px solid rgba(0,0,0,.15);
-}
-/* ---------------------------------------------------
-    CONTENT STYLE
------------------------------------------------------ */
-
-#content {
-    width: 100%;
-    padding: 0px;
-    min-height: 100vh;
-    transition: all 0.3s;
-}
-
-/* ---------------------------------------------------
-    MEDIAQUERIES
------------------------------------------------------ */
-
-@@media (max-width: 768px) {
-    #sidebar {
-        margin-left: -250px;
-    }
-    #sidebar.active {
-        margin-left: 0;
-    }
-    #sidebarCollapse span {
-        display: none;
-    }
-}
+                #sidebar {
+                    min-width: 250px;
+                    max-width: 250px;
+                    background: #010846;
+                    color: #fff;
+                    transition: all 0.3s;
+                }
 
 
 
+                    #sidebar.active {
+                        margin-left: -250px;
+                    }
+
+                    #sidebar .sidebar-header {
+                        padding: 20px;
+                        background: #010846;
+                    }
+
+
+                    #sidebar ul p {
+                        color: #fff;
+                        padding: 10px;
+                    }
+
+                    #sidebar ul li a {
+                        padding: 25px;
+                        font-size: 1.1em;
+                        display: block;
+                    }
+
+                        #sidebar ul li a:hover {
+                            background: #1d4c9e;
+                            color: #9AD701;
+                        }
+
+                    #sidebar ul li.active > a,
+                    a[aria-expanded="true"] {
+                        color: #010846;
+                        min-width: 100px;
+                    }
+
+                a[data-toggle="collapse"] {
+                    position: relative;
+                }
+
+                .menu ul {
+                    display: none;
+                }
+
+                /*btn boostrap bell*/
+                .btn:not(:disabled):not(.disabled) {
+                    cursor: pointer;
+                }
+
+                [type=reset], [type=submit], button, html [type=button] {
+                    -webkit-appearance: button;
+                }
+
+                .btn-group-sm > .btn, .btn-sm {
+                    padding: 7px 10px;
+                    font-size: .875rem;
+                    line-height: 1.5;
+                    border-radius: .2rem;
+                }
+
+                .btn-warning {
+                    color: #fff;
+                    background-color: #ffc107;
+                    border-color: #ffc107;
+                }
+
+                    .btn-warning:hover {
+                        color: #fff;
+                        background-color: #e0a800;
+                        border-color: #d39e00;
+                    }
+
+                /*Desplegable de usuario Navbar*/
+                .navbar-nav .dropdown-menu {
+                    position: static;
+                    float: none;
+                }
+
+                .dropdown-menu.show {
+                    display: block;
+                }
+
+                .dropdown-menu {
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    z-index: 1000;
+                    float: left;
+                    min-width: 130px;
+                    padding: .5rem 0;
+                    margin: .125rem;
+                    font-size: 1rem;
+                    color: #010846;
+                    text-align: left;
+                    list-style: none;
+                    background-color: #010846;
+                    background-clip: padding-box;
+                    border: 1px solid rgba(0,0,0,.15);
+                }
+                /* ---------------------------------------------------
+            CONTENT STYLE
+        ----------------------------------------------------- */
+
+                #content {
+                    width: 100%;
+                    padding: 0px;
+                    min-height: 100vh;
+                    transition: all 0.3s;
+                }
+
+                /* ---------------------------------------------------
+            MEDIAQUERIES
+        ----------------------------------------------------- */
+
+                @@media (max-width: 768px) {
+                    #sidebar {
+                        margin-left: -250px;
+                    }
+
+                        #sidebar.active {
+                            margin-left: 0;
+                        }
+
+                    #sidebarCollapse span {
+                        display: none;
+                    }
+                }
     </style>
 </head>
 
@@ -328,10 +342,10 @@ a[data-toggle="collapse"] {
                     </ul>
                 </li>
 
-                <li class="activado">
-                    <a href="@Url.Action("Index","Empleados")">
+                <!--<li class="activado">
+                    <a href="#">
                         <i class="icon d fas fa-address-book"></i>  Empleados<i class="icon i fas fa-chevron-down"></i></a>
-                    @*<ul >
+                    <ul >
                         <li>
                             <a href="#"><i class="icon d fas fa-users"></i>Empleados</a>
                         </li>
@@ -341,8 +355,8 @@ a[data-toggle="collapse"] {
                         <li>
                             <a href="#"><i class="icon d fas fa-address-card"></i>Roles</a>
                         </li>
-                    </ul>*@
-                </li>
+                    </ul>
+                </li>-->
 
 
 
@@ -378,9 +392,10 @@ a[data-toggle="collapse"] {
                                     <i class="icon fas fa-users"></i>Usuario
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="@Url.Action("Index","Usuarios")">Gestion Usuario</a>
-                                    <a class="dropdown-item" href="@Url.Action("Index","Roles")">Gestion Roles</a>
-                                    <a class="dropdown-item" href="@Url.Action("CerrarSesion","Home")">Salir</a>
+                                    <a class="dropdown-item" href="@Url.Action("Index","Empleados")">Gestion Empleados</a>
+                                    <a class="dropdown-item" href="@Url.Action("Index","Usuario")">Gestion Usuarios</a>
+                                    @*<a class="dropdown-item" href="#">Gestion Roles</a>*@
+                                    <a class="dropdown-item" href="#">Salir</a>
                                 </div>
                             </li>
                         </ul>
@@ -388,26 +403,6 @@ a[data-toggle="collapse"] {
                 </div>
             </nav>
 
-            <!--<h2>Collapsible Sidebar Using Bootstrap 4</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-                    <div class="line"></div>
-
-                    <h2>Lorem Ipsum Dolor</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-                    <div class="line"></div>
-
-                    <h2>Lorem Ipsum Dolor</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-                    <div class="line"></div>
-
-                    <h3>Lorem Ipsum Dolor</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-            </div>-->
             <div id="content" class="p-4 p-md-5 pt-5">
                 @RenderBody()
             </div>
