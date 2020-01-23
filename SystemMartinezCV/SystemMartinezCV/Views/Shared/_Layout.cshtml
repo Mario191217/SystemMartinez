@@ -328,10 +328,10 @@ a[data-toggle="collapse"] {
                     </ul>
                 </li>
 
-                <!--<li class="activado">
-                    <a href="#">
+                <li class="activado">
+                    <a href="@Url.Action("Index","Empleados")">
                         <i class="icon d fas fa-address-book"></i>  Empleados<i class="icon i fas fa-chevron-down"></i></a>
-                    <ul >
+                    @*<ul >
                         <li>
                             <a href="#"><i class="icon d fas fa-users"></i>Empleados</a>
                         </li>
@@ -341,8 +341,8 @@ a[data-toggle="collapse"] {
                         <li>
                             <a href="#"><i class="icon d fas fa-address-card"></i>Roles</a>
                         </li>
-                    </ul>
-                </li>-->
+                    </ul>*@
+                </li>
 
 
 
@@ -378,9 +378,9 @@ a[data-toggle="collapse"] {
                                     <i class="icon fas fa-users"></i>Usuario
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Gestion Usuario</a>
-                                    <a class="dropdown-item" href="#">Gestion Roles</a>
-                                    <a class="dropdown-item" href="#">Salir</a>
+                                    <a class="dropdown-item" href="@Url.Action("Index","Usuarios")">Gestion Usuario</a>
+                                    <a class="dropdown-item" href="@Url.Action("Index","Roles")">Gestion Roles</a>
+                                    <a class="dropdown-item" href="@Url.Action("CerrarSesion","Home")">Salir</a>
                                 </div>
                             </li>
                         </ul>
