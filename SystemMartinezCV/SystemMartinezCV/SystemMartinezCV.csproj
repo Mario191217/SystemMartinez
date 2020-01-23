@@ -433,6 +433,14 @@
     <Compile Include="Migrations\202001211936382_model.designer.cs">
       <DependentUpon>202001211936382_model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001231545583_db.cs" />
+    <Compile Include="Migrations\202001231545583_db.designer.cs">
+      <DependentUpon>202001231545583_db.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001231550185_bug.cs" />
+    <Compile Include="Migrations\202001231550185_bug.designer.cs">
+      <DependentUpon>202001231550185_bug.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Categorias.cs" />
     <Compile Include="Models\Contexto.cs" />
@@ -441,9 +449,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Productos.cs" />
     <Compile Include="Models\Proveedores.cs" />
     <Compile Include="Models\Roles.cs" />
     <Compile Include="Models\Empleados.cs" />
+    <Compile Include="Models\UnidadMedida.cs" />
     <Compile Include="Models\Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -489,6 +499,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001211936382_model.resx">
       <DependentUpon>202001211936382_model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001231545583_db.resx">
+      <DependentUpon>202001231545583_db.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001231550185_bug.resx">
+      <DependentUpon>202001231550185_bug.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
