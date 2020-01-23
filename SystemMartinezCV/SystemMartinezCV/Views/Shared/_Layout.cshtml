@@ -297,10 +297,10 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="@Url.Action("Index","Proveedores")">Proveedores</a>
+                            <a href="/proveedores">Proveedores</a>
                         </li>
                         <li>
-                            <a href="#">Compras</a>
+                            <a>Compras</a>
                         </li>
                         <li>
                             <a href="#">Compras</a>
@@ -342,9 +342,10 @@
                     </ul>
                 </li>
 
-                <!--<li class="activado">
+                @*<li class="activado">
                     <a href="#">
                         <i class="icon d fas fa-address-book"></i>  Empleados<i class="icon i fas fa-chevron-down"></i></a>
+            
                     <ul >
                         <li>
                             <a href="#"><i class="icon d fas fa-users"></i>Empleados</a>
@@ -356,7 +357,7 @@
                             <a href="#"><i class="icon d fas fa-address-card"></i>Roles</a>
                         </li>
                     </ul>
-                </li>-->
+                </li>*@
 
 
 
@@ -393,9 +394,9 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item" href="@Url.Action("Index","Empleados")">Gestion Empleados</a>
-                                    <a class="dropdown-item" href="@Url.Action("Index","Usuario")">Gestion Usuarios</a>
+                                    <a class="dropdown-item" href="@Url.Action("Index","Usuarios")">Gestion Usuarios</a>
                                     @*<a class="dropdown-item" href="#">Gestion Roles</a>*@
-                                    <a class="dropdown-item" href="#">Salir</a>
+                                    <a class="dropdown-item" href="@Url.Action("CerrarSesion","Home")">Salir</a>
                                 </div>
                             </li>
                         </ul>
@@ -420,9 +421,8 @@
                         $('#sidebar').classList.toggle('active');
                     });
 
-
-                    $('.menu li:has(ul)').click(function(e){
-        e.preventDefault();
+ $('.menu li:has(ul)').on('click',function(){
+    
 
         if ($(this).hasClass('activado')) {
             $(this).removeClass('activado');
