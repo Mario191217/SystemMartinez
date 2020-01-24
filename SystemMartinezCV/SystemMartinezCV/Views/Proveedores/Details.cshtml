@@ -1,82 +1,86 @@
 ﻿@model SystemMartinezCV.Models.Proveedores
+<style>
+    .row {
+        width: 100%;
+    }
 
-@{
-    Layout = null;
-}
+    .col-sm-3 {
+        display: inline-flex;
+    }
 
-<!DOCTYPE html>
+        .col-sm-3 .jumbotron {
+            font-size: 85%;
+            width: 100%;
+        }
+</style>
+<div>
+    <div class="row">
+        <div class="col-sm-3">
+            <dl class="dl-horizontal jumbotron" style="background:#2C3E50; color: #fff">
+                <h4>Proveedores</h4>
+                <hr />
+                <dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.RazonSocial)
+                </dt>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Details</title>
-</head>
-<body>
-    <div>
-        <h4>Proveedores</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.RazonSocial)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.RazonSocial)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Representante)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Representante)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Direccion)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Direccion)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.NIT)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.NIT)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.NRC)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.NRC)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.NumeroCuenta)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.NumeroCuenta)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Observacion)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Observacion)
-            </dd>
-    
-        </dl>
+                <dd>
+                    @Html.DisplayFor(model => model.RazonSocial)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Representante)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Representante)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Direccion)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Direccion)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.NIT)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.NIT)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.NRC)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.NRC)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.NumeroCuenta)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.NumeroCuenta)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Observacion)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Observacion)
+                </dd>
+            </dl>
+        </div>
+        </div>
     </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.IdProveedor }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
-</body>
-</html>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.IdProveedor }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+
