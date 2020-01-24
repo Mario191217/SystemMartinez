@@ -130,7 +130,6 @@
     <Content Include="Content\js\main.js" />
     <Content Include="Content\js\map-custom.js" />
     <Content Include="Content\Login.css" />
-    <Content Include="Content\LogoSM.jpeg" />
     <Content Include="Content\LogoSM.png" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\form.css" />

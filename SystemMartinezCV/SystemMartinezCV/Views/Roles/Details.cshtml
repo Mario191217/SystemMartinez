@@ -4,31 +4,34 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+    <div>
+        <div class="row">
+            <div class="col-sm-3">
+                <dl class="dl-horizontal jumbotron" style="background:#2C3E50; color: #fff">
+                    <h4>Detalles Roles</h4>
+                    <hr />
+                   
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Rol)
+                        </dt>
 
-<div>
-    <h4>Roles</h4>
-    <hr />
-    <dl class="dl-horizontal jumbotron">
-        <dt>
-            @Html.DisplayNameFor(model => model.Rol)
-        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Rol)
+                        </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Rol)
-        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Descripcion)
+                        </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Descripcion)
+                        </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Descripcion)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IdRol }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+                    </dl>
+            </div>
+           </div>
+      </div>
+            <p>
+                @Html.ActionLink("Editar", "Edit", new { id = Model.IdRol }, new {@class = "btn btn-success" }) |
+                @Html.ActionLink("Regresar", "Index", null, new {@class = "btn btn-danger" })
+            </p>

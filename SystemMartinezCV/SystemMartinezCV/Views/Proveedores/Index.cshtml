@@ -1,10 +1,15 @@
 ﻿@model IEnumerable<SystemMartinezCV.Models.Proveedores>
 
+@{
+    ViewBag.Title = "Index";
+    var lista = Model.ToArray();
+}
+
 <!DOCTYPE html>
-    <p>
-        @Html.ActionLink("Agregar", "Create", null, new {@class = "btn btn-info" })
-    </p>
-    <table class="table table-hover">
+<p>
+    @Html.ActionLink("Agregar", "Create", null, new { @class = "btn btn-info" })
+</p>
+@*<table class="table table-hover">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.RazonSocial)
@@ -29,7 +34,7 @@
             </th>
             <th></th>
         </tr>
-    
+
     @foreach (var item in Model) {
         <tr>
             <td>
@@ -54,11 +59,26 @@
                 @Html.DisplayFor(modelItem => item.Observacion)
             </td>
             <td>
-                @*@Html.ActionLink("Editar", "Edit", new { id=item.IdProveedor }) |*@
+                @Html.ActionLink("Editar", "Edit", new { id=item.IdProveedor }, new {@class = "btn btn-warning" }) |
                 @Html.ActionLink("Detalles", "Details", new { id=item.IdProveedor }, new {@class = "btn btn-success" }) |
                 @Html.ActionLink("Eliminar", "Delete", new { id=item.IdProveedor }, new {@class = "btn btn-danger" })
             </td>
         </tr>
     }
-    
-    </table>
+
+    </table>*@
+<div class="row">
+    @for (int i = 0; i < lista.Length; i += 1)
+    {
+        <div class="col-sm-6">
+            <div class="jumbotron" style="background-color: #2C3E50; color: #fff">
+                <p style="font-size: 26px">RazonSocial: @lista[i].RazonSocial</p>
+                <p style="font-size: 20px">Representante: @lista[i].Representante</p>
+                @Html.ActionLink("Editar", "Edit", new { id = lista[i].IdProveedor }, new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("Detalles", "Details", new { id = lista[i].IdProveedor }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id = lista[i].IdProveedor }, new { @class = "btn btn-danger" })
+
+            </div>
+        </div>
+    }
+</div>

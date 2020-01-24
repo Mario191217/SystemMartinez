@@ -28,7 +28,7 @@ body
 }
 
 .user-img img{
-    width: 200px;
+    width: 100px;
     height: 100px; 
 }
 
@@ -41,7 +41,7 @@ body
 	background: #ffffff;
 	color: #F62104;
 }
-.form-group ::placeholder{
+.form-group placeholder{
 	color: #000;
 	
 }
