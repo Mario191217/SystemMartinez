@@ -33,7 +33,7 @@
         <div class="col-sm-8 main-section">
             <div class="modal-content">
                 <div class="col-12 user-img">
-                    <img @*src="De.png"*@ />
+                    <img src="~/Content/LogoSM.jpeg"/>
                 </div>
                 <form class="col-12" method="post" action="@Url.Action("Index","Home")">
                     <div class="form-group" id="user-group">
@@ -45,7 +45,7 @@
                     <button type="submit" class="btn btn-success"><i class="fas fa-sign-in-alt"></i>  Ingresar </button>
                 </form>
                 <div class="col-12 forgot">
-                    <a href="#">Recordar contraseña</a>
+                    <p style="color:red;">@ViewBag.msj</p>
                 </div>
             </div>
         </div>

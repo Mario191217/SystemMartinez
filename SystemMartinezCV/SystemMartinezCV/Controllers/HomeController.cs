@@ -12,7 +12,6 @@ namespace SystemMartinezCV.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            ViewBag.lista = db.Usuarios.ToList();
             return View();
         }
 
