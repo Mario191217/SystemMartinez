@@ -19,7 +19,7 @@
     </style>
 
 
-<form>
+
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
@@ -28,6 +28,7 @@
         <h4>Roles</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
         <div class="form-group  mb-3 text-left">
             @Html.LabelFor(model => model.Rol, htmlAttributes: new { @class = "control-label col-md-2" })
             <div >
@@ -54,7 +55,6 @@
     }
 
 
-</form>
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

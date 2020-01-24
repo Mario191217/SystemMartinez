@@ -31,6 +31,7 @@
                 <h4 style="color:#fff;">Editar Roles</h4>
                 <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.IdRol)
                 <div class="form-group  mb-3 text-left">
                     @Html.LabelFor(model => model.Rol, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div>

@@ -2,43 +2,59 @@
 
 @{
     ViewBag.Title = "Index";
+    var lista = Model.ToArray();
 }
 
 
 <p>
-    @Html.ActionLink("Agerga", "Create", null, new {@class = "btn btn-info" })
+    @Html.ActionLink("Agerga", "Create", null, new { @class = "btn btn-info" })
 </p>
-<table class="table jumbotron table-bordered">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Empleados.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Roles.Rol)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Usuario)
-        </th>
-        <th></th>
-    </tr>
+@*<table class="table jumbotron table-bordered">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Empleados.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Roles.Rol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Usuario)
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Empleados.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Roles.Rol)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Usuario)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.IdUsuario },new {@class = "btn btn-warning" }) |
-            @Html.ActionLink("Detalles", "Details", new { id=item.IdUsuario },new {@class = "btn btn-success" }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.IdUsuario },new {@class = "btn btn-danger" })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Empleados.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Roles.Rol)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usuario)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id=item.IdUsuario },new {@class = "btn btn-warning" }) |
+                @Html.ActionLink("Detalles", "Details", new { id=item.IdUsuario },new {@class = "btn btn-success" }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id=item.IdUsuario },new {@class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
 
-</table>
+    </table>*@
+<div class="row">
+    @for(int i = 0; i < lista.Length; i += 1)
+    {
+    <div class="col-sm-6">
+        <div class="jumbotron" style="background-color: #2C3E50; color: #fff">
+            <p style="font-size: 26px">@lista[i].Usuario @lista[i].IdRol</p>  
+            
+            @Html.ActionLink("Editar", "Edit", new { id = lista[i].IdUsuario }, new { @class = "btn btn-warning" }) |
+            @Html.ActionLink("Detalles", "Details", new { id = lista[i].IdUsuario }, new { @class = "btn btn-success" }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id = lista[i].IdUsuario }, new { @class = "btn btn-danger" })
+
+        </div>
+    </div>
+    }
+</div>
