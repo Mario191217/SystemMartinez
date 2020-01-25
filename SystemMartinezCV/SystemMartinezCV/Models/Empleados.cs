@@ -21,12 +21,15 @@ namespace SystemMartinezCV.Models
         public string AFP { get; set; }
         public string Email { get; set; }
         public string Genero { get; set; }
+        [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
+        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime FechaNacimiento { get; set; }
         public string Direccion { get; set; }
         public string Telefono { get; set; }
         public string TelefonoEmergencia { get; set; }
         public string EstadoEliminar { get; set; }
+        [DataType(DataType.MultilineText)]
         public string Observaciones { get; set; }
         public DateTime FechaRegistro { get; set; }
 
