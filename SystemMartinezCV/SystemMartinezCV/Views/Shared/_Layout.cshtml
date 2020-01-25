@@ -10,7 +10,8 @@
     <title>System</title>
 
     <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    @*<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" @*integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">*@
+    <link rel="stylesheet" href="~/Content/Mod/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="~/Content/Site.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -32,7 +33,7 @@
             <div class="sidebar-header">
                 <div class="LogoSM">
                     <div class="img">
-                        <img src="~/Content/LogoSM.png">
+                        <a href="@Url.Action("Index","Home")"><img src="~/Content/LogoSM.png"></a>
                     </div>
                 </div>
             </div>
@@ -55,40 +56,44 @@
                     </ul>
                 </li>
 
-                <li class="activado">
-                    <a>
-                        <i class="icon d fas fa-cart-arrow-down"></i>   Compras<i class="icon i fas fa-chevron-down"></i>
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="/proveedores">Proveedores</a>
-                        </li>
-                        <li>
-                            <a>Compras</a>
-                        </li>
-                        <li>
-                            <a href="#">Compras</a>
-                        </li>
-                    </ul>
-                </li>
 
-                <li class="activado">
-                    <a href="#">
-                        <i class="icon d fas fa-file-alt"></i>   Ventas<i class="icon i fas fa-chevron-down"></i>
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="#">Ventas</a>
-                        </li>
-                        <li>
-                            <a href="#">Ventas</a>
-                        </li>
-                        <li>
-                            <a href="#">Ventas</a>
-                        </li>
-                    </ul>
-                </li>
+                @if (Session["Rol"].ToString() == "Administrador")
+                {
 
+                    <li class="activado">
+                        <a>
+                            <i class="icon d fas fa-cart-arrow-down"></i>   Compras<i class="icon i fas fa-chevron-down"></i>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="/proveedores">Proveedores</a>
+                            </li>
+                            <li>
+                                <a>Compras</a>
+                            </li>
+                            <li>
+                                <a href="#">Compras</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="activado">
+                        <a href="#">
+                            <i class="icon d fas fa-file-alt"></i>   Ventas<i class="icon i fas fa-chevron-down"></i>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="#">Ventas</a>
+                            </li>
+                            <li>
+                                <a href="#">Ventas</a>
+                            </li>
+                            <li>
+                                <a href="#">Ventas</a>
+                            </li>
+                        </ul>
+                    </li>
+                }
                 <li class="activado">
                     <a href="#">
                         <i class="icon d fab fa-buffer"></i>   Proyectos<i class="icon i fas fa-chevron-down"></i>
@@ -107,21 +112,21 @@
                 </li>
 
                 @*<li class="activado">
-                    <a href="#">
-                        <i class="icon d fas fa-address-book"></i>  Empleados<i class="icon i fas fa-chevron-down"></i></a>
-            
-                    <ul >
-                        <li>
-                            <a href="#"><i class="icon d fas fa-users"></i>Empleados</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="icon d fas fa-user-shield"></i>Usuarios</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="icon d fas fa-address-card"></i>Roles</a>
-                        </li>
-                    </ul>
-                </li>*@
+            <a href="#">
+                <i class="icon d fas fa-address-book"></i>  Empleados<i class="icon i fas fa-chevron-down"></i></a>
+
+            <ul >
+                <li>
+                    <a href="#"><i class="icon d fas fa-users"></i>Empleados</a>
+                </li>
+                <li>
+                    <a href="#"><i class="icon d fas fa-user-shield"></i>Usuarios</a>
+                </li>
+                <li>
+                    <a href="#"><i class="icon d fas fa-address-card"></i>Roles</a>
+                </li>
+            </ul>
+        </li>*@
 
             </ul>
         </nav>
@@ -141,29 +146,45 @@
                         <i class="fas fa-align-justify"></i>
                     </button>
 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    @if (Session["Rol"].ToString() == "Administrador")
+                    {
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                        <ul class="menu nav navbar-nav ml-auto">
-                            <li class=" nav-item">
-                                <button type="button" class="btn btn-warning btn-sm"><i class="icon fas fa-bell"></i></button>
+                            <ul class="menu nav navbar-nav ml-auto">
+                                <li class=" nav-item">
+                                    <button type="button" class="btn btn-warning btn-sm"><i class="icon fas fa-bell"></i></button>
 
-                            <li class=" nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="icon fas fa-users"></i>Usuario
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="@Url.Action("Index","Empleados")">Gestion Empleados</a>
-                                    <a class="dropdown-item" href="@Url.Action("Index","Usuarios")">Gestion Usuarios</a>
-                                    <a class="dropdown-item" href="@Url.Action("Index","Roles")">Gestion Roles</a>
-                                    <a class="dropdown-item" href="@Url.Action("CerrarSesion","Home")">Salir</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+                                <li class=" nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="icon fas fa-users"></i>Usuario
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item" href="@Url.Action("Index","Empleados")">Gestion Empleados</a>
+                                        <a class="dropdown-item" href="@Url.Action("Index","Usuarios")">Gestion Usuarios</a>
+                                        <a class="dropdown-item" href="@Url.Action("Index","Roles")">Gestion Roles</a>
+                                        <a class="dropdown-item" href="@Url.Action("CerrarSesion","Home")">Salir</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                            <ul class="menu nav navbar-nav ml-auto">
+                                <li class=" nav-item" style="margin:2px">
+                                    <a class="btn btn-warning btn-sm"><i class="icon fas fa-bell"></i></a>
+                                <li class=" nav-item" style="margin:2px">
+                                    <a href="@Url.Action("CerrarSesion","Home")" class="btn btn-danger btn-sm"><i class="icon fas fa-amazon"></i> Salir</a>
+                                </li>
+                            </ul>
+                        </div>
+                    }
                 </div>
             </nav>
 
-            <div id="content" class="p-4 p-md-5 pt-5">
+            <div id="content" class="" style="margin-left:5%;">
                 @RenderBody()
             </div>
 
@@ -173,32 +194,32 @@
             <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
             <script src="~/Scripts/bootstrap.min.js"></script>
             <script src="~/Scripts/main.js"></script>
-            @RenderSection("datepicker", false);
+            @RenderSection("datepicker", false)
             <script type="text/javascript">
                 $(document).ready(function () {
                     $('#sidebarCollapse').on('click', function () {
                         $('#sidebar').classList.toggle('active');
                     });
 
- $('.menu li:has(ul)').on('click',function(){
-    
-
-        if ($(this).hasClass('activado')) {
-            $(this).removeClass('activado');
-            $(this).children('ul').slideUp();
-            
-        } else {
-            $('.menu li ul').slideUp();
-            $('.menu li').removeClass('activado');
-            $(this).addClass('activado');
-            $(this).children('ul').slideDown();
-            
-        }
+                    $('.menu li:has(ul)').on('click', function () {
 
 
+                        if ($(this).hasClass('activado')) {
+                            $(this).removeClass('activado');
+                            $(this).children('ul').slideUp();
+
+                        } else {
+                            $('.menu li ul').slideUp();
+                            $('.menu li').removeClass('activado');
+                            $(this).addClass('activado');
+                            $(this).children('ul').slideDown();
+
+                        }
 
 
-    });
+
+
+                    });
                 });
             </script>
             </div>

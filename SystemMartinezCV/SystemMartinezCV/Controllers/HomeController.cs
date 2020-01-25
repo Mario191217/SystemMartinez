@@ -12,6 +12,10 @@ namespace SystemMartinezCV.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            if (Session["User"] != null)
+            {
+                return RedirectToAction("Bienvenida", "Home");
+            }
             return View();
         }
 

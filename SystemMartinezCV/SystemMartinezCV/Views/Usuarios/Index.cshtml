@@ -48,7 +48,7 @@
     {
     <div class="col-sm-6">
         <div class="jumbotron" style="background-color: #2C3E50; color: #fff">
-            <p style="font-size: 26px">@lista[i].Usuario @lista[i].IdRol</p>  
+            <p style="font-size: 26px">@lista[i].Usuario Rol:@lista[i].Roles.Rol</p>  
             
             @Html.ActionLink("Editar", "Edit", new { id = lista[i].IdUsuario }, new { @class = "btn btn-warning" }) |
             @Html.ActionLink("Detalles", "Details", new { id = lista[i].IdUsuario }, new { @class = "btn btn-info" }) |

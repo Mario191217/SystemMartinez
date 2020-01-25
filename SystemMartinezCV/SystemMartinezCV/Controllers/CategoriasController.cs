@@ -18,12 +18,20 @@ namespace SystemMartinezCV.Controllers
         // GET: Categorias
         public ActionResult Index()
         {
+            if (Session["User"].ToString() == null)
+            {
+                return RedirectToAction("Bienvenida", "Home");
+            }
             return View(db.Categorias.ToList());
         }
 
         // GET: Categorias/Details/5
         public ActionResult Details(int? id)
         {
+            if (Session["User"].ToString() == null)
+            {
+                return RedirectToAction("Bienvenida", "Home");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -39,6 +47,10 @@ namespace SystemMartinezCV.Controllers
         // GET: Categorias/Create
         public ActionResult Create()
         {
+            if (Session["User"].ToString() == null)
+            {
+                return RedirectToAction("Bienvenida", "Home");
+            }
             return View();
         }
 
@@ -62,6 +74,10 @@ namespace SystemMartinezCV.Controllers
         // GET: Categorias/Edit/5
         public ActionResult Edit(int? id)
         {
+            if (Session["User"].ToString() == null)
+            {
+                return RedirectToAction("Bienvenida", "Home");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -93,6 +109,10 @@ namespace SystemMartinezCV.Controllers
         // GET: Categorias/Delete/5
         public ActionResult Delete(int? id)
         {
+            if (Session["User"].ToString() == null)
+            {
+                return RedirectToAction("Bienvenida", "Home");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
