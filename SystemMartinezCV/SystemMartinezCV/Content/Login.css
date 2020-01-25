@@ -3,11 +3,9 @@
     text-decoration: none;
 
 }
-body
-{
-	background:#fff;
-    background-color: blueviolet;
-	background-size: cover;
+body {
+    background-color: #2C3E50;
+    background-size: cover;
 }
 
 .main-section{
@@ -42,7 +40,7 @@ body
 	color: #F62104;
 }
 .form-group placeholder{
-	color: #000;
+	color:aqua;
 	
 }
 .form-group::before{
