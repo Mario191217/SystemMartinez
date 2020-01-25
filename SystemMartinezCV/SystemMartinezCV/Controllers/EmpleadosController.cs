@@ -22,6 +22,10 @@ namespace SystemMartinezCV.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
+            if (Session["User"].ToString() != "Administrador")
+            {
+                return RedirectToAction("Bienvenida", "Home");
+            }
             return View(db.Empleados.ToList());
         }
 
@@ -31,6 +35,10 @@ namespace SystemMartinezCV.Controllers
             if (Session["User"] == null)
             {
                 return RedirectToAction("Index", "Home");
+            }
+            if (Session["User"].ToString() != "Administrador")
+            {
+                return RedirectToAction("Bienvenida", "Home");
             }
             if (id == null)
             {
@@ -50,6 +58,10 @@ namespace SystemMartinezCV.Controllers
             if (Session["User"] == null)
             {
                 return RedirectToAction("Index", "Home");
+            }
+            if (Session["User"].ToString() != "Administrador")
+            {
+                return RedirectToAction("Bienvenida", "Home");
             }
             return View();
         }
@@ -78,6 +90,10 @@ namespace SystemMartinezCV.Controllers
             if (Session["User"] == null)
             {
                 return RedirectToAction("Index", "Home");
+            }
+            if (Session["User"].ToString() != "Administrador")
+            {
+                return RedirectToAction("Bienvenida", "Home");
             }
             if (id == null)
             {
@@ -114,6 +130,10 @@ namespace SystemMartinezCV.Controllers
             if (Session["User"] == null)
             {
                 return RedirectToAction("Index", "Home");
+            }
+            if (Session["User"].ToString() != "Administrador")
+            {
+                return RedirectToAction("Bienvenida", "Home");
             }
             if (id == null)
             {
