@@ -47,7 +47,7 @@ namespace SystemMartinezCV.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdProveedor,RazonSocial,Representante,Direccion,NIT,NRC,NumeroCuenta,Observacion")] Proveedores proveedores)
+        public ActionResult Create(Proveedores proveedores)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace SystemMartinezCV.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdProveedor,RazonSocial,Representante,Direccion,NIT,NRC,NumeroCuenta,Observacion")] Proveedores proveedores)
+        public ActionResult Edit(Proveedores proveedores)
         {
             if (ModelState.IsValid)
             {

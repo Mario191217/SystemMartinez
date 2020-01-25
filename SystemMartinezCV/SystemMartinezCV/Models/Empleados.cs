@@ -19,6 +19,7 @@ namespace SystemMartinezCV.Models
         public string Nit { get; set; }
         public string Seguro { get; set; }
         public string AFP { get; set; }
+
         public string Email { get; set; }
         public string Genero { get; set; }
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
