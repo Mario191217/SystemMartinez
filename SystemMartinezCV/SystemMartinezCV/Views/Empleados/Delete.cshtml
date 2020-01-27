@@ -85,42 +85,42 @@
                 </dd>
             </dl>
         </div>
-            <div class="col-sm-3">
-                <dl class="dl-horizontal jumbotron" style="background:#2C3E50; color: #fff">
-                    <dt>
-                        @Html.DisplayNameFor(model => model.FechaNacimiento)
-                    </dt>
+        <div class="col-sm-3">
+            <dl class="dl-horizontal jumbotron" style="background:#2C3E50; color: #fff">
+                <dt>
+                    @Html.DisplayNameFor(model => model.FechaNacimiento)
+                </dt>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.FechaNacimiento)
-                    </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.FechaNacimiento)
+                </dd>
 
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Direccion)
-                    </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Direccion)
+                </dt>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.Direccion)
-                    </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Direccion)
+                </dd>
 
-                    <dt>
-                        @Html.DisplayNameFor(model => model.EstadoEliminar)
-                    </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.EstadoEliminar)
+                </dt>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.EstadoEliminar)
-                    </dd>
-                    
-                </dl>
-            </div>
+                <dd>
+                    @Html.DisplayFor(model => model.EstadoEliminar)
+                </dd>
 
-            @using (Html.BeginForm())
-            {
-                @Html.AntiForgeryToken()
-
-                <div class="form-actions no-color">
-                    <input type="submit" value="Eliminar" class="btn btn-danger" /> |
-                    @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-info" })
-                </div>
-            }
+            </dl>
         </div>
+    </div>
+        <hr />
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-actions no-color">
+                <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+                @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-info" })
+            </div>
+        }
+

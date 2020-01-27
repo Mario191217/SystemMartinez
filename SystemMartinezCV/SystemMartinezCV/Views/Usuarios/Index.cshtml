@@ -7,7 +7,7 @@
 
 
 <p>
-    @Html.ActionLink("Agerga", "Create", null, new { @class = "btn btn-info" })
+    @Html.ActionLink("Agergar", "Create", null, new { @class = "btn btn-primary btn-lg btn-block" })
 </p>
 @*<table class="table jumbotron table-bordered">
         <tr>
@@ -51,7 +51,7 @@
             <p style="font-size: 26px">@lista[i].Usuario Rol:@lista[i].Roles.Rol</p>  
             
             @Html.ActionLink("Editar", "Edit", new { id = lista[i].IdUsuario }, new { @class = "btn btn-warning" }) |
-            @Html.ActionLink("Detalles", "Details", new { id = lista[i].IdUsuario }, new { @class = "btn btn-success" }) |
+            @Html.ActionLink("Detalles", "Details", new { id = lista[i].IdUsuario }, new { @class = "btn btn-info" }) |
             @Html.ActionLink("Eliminar", "Delete", new { id = lista[i].IdUsuario }, new { @class = "btn btn-danger" })
 
         </div>
