@@ -13,6 +13,7 @@ namespace SystemMartinezCV.Models
         [Key]
         public int IdUsuario { get; set; }
         public string Usuario { get; set; }
+        //[DataType(DataType.Password)]
         public string Clave { get; set; }
 
         public int IdEmpleado { get; set; }
