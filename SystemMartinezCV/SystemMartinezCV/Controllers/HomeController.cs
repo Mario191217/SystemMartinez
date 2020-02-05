@@ -16,6 +16,7 @@ namespace SystemMartinezCV.Controllers
             {
                 return RedirectToAction("Bienvenida", "Home");
             }
+            Session["Rol"] = "User";
             return View();
         }
 

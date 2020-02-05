@@ -17,5 +17,7 @@ namespace SystemMartinezCV.Models
         public virtual Proveedores Proveedores { get; set; }
         public string Descripcion { get; set; }
         public string EstadoEliminar { get; set; }
+
+        public virtual List<DetalleCompra> DetalleCompras { get; set; }
     }
 }
