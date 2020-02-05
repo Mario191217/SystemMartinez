@@ -22,10 +22,6 @@ namespace SystemMartinezCV.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
-            if (Session["Rol"].ToString() != "Administrador")
-            {
-                return RedirectToAction("Bienvenida", "Home");
-            }
             var usuarios = db.Usuarios.Include(u => u.Empleados).Include(u => u.Roles);
             return View(usuarios.ToList());
         }
@@ -36,10 +32,6 @@ namespace SystemMartinezCV.Controllers
             if (Session["User"] == null)
             {
                 return RedirectToAction("Index", "Home");
-            }
-            if (Session["Rol"].ToString() != "Administrador")
-            {
-                return RedirectToAction("Bienvenida", "Home");
             }
             if (id == null)
             {
@@ -59,10 +51,6 @@ namespace SystemMartinezCV.Controllers
             if (Session["User"] == null)
             {
                 return RedirectToAction("Index", "Home");
-            }
-            if (Session["Rol"].ToString() != "Administrador")
-            {
-                return RedirectToAction("Bienvenida", "Home");
             }
             ViewBag.IdEmpleado = new SelectList(db.Empleados, "IdEmpleado", "Nombre");
             ViewBag.IdRol = new SelectList(db.Roles, "IdRol", "Rol");
@@ -95,10 +83,6 @@ namespace SystemMartinezCV.Controllers
             if (Session["User"] == null)
             {
                 return RedirectToAction("Index", "Home");
-            }
-            if (Session["Rol"].ToString() != "Administrador")
-            {
-                return RedirectToAction("Bienvenida", "Home");
             }
             if (id == null)
             {
@@ -138,10 +122,6 @@ namespace SystemMartinezCV.Controllers
             if (Session["User"] == null)
             {
                 return RedirectToAction("Index", "Home");
-            }
-            if (Session["Rol"].ToString() != "Administrador")
-            {
-                return RedirectToAction("Bienvenida", "Home");
             }
             if (id == null)
             {

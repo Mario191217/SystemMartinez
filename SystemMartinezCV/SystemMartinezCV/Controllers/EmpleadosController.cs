@@ -22,7 +22,7 @@ namespace SystemMartinezCV.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
-            if (Session["User"].ToString() != "Administrador")
+            if (Session["Rol"].ToString() != "Administrador")
             {
                 return RedirectToAction("Bienvenida", "Home");
             }
@@ -76,7 +76,6 @@ namespace SystemMartinezCV.Controllers
             if (ModelState.IsValid)
             {
                 empleados.FechaRegistro = DateTime.Now;
-                empleados.EstadoEliminar = "Activo";
                 db.Empleados.Add(empleados);
                 db.SaveChanges();
                 return RedirectToAction("Index");

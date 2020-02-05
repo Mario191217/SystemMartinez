@@ -5,12 +5,14 @@
     var lista = Model.ToArray();
 }
 
+<center><p style="background-color: #2C3E50;">Empleados</p></center>
+<hr />
 
-<p>
-    @Html.ActionLink("Agregar", "Create", null, new {@class = "btn btn-primary btn-lg btn-block" })
+<p style="width:50%;">
+    @Html.ActionLink("Agregar", "Create", null, new {@class = "btn btn-primary btn-lg btn-block", })
 </p>
-@*<table class="table jumbotron table-bordered">
-    <tr>
+<table class="table jumbotron table-hover"  style="background-color: #2C3E50; color: #fff;">
+    <tr class="bg-dark">
         <th>
             @Html.DisplayNameFor(model => model.Nombre)
         </th>
@@ -23,16 +25,18 @@
         <th>
             @Html.DisplayNameFor(model => model.Email)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.FechaNacimiento)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.Direccion)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.EstadoEliminar)
+        </th>*@
+        <th>
+            Funciones
         </th>
-        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -49,26 +53,26 @@
         <td>
             @Html.DisplayFor(modelItem => item.Email)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.FechaNacimiento)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.Direccion)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.EstadoEliminar)
-        </td>
+        </td>*@
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdEmpleado }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdEmpleado }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdEmpleado })
+            @Html.ActionLink("Editar", "Edit", new { id=item.IdEmpleado }, new {@class="btn btn-warning" }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.IdEmpleado }, new {@class = "btn btn-info" }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.IdEmpleado }, new {@class = "btn btn-danger" })
         </td>
     </tr>
 }
 
-</table>*@
+</table>
 
-<div class="row">
+@*<div class="row">
 @for(int i = 0; i < lista.Length; i += 1)
 {
     <div class="col-sm-6">
@@ -80,4 +84,4 @@
         </div>
     </div>
 }
-</div>
+</div>*@
