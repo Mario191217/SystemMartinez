@@ -458,6 +458,10 @@
     <Compile Include="Migrations\202002041605421_prob.designer.cs">
       <DependentUpon>202002041605421_prob.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002052006545_add-migration AddCompras.cs" />
+    <Compile Include="Migrations\202002052006545_add-migration AddCompras.designer.cs">
+      <DependentUpon>202002052006545_add-migration AddCompras.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Categorias.cs" />
     <Compile Include="Models\Clientes.cs" />
@@ -559,6 +563,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002041605421_prob.resx">
       <DependentUpon>202002041605421_prob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002052006545_add-migration AddCompras.resx">
+      <DependentUpon>202002052006545_add-migration AddCompras.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
