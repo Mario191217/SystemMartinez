@@ -12,6 +12,7 @@ namespace SystemMartinezCV.Models
         public int IdProducto { get; set; }
         public string Nombre { get; set; }
         public int Cantidad { get; set; }
+        public double Precio { get; set; }
         public string Descripcion { get; set; }
         public DateTime FechaRegistro { get; set; }
         public string EstadoEliminar { get; set; }
@@ -21,5 +22,7 @@ namespace SystemMartinezCV.Models
 
         public int IdCategoria { get; set; }
         public virtual Categorias Categorias { get; set; }
+
+        public virtual List<DetalleCompra> DetalleCompras { get; set; }
     }
 }

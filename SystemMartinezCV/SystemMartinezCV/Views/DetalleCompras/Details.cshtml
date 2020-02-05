@@ -1,0 +1,58 @@
+﻿@model SystemMartinezCV.Models.DetalleCompra
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DetalleCompra</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Compras.NFactura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Compras.NFactura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Productos.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Productos.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cantidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cantidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrecioUnitario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrecioUnitario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdDetalleCompra }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

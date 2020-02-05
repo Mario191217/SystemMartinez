@@ -21,5 +21,7 @@ namespace SystemMartinezCV.Models
         public string Telefono { get; set; }
         public string TelefonoRepresentante { get; set; }
         public string EstadoEliminar { get; set; }
+
+        public virtual List<Compras> Compras { get; set; }
     }
 }

@@ -419,6 +419,8 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CategoriasController.cs" />
+    <Compile Include="Controllers\ComprasController.cs" />
+    <Compile Include="Controllers\DetalleComprasController.cs" />
     <Compile Include="Controllers\EmpleadosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductosController.cs" />
@@ -447,6 +449,14 @@
     <Compile Include="Migrations\202001231617254_modelProductos.cs" />
     <Compile Include="Migrations\202001231617254_modelProductos.designer.cs">
       <DependentUpon>202001231617254_modelProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002031724155_precioProd.cs" />
+    <Compile Include="Migrations\202002031724155_precioProd.designer.cs">
+      <DependentUpon>202002031724155_precioProd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002041605421_prob.cs" />
+    <Compile Include="Migrations\202002041605421_prob.designer.cs">
+      <DependentUpon>202002041605421_prob.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Categorias.cs" />
@@ -499,6 +509,16 @@
     <Content Include="Views\UnidadMedidas\Details.cshtml" />
     <Content Include="Views\UnidadMedidas\Edit.cshtml" />
     <Content Include="Views\UnidadMedidas\Index.cshtml" />
+    <Content Include="Views\Compras\Create.cshtml" />
+    <Content Include="Views\Compras\Delete.cshtml" />
+    <Content Include="Views\Compras\Details.cshtml" />
+    <Content Include="Views\Compras\Edit.cshtml" />
+    <Content Include="Views\Compras\Index.cshtml" />
+    <Content Include="Views\DetalleCompras\Create.cshtml" />
+    <Content Include="Views\DetalleCompras\Delete.cshtml" />
+    <Content Include="Views\DetalleCompras\Details.cshtml" />
+    <Content Include="Views\DetalleCompras\Edit.cshtml" />
+    <Content Include="Views\DetalleCompras\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -533,6 +553,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001231617254_modelProductos.resx">
       <DependentUpon>202001231617254_modelProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002031724155_precioProd.resx">
+      <DependentUpon>202002031724155_precioProd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002041605421_prob.resx">
+      <DependentUpon>202002041605421_prob.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
