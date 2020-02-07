@@ -123,6 +123,39 @@ namespace SystemMartinezCV.Controllers
             return RedirectToAction("Index");
         }
 
+        public JsonResult Factura(Compras compra)
+        {
+            try
+            {
+                var idPrimaria = (from id in db.Compras select id.IdCompra).Max();
+                compra.IdCompra = idPrimaria;
+                compra.EstadoEliminar = "Disponible";
+                db.Compras.Add(compra);
+                db.SaveChanges();
+                return Json(true);
+            }
+            catch (Exception)
+            {
+
+                return Json(false);
+            }
+        }
+
+        public JsonResult Detalle(DetalleCompra compra)
+        {
+            try
+            {
+                db.DetalleCompras.Add(compra);
+                db.SaveChanges();
+                return Json(true);
+            }
+            catch (Exception)
+            {
+
+                return Json(false);
+            }
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

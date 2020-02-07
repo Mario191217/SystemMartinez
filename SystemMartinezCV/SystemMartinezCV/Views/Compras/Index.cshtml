@@ -115,4 +115,115 @@
         </div>
     </div>
 </div>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        //cargar code de producto
+        var IdProducto = $("select[name=idProducto]").val();
+            $("#idPro").val(IdProducto);
+        var Producto = $("select[name=idProducto] option:selected").text();
+            $("#dato").val(Producto);
+        //llenad o input
+            //$("#idPro").val(Producto);
+            $("select[name=idProducto]").change(function () {
+                var IdProducto = $("select[name=idProducto]").val();
+                alert("ipdpro");
+                    $("#idPro").val(IdProducto);
+                var Producto = $("select[name=idProducto] option:selected").text();
+                    //$("#idProducto").val(Producto);
+                    $("#dato").val(Producto);
+            });
+        //guardar detalle compra
+        $("#btnEnviar").click(function () {
+            
+            var id = $("#idPro").val();
+            var Producto = $("#idProducto").val();
+            var dato = $("#dato").val();
+            var cantidad = $("#cantidad").val();
+            var precio = $("#precio").val();
+            if (id == "" || Producto == "" || dato == "" || cantidad == "" || precio == "") {
+                alert("Faltan algunos datos.");
+            }
+            else {
+                var subtt1 = $("#subt1").val();
+                var subtotal = (cantidad * precio);
+                var contador = $("#fila").html();
+                var HTML = "<tr><td class='id'>" + id + "</td><td>" + dato + "</td><td>" + cantidad + "</td><td>" + precio + "</td><td>" + subtotal + "</td><td class='no'><button type='button' name='btnDelete' id='btnDelete' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-trash'></span></button></td></tr> ";
+                    $("#fila").html(contador + HTML);
+                    //$("#idPro").val("s");
+                    $("#dato").val("");
+                    $("#cantidad").val("");
+                    $("#precio").val("");
+                var total = parseFloat(subtt1)+ parseFloat(subtotal);
+                    $("#subt1").val(total)
+                    $("#total").val(total)
+            }
+        });
+        //Elimnar filas
+        $('body').on('click', 'button#btnDelete', function () {
+            //manejo de totales
+            var col = $(this).parents('tr');
+            var subTotalEliminar = col.find("td:eq(4)").text();
+            var totalAC = $("#subt1").val();
+            var total1 = parseFloat(totalAC) - parseFloat(subTotalEliminar);
+            $("#subt1").val(total1);
+            $("#total").val(total1);
+            //removiendo fila
+            $(this).parents('tr').remove();
+        });
+        //enviar factura
+            $("#btnEnviarF").click(function () {
+                var IdProveedor = $("select[name=idProveedor]").val();
+                var Codigo = $("#codigo").val();
+                var Fecha = $("#fecha").val();
 
+                if (IdProveedor == "" || Codigo == "" || Fecha == "") {
+                    alert("Faltan algunos datos de la factura.");
+                }
+                else {
+                    $.ajaxSetup({ async: false });
+                    //cargando datos tabla primaria
+                    var urlCompra = '@Url.Action("Factura", "Compras")';
+                    var dataCompra = { IdProveedor: IdProveedor, NFactura: Codigo, Fecha: Fecha};
+                        $.post(urlCompra, dataCompra)
+                            .done(function (data) {
+                                //alert("Compra Creada con exito")
+                            })
+                            .fail(function (data) {
+                                console.log("Error: " + data.responseText);
+                            }).
+                            always(function () {
+                            });
+                        //creando detalleCompra
+                        $(".id").parent("tr").find("td:eq(0)").each(function () {
+                            var columna = $(this).parents('tr');
+                            var idProducto = columna.find("td:eq(0)").text();
+                            var Nombre = columna.find("td:eq(1)").text();
+                            var Cantidad = columna.find("td:eq(2)").text();
+                            var Precio = columna.find("td:eq(3)").text();
+                            var Total = columna.find("td:eq(4)").text();
+                            //var TotalP = columna.find("td:eq(5)").text();
+                            var urlDetalle = '@Url.Action("Detalle", "Compras")';
+                            var dataDetalle = { IdProducto: idProducto, Cantidad: Cantidad, Precio: Precio, Total: Total };
+                          
+                            $.post(urlDetalle, dataDetalle)
+                                .done(function (data) {
+                                })
+                                .fail(function (data) {
+                                    console.log("Error: " + data.responseText);
+                                }).
+                                always(function () {
+                                });
+
+                        });
+                        var url = '@Url.Action("Index", "Compras")';
+                        $(location).attr('href', url);
+                    }
+                });
+    });
+        //Boton eliminar
+                @*$("#btnCancelar").click(function () {
+                    var url = '@Url.Action("Index")';
+                    $(location).attr('href', url);
+                });*@
+</script>
