@@ -5,13 +5,14 @@
     var lista = Model.ToArray();
 }
 
+
 <center><p style="background-color: #2C3E50;">Empleados</p></center>
 <hr />
 
 <p style="width:50%;">
-    @Html.ActionLink("Agregar", "Create", null, new {@class = "btn btn-primary btn-lg btn-block", })
+    @Html.ActionLink("Agregar", "Create", null, new { @class = "btn btn-primary btn-lg btn-block", })
 </p>
-<table class="table jumbotron table-hover"  style="background-color: #2C3E50; color: #fff;">
+<table class="table jumbotron table-hover" style="background-color: #2C3E50; color: #fff;">
     <tr class="bg-dark">
         <th>
             @Html.DisplayNameFor(model => model.Nombre)
@@ -26,62 +27,63 @@
             @Html.DisplayNameFor(model => model.Email)
         </th>
         @*<th>
-            @Html.DisplayNameFor(model => model.FechaNacimiento)
-        </th>*@
+                @Html.DisplayNameFor(model => model.FechaNacimiento)
+            </th>*@
         <th>
             @Html.DisplayNameFor(model => model.Direccion)
         </th>
         @*<th>
-            @Html.DisplayNameFor(model => model.EstadoEliminar)
-        </th>*@
+                @Html.DisplayNameFor(model => model.EstadoEliminar)
+            </th>*@
         <th>
             Funciones
         </th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Apellido)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Telefono)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.FechaNacimiento)
-        </td>*@
-        <td>
-            @Html.DisplayFor(modelItem => item.Direccion)
-        </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.EstadoEliminar)
-        </td>*@
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.IdEmpleado }, new {@class="btn btn-warning" }) |
-            @Html.ActionLink("Detalles", "Details", new { id=item.IdEmpleado }, new {@class = "btn btn-info" }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.IdEmpleado }, new {@class = "btn btn-danger" })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.FechaNacimiento)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Direccion)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.EstadoEliminar)
+                </td>*@
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.IdEmpleado }, new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("Detalles", "Details", new { id = item.IdEmpleado }, new { @class = "btn btn-info" }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.IdEmpleado }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
 
 </table>
 
 @*<div class="row">
-@for(int i = 0; i < lista.Length; i += 1)
-{
-    <div class="col-sm-6">
-        <div class="jumbotron" style="background-color: #2C3E50; color: #fff">
-            <p style="font-size: 26px">@lista[i].Nombre @lista[i].Apellido</p>
-            @Html.ActionLink("Editar", "Edit", new { id = lista[i].IdEmpleado }, new {@class="btn btn-warning" }) |
-            @Html.ActionLink("Detalles", "Details", new { id = lista[i].IdEmpleado }, new {@class = "btn btn-info" }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id = lista[i].IdEmpleado }, new {@class = "btn btn-danger" })
+    @for(int i = 0; i < lista.Length; i += 1)
+    {
+        <div class="col-sm-6">
+            <div class="jumbotron" style="background-color: #2C3E50; color: #fff">
+                <p style="font-size: 26px">@lista[i].Nombre @lista[i].Apellido</p>
+                @Html.ActionLink("Editar", "Edit", new { id = lista[i].IdEmpleado }, new {@class="btn btn-warning" }) |
+                @Html.ActionLink("Detalles", "Details", new { id = lista[i].IdEmpleado }, new {@class = "btn btn-info" }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id = lista[i].IdEmpleado }, new {@class = "btn btn-danger" })
+            </div>
         </div>
-    </div>
-}
-</div>*@
+    }
+    </div>*@

@@ -2,44 +2,55 @@
 @{
     ViewBag.Title = "Home Page";
 }
-<br />
+
 <div class="row">
-    <div class="col-lg-12">
-        <div class="col-md-6">
+        <div class="col-md-5">
             <div class="panel panel-primary">
-                <div class="panel panel-heading">
-                    Panel de Primaria
+
+                <div class="card-header">
+
+                    <center><h6>Proveedor</h6></center>
                 </div>
-                <div class="panel-body">
+               
+                <div class="card" style="background-color: #2C3E50; color: #fff;">
+                    <hr />
                     <div class="col-md-12">
-                        <div class="col-sm-6">
+                        <div class="col-sm-5">
                             <input type="number" placeholder="Código" name="codigo" id="codigo" class="form-control" />
                         </div>
-                        <div class="col-sm-6">
-                            <input type="date" placeholder="Fecha: " name="fecha" id="fecha" class="form-control" />
-                        </div>
                         <br />
-                        <br />
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <select name="idProveedor" class="form-control">
-                                @foreach (var proveedor in ViewBag.idProveedor)
-                                {
-                                    <option value="@proveedor.IdProveedor">@proveedor.Representante</option>
-                                }
-                            </select>
+                        
+                            <div class="col-sm-5">
+                                <input type="date" placeholder="Fecha: " name="fecha" id="fecha" class="form-control" />
+                            </div>
+                            <br />
+
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <select name="idProveedor" class="form-control">
+                                    @foreach (var proveedor in ViewBag.idProveedor)
+                                    {
+                                        <option value="@proveedor.IdProveedor">@proveedor.Representante</option>
+                                    }
+                                </select>
+                            </div>
+                            <hr />
                         </div>
                     </div>
-                </div>
             </div>
         </div>
-        <div class="col-md-6">
+
+        
+
+        <div class="col-md-5">
             <div class="panel panel-primary">
-                <div class="panel panel-heading">
-                    Panel de Secundario
+
+                <div class="card-header">
+                    <center><h6>Producto</h6></center>
                 </div>
-                <div class="panel-body">
+                <div class="card" style="background-color: #2C3E50; color: #fff;">
                     <div class="col-md-12">
-                        <div class="col-sm-6">
+                        <div class="col-sm-5">
+                            <br />
                             <select name="idProducto" class="form-control">
                                 @foreach (var producto in ViewBag.idProducto)
                                 {
@@ -47,38 +58,41 @@
                                 }
                             </select>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-5">
                             <input type="number" placeholder="idProducto" name="idPro" id="idPro" class="form-control" readonly />
                         </div>
                         <br />
-                        <br />
-                        <div class="col-sm-6">
+                      
+                        <div class="col-sm-5">
                             <input type="text" placeholder="Dato" name="dato" id="dato" class="form-control" readonly />
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-5">
                             <input type="number" placeholder="cantidad" name="cantidad" id="cantidad" class="form-control" />
                         </div>
+                    
                         <br />
-                        <br />
-                        <div class="col-sm-6">
+                        <div class="col-sm-5">
                             <input type="number" placeholder="Precio" name="precio" id="precio" class="form-control" />
                         </div>
-                        <div class="col-sm-6">
-                            <button id="btnEnviar" class="btn btn-info"><span class="glyphicon glyphicon-circle-arrow-down"></span></button>
+                       
+                        <div class="col-sm-5">
+                            <button id="btnEnviar" class="btn btn-info"><i class="fas fa-arrow-circle-down" style="width:30%; position:"></i></button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+   
         <div class="col-md-12">
+            <br /><br />
             <div class="panel panel-default">
-                <div class="panel panel-heading">
-                    Panel de Detalle
+                <div class="card-header" style="background-color: #2C3E50; color: #fff;">
+                    <center><h6>Detalles</h6></center>
                 </div>
-                <div class="panel-body">
+                <div class="card">
                     <div class="table-responsive">
                         <table class="table table-bordered table-hover">
-                            <thead class="alert-info">
+                            <thead class="alert-info" style="background-color: #2C3E50; color: #fff;">
                                 <tr>
                                     <td>#</td>
                                     <td>Nombre</td>
@@ -103,9 +117,11 @@
                         </table>
                     </div>
                     <div>
+                        </div>
                         <div class="col-sm-offset-4 col-sm-4 form-inline">
                             <label class="col-sm-3">Total: </label><input type="number" name="total" id="total" class="form-control col-sm-9" readonly />
                         </div>
+                    
                         <div class="col-sm-4">
                             <button class="btn btn-success" name="btnEnviarF" id="btnEnviarF">Guardar</button>
                         </div>
@@ -113,6 +129,5 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
+
 
