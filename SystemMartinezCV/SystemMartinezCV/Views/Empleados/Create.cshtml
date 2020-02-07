@@ -160,6 +160,19 @@
 
             $("#Fecha").datepicker();
         });
+
+        $("#Dui").on('keydown', function (event) {
+            //alert("ed");
+            if (event.keyCode == 8 || event.keyCode == 37 || event.keyCode == 39) {
+
+            } else {
+                inputval = $(this).val();
+                var string = inputval.replace(/[^0-9])/g, "");
+                var bloque1 = string.substring(0, 8);
+                var string = (bloque1 + "-");
+                $(this).val(string);
+            }
+        });
     </script>
 
 }
