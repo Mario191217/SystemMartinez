@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
+    var lista = Model.ToArray();
 }
 
 
@@ -9,7 +10,7 @@
 <p>
     @Html.ActionLink("Agregar", "Create", null, new { @class = "btn btn-primary btn-lg btn-block" })
 </p>
-<table class="table">
+@*<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Categoria)
@@ -36,4 +37,21 @@
     </tr>
 }
 
-</table>
+</table>*@
+<div class="row">
+    @for (int i = 0; i < lista.Length; i += 1)
+    {
+        <div class="col-sm-6">
+            <div class="jumbotron" style="background-color: #2C3E50; color: #fff">
+                <p style="font-size: 26px">@lista[i].Categoria</p>
+                <hr />
+                <p style="font-size: 20px">@lista[i].Descripcion</p>
+
+                @Html.ActionLink("Editar", "Edit", new { id = lista[i].IdCategoria }, new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("Detalles", "Details", new { id = lista[i].IdCategoria }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id = lista[i].IdCategoria }, new { @class = "btn btn-danger" })
+
+            </div>
+        </div>
+    }
+</div>
