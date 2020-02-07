@@ -19,6 +19,8 @@ namespace SystemMartinezCV.Controllers
         public ActionResult Index()
         {
             var compras = db.Compras.Include(c => c.Proveedores);
+            ViewBag.IdProveedor = db.Proveedores;
+            ViewBag.IdProducto = db.Productos;
             return View(compras.ToList());
         }
 

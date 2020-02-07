@@ -509,16 +509,7 @@
     <Content Include="Views\UnidadMedidas\Details.cshtml" />
     <Content Include="Views\UnidadMedidas\Edit.cshtml" />
     <Content Include="Views\UnidadMedidas\Index.cshtml" />
-    <Content Include="Views\Compras\Create.cshtml" />
-    <Content Include="Views\Compras\Delete.cshtml" />
-    <Content Include="Views\Compras\Details.cshtml" />
-    <Content Include="Views\Compras\Edit.cshtml" />
     <Content Include="Views\Compras\Index.cshtml" />
-    <Content Include="Views\DetalleCompras\Create.cshtml" />
-    <Content Include="Views\DetalleCompras\Delete.cshtml" />
-    <Content Include="Views\DetalleCompras\Details.cshtml" />
-    <Content Include="Views\DetalleCompras\Edit.cshtml" />
-    <Content Include="Views\DetalleCompras\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

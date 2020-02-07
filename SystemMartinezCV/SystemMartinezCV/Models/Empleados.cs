@@ -23,7 +23,7 @@ namespace SystemMartinezCV.Models
         public string Email { get; set; }
         public string Genero { get; set; }
         
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
+            [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime FechaNacimiento { get; set; }
         public string Direccion { get; set; }
