@@ -24,6 +24,19 @@ namespace SystemMartinezCV.Controllers
             return View(compras.ToList());
         }
 
+        public ActionResult Lista()
+        {
+            var compras = db.Compras.Include(c => c.Proveedores);
+            return View(compras.ToList());
+        }
+
+        public ActionResult Detalles()
+        {
+            var compras = db.DetalleCompras.Include(c => c.Compras);
+            return View(compras.ToList());
+        }
+
+
         // GET: Compras/Details/5
         public ActionResult Details(int? id)
         {
@@ -127,8 +140,8 @@ namespace SystemMartinezCV.Controllers
         {
             try
             {
-                var idPrimaria = (from id in db.Compras select id.IdCompra).Max();
-                compra.IdCompra = idPrimaria;
+                compra.FechaRegistro = DateTime.Now;
+                compra.Descripcion = "alv ptm";
                 compra.EstadoEliminar = "Disponible";
                 db.Compras.Add(compra);
                 db.SaveChanges();
@@ -145,6 +158,8 @@ namespace SystemMartinezCV.Controllers
         {
             try
             {
+                var idPrimaria = (from id in db.Compras select id.IdCompra).Max();
+                compra.IdCompra = idPrimaria;
                 db.DetalleCompras.Add(compra);
                 db.SaveChanges();
                 return Json(true);

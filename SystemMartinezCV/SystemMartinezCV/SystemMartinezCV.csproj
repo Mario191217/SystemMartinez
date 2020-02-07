@@ -514,6 +514,8 @@
     <Content Include="Views\UnidadMedidas\Edit.cshtml" />
     <Content Include="Views\UnidadMedidas\Index.cshtml" />
     <Content Include="Views\Compras\Index.cshtml" />
+    <Content Include="Views\Compras\Lista.cshtml" />
+    <Content Include="Views\Compras\Detalles.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
