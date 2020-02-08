@@ -50,10 +50,12 @@ namespace SystemMartinezCV.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdProducto,Nombre,Cantidad,Descripcion,FechaRegistro,EstadoEliminar,IdUnidadMedida,IdCategoria")] Productos productos)
+        public ActionResult Create( Productos productos)
         {
             if (ModelState.IsValid)
             {
+                productos.FechaRegistro = DateTime.Now;
+                productos.EstadoEliminar = "Disponible";
                 db.Productos.Add(productos);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -86,7 +88,7 @@ namespace SystemMartinezCV.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdProducto,Nombre,Cantidad,Descripcion,FechaRegistro,EstadoEliminar,IdUnidadMedida,IdCategoria")] Productos productos)
+        public ActionResult Edit(Productos productos)
         {
             if (ModelState.IsValid)
             {

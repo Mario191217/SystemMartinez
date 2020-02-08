@@ -16,7 +16,7 @@ namespace SystemMartinezCV.Controllers
         private Contexto db = new Contexto();
 
         // GET: Compras
-        public ActionResult Index()
+        public ActionResult CrearCompra()
         {
             var compras = db.Compras.Include(c => c.Proveedores);
             ViewBag.IdProveedor = db.Proveedores;
@@ -24,7 +24,7 @@ namespace SystemMartinezCV.Controllers
             return View(compras.ToList());
         }
 
-        public ActionResult Lista()
+        public ActionResult Index()
         {
             var compras = db.Compras.Include(c => c.Proveedores);
             return View(compras.ToList());
