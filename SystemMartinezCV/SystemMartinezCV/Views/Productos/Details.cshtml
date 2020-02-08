@@ -81,6 +81,6 @@
 
         </div>
         <p>
-            @Html.ActionLink("Edit", "Edit", new { id = Model.IdProducto }) |
-            @Html.ActionLink("Back to List", "Index")
+            @Html.ActionLink("Editar", "Edit", new { id = Model.IdProducto }, new {@class = "btn btn-warning" }) |
+            @Html.ActionLink("Regresar", "Index", null, new {@class="btn btn-info" })
         </p>
