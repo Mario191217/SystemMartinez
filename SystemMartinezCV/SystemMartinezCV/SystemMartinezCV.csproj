@@ -515,6 +515,7 @@
     <Content Include="Views\UnidadMedidas\Index.cshtml" />
     <Content Include="Views\Compras\CrearCompra.cshtml" />
     <Content Include="Views\Compras\Index.cshtml" />
+    <Content Include="Views\DetalleCompras\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

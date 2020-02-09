@@ -64,7 +64,7 @@ namespace SystemMartinezCV.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdCompra,NFactura,Fecha,FechaRegistro,IdProveedor,Descripcion,EstadoEliminar")] Compras compras)
+        public ActionResult Create(Compras compras)
         {
             if (ModelState.IsValid)
             {
@@ -161,6 +161,11 @@ namespace SystemMartinezCV.Controllers
                 var idPrimaria = (from id in db.Compras select id.IdCompra).Max();
                 compra.IdCompra = idPrimaria;
                 db.DetalleCompras.Add(compra);
+
+                var producto = (from product in db.Productos where compra.IdProducto == product.IdProducto select product).FirstOrDefault();
+                producto.Cantidad = producto.Cantidad + compra.Cantidad;
+
+                db.Entry(producto).State = EntityState.Modified;
                 db.SaveChanges();
                 return Json(true);
             }
