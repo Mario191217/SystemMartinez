@@ -9,7 +9,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table" style="background-color: #2C3E50; color: #fff;">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Proveedores.RazonSocial)
@@ -26,10 +26,10 @@
         <th>
             @Html.DisplayNameFor(model => model.Descripcion)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.EstadoEliminar)
-        </th>
-        <th></th>
+        </th>*@
+        <th>Funciones</th>
     </tr>
 
 @foreach (var item in Model) {
@@ -49,13 +49,13 @@
         <td>
             @Html.DisplayFor(modelItem => item.Descripcion)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.EstadoEliminar)
-        </td>
+        </td>*@
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdCompra }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdCompra }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdCompra })
+            @Html.ActionLink("Editar", "Edit", new { id=item.IdCompra }, new { @class = "btn btn-warning" }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.IdCompra }, new { @class = "btn btn-info" }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.IdCompra }, new { @class = "btn btn-danger" })
         </td>
     </tr>
 }

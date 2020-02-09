@@ -136,7 +136,7 @@ namespace SystemMartinezCV.Controllers
             return RedirectToAction("Index");
         }
 
-        public JsonResult Factura(Compras compra)
+        public JsonResult AddFactura(Compras compra)
         {
             try
             {
@@ -184,5 +184,16 @@ namespace SystemMartinezCV.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult Factura()
+        {
+
+            return View();
+        }
+
     }
+
+
 }
+
+

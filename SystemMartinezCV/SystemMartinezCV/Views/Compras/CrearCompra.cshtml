@@ -3,54 +3,46 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="row">
-    <div class="col-md-5">
-        <div class="panel panel-primary">
 
-            <div class="card-header">
 
-                <center><h6>Proveedor</h6></center>
-            </div>
 
-            <div class="card" style="background-color: #2C3E50; color: #fff;">
+@*<div class="row">
+    <div class="col-sm-5">
+        <div class="card" style="background-color: #2C3E50; color: #fff;">
+            <div class="card-body">
+                <center><p>Proveedores</p></center>
                 <hr />
-                <div class="col-md-12">
-                    <div class="col-sm-5">
-                        <input type="number" placeholder="Código" name="codigo" id="codigo" class="form-control" />
-                    </div>
-                    <br />
-
-                    <div class="col-sm-5">
-                        <input type="date" placeholder="Fecha: " name="fecha" id="fecha" class="form-control" />
-                    </div>
-                    <br />
-
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <select name="idProveedor" class="form-control">
-                            @foreach (var proveedor in ViewBag.idProveedor)
-                            {
-                                <option value="@proveedor.IdProveedor">@proveedor.Representante</option>
-                            }
-                        </select>
-                    </div>
-                    <hr />
+                <div class="col-sm-5">
+                    <input type="number" placeholder="Código" name="codigo" id="codigo" class="form-control" />
+                </div><br />
+                <div class="col-sm-5">
+                    <input type="date" placeholder="Fecha: " name="fecha" id="fecha" class="form-control" />
+                </div>
+                <br /><br />
+                <div class="col-sm-offset-2 col-sm-10">
+                    <select name="idProveedor" class="form-control">
+                        @foreach (var proveedor in ViewBag.idProveedor)
+                        {
+                            <option value="@proveedor.IdProveedor">@proveedor.Representante</option>
+                        }
+                    </select>
                 </div>
             </div>
         </div>
-    </div>
+    </div>*@
 
 
-
-    <div class="col-md-5">
+@*<div class="col-sm-1"></div>
+    <div class="col-sm-5">
         <div class="panel panel-primary">
 
             <div class="card-header">
                 <center><h6>Producto</h6></center>
             </div>
             <div class="card" style="background-color: #2C3E50; color: #fff;">
-                <div class="col-md-12">
+
                     <div class="col-sm-5">
-                        <br />
+
                         <select name="idProducto" class="form-control">
                             @foreach (var producto in ViewBag.idProducto)
                             {
@@ -58,77 +50,149 @@
                             }
                         </select>
                     </div>
-                    <div class="col-sm-5">
+                    <div class="col-sm-4">
                         <input type="number" placeholder="idProducto" name="idPro" id="idPro" class="form-control" readonly />
                     </div>
-                    <br />
 
-                    <div class="col-sm-5">
+
+                    <div class="form-group col-md-4 mb-3">
                         <input type="text" placeholder="Dato" name="dato" id="dato" class="form-control" readonly />
                     </div>
                     <div class="col-sm-5">
                         <input type="number" placeholder="cantidad" name="cantidad" id="cantidad" class="form-control" />
-                    </div>
-
-                    <br />
-                    <div class="col-sm-5">
-                        <input type="number" placeholder="Precio" name="precio" id="precio" class="form-control" />
-                    </div>
-
-                    <div class="col-sm-5">
-                        <button id="btnEnviar" class="btn btn-info"><i class="fas fa-arrow-circle-down" style="width:30%; position:"></i></button>
-                    </div>
-                </div>
+                    </div>*@
+  
+    <div class="row">    
+            <div class="col-sm-3">
+                <select name="idProducto" class="form-control">
+                    @foreach (var producto in ViewBag.idProducto)
+                    {
+                        <option value="@producto.IdProducto">@producto.Nombre</option>
+                    }
+                </select>
+            </div>
+            <div class="col-sm-3">
+                <input type="number" placeholder="cantidad" name="cantidad" id="cantidad" class="form-control" />
             </div>
         </div>
-    </div>
-
-    <div class="col-md-12">
         <br /><br />
-        <div class="panel panel-default">
-            <div class="card-header" style="background-color: #2C3E50; color: #fff;">
-                <center><h6>Detalles</h6></center>
+        <div class="row">
+
+            <div class="col-sm-3">
+                <input type="number" placeholder="Precio" name="precio" id="precio" class="form-control" />
             </div>
-            <div class="card">
-                <div class="table-responsive">
-                    <table class="table table-bordered table-hover">
-                        <thead class="alert-info" style="background-color: #2C3E50; color: #fff;">
-                            <tr>
-                                <td>#</td>
-                                <td>Nombre</td>
-                                <td>Cantidad</td>
-                                <td>Precio</td>
-                                <td>SubTotal</td>
-                                <td></td>
-                            </tr>
-                        </thead>
-                        <tbody id="fila">
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td>
-                                    <input type="hidden" class="form-control" name="subt1" id="subt1" value="0" />
-                                </td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div>
-                </div>
-                <div class="col-sm-offset-4 col-sm-4 form-inline">
-                    <label class="col-sm-3">Total: </label><input type="number" name="total" id="total" class="form-control col-sm-9" readonly />
+            <br />
+            <div class="col-sm-3">
+                <button id="btnEnviar" class="btn btn-info"><i class="fas fa-arrow-circle-down" style="width:100%; "></i></button>
+            </div>
+        </div>
+  
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        @*<div class="row">
+        <div class="col-md-5">
+            <div class="panel panel-primary">
+
+                <div class="card-header">
+
+                    <center><h6>Proveedor</h6></center>
                 </div>
 
-                <div class="col-sm-4">
-                    <button class="btn btn-success" name="btnEnviarF" id="btnEnviarF">Guardar</button>
+                <div class="card" style="background-color: #2C3E50; color: #fff;">
+                    <hr />
+                    <div class="col-md-12">
+                        <div class="col-sm-5">
+                            <input type="number" placeholder="Código" name="codigo" id="codigo" class="form-control" />
+                        </div>
+                        <br />
+
+                        <div class="col-sm-5">
+                            <input type="date" placeholder="Fecha: " name="fecha" id="fecha" class="form-control" />
+                        </div>
+                        <br />
+
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <select name="idProveedor" class="form-control">
+                                @foreach (var proveedor in ViewBag.idProveedor)
+                                {
+                                    <option value="@proveedor.IdProveedor">@proveedor.Representante</option>
+                                }
+                            </select>
+                        </div>
+                        <hr />
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+
+
+
+
+
+
+        <div class="col-md-12">
+            <br /><br />
+            <div class="panel panel-default">
+                <div class="card-header" style="background-color: #2C3E50; color: #fff;">
+                    <center><h6>Detalles</h6></center>
+                </div>
+                <div class="card">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <thead class="alert-info" style="background-color: #2C3E50; color: #fff;">
+                                <tr>
+                                    <td>#</td>
+                                    <td>Nombre</td>
+                                    <td>Cantidad</td>
+                                    <td>Precio</td>
+                                    <td>SubTotal</td>
+                                    <td></td>
+                                </tr>
+                            </thead>
+                            <tbody id="fila">
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <input type="hidden" class="form-control" name="subt1" id="subt1" value="0" />
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="col-sm-offset-4 col-sm-4 form-inline">
+                        <label class="col-sm-3">Total: </label><input type="number" name="total" id="total" class="form-control col-sm-9" readonly />
+                    </div>
+
+                    <div class="col-sm-4">
+                        <button class="btn btn-success" name="btnEnviarF" id="btnEnviarF">Guardar</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
@@ -199,7 +263,7 @@
                 else {
                     $.ajaxSetup({ async: false });
                     //cargando datos tabla primaria
-                    var urlCompra = '@Url.Action("Factura", "Compras")';
+                    var urlCompra = '@Url.Action("AddFactura", "Compras")';
                     var dataCompra = { IdProveedor: IdProveedor, NFactura: Codigo, Fecha: Fecha};
                         $.post(urlCompra, dataCompra)
                             .done(function (data) {
