@@ -12,7 +12,7 @@ namespace SystemMartinezCV.Models
         public int IdProyecto { get; set; }
         public string Proyecto { get; set; }
         /////////////////////////////////////////////////////
-        public string IdCliente { get; set; }
+        public int IdCliente { get; set; }
         public virtual Clientes Clientes { get; set; }
         /////////////////////////////////////////////////////
         public double MontoFinal { get; set; }

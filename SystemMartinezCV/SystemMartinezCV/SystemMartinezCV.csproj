@@ -475,6 +475,14 @@
     <Compile Include="Migrations\202002100750071_generos.designer.cs">
       <DependentUpon>202002100750071_generos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002100756420_fgeneros.cs" />
+    <Compile Include="Migrations\202002100756420_fgeneros.designer.cs">
+      <DependentUpon>202002100756420_fgeneros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002100834484_clienteId.cs" />
+    <Compile Include="Migrations\202002100834484_clienteId.designer.cs">
+      <DependentUpon>202002100834484_clienteId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Categorias.cs" />
     <Compile Include="Models\Clientes.cs" />
@@ -608,6 +616,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002100750071_generos.resx">
       <DependentUpon>202002100750071_generos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002100756420_fgeneros.resx">
+      <DependentUpon>202002100756420_fgeneros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002100834484_clienteId.resx">
+      <DependentUpon>202002100834484_clienteId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

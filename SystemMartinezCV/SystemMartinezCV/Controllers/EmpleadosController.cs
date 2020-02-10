@@ -63,6 +63,7 @@ namespace SystemMartinezCV.Controllers
             {
                 return RedirectToAction("Bienvenida", "Home");
             }
+            ViewBag.IdGenero = new SelectList(db.Generos, "IdGenero", "Genero");
             return View();
         }
 
@@ -104,6 +105,7 @@ namespace SystemMartinezCV.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.IdGenero = new SelectList(db.Generos, "IdGenero", "Genero", empleados.IdGenero);
             return View(empleados);
         }
 
