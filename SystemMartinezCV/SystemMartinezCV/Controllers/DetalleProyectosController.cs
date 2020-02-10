@@ -40,6 +40,7 @@ namespace SystemMartinezCV.Controllers
         // GET: DetalleProyectos/Create
         public ActionResult Create()
         {
+            ViewBag.IdProveedor = new SelectList(db.Proveedores, "IdProveedor", "RazonSocial");
             ViewBag.IdProducto = new SelectList(db.Productos, "IdProducto", "Nombre");
             ViewBag.IdProyecto = new SelectList(db.Proyectos, "IdProyecto", "Proyecto");
             return View();
@@ -50,7 +51,7 @@ namespace SystemMartinezCV.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdDetalleProyecto,Producto,Cantidad,Precio,Total,Comentario,Existencias,IdProyecto")] DetalleProyectos detalleProyectos)
+        public ActionResult Create(DetalleProyectos detalleProyectos)
         {
             if (ModelState.IsValid)
             {
