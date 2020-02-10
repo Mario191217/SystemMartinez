@@ -39,6 +39,7 @@ namespace SystemMartinezCV.Controllers
         // GET: Clientes/Create
         public ActionResult Create()
         {
+            ViewBag.IdGenero = new SelectList(db.Generos, "IdGenero", "Genero");
             return View();
         }
 
@@ -47,7 +48,7 @@ namespace SystemMartinezCV.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdCliente,Nombre,Apellido,Direccion,DUI,Telefono,NRC,NIT,EstadoEliminar")] Clientes clientes)
+        public ActionResult Create(Clientes clientes)
         {
             if (ModelState.IsValid)
             {

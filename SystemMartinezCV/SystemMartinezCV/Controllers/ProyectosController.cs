@@ -39,6 +39,7 @@ namespace SystemMartinezCV.Controllers
         // GET: Proyectos/Create
         public ActionResult Create()
         {
+            ViewBag.IdCliente = new SelectList(db.Clientes, "IdCliente", "Nombre");
             return View();
         }
 
