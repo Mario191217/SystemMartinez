@@ -419,12 +419,17 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CategoriasController.cs" />
+    <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\ComprasController.cs" />
     <Compile Include="Controllers\DetalleComprasController.cs" />
+    <Compile Include="Controllers\DetalleProyectosController.cs" />
     <Compile Include="Controllers\EmpleadosController.cs" />
+    <Compile Include="Controllers\EstadosController.cs" />
+    <Compile Include="Controllers\ExtrasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductosController.cs" />
     <Compile Include="Controllers\ProveedoresController.cs" />
+    <Compile Include="Controllers\ProyectosController.cs" />
     <Compile Include="Controllers\UnidadMedidasController.cs" />
     <Compile Include="Migrations\202001150750240_InitialCreate.cs" />
     <Compile Include="Migrations\202001150750240_InitialCreate.designer.cs">
@@ -462,6 +467,14 @@
     <Compile Include="Migrations\202002052006545_add-migration AddCompras.designer.cs">
       <DependentUpon>202002052006545_add-migration AddCompras.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002100723161_proyectos.cs" />
+    <Compile Include="Migrations\202002100723161_proyectos.designer.cs">
+      <DependentUpon>202002100723161_proyectos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002100750071_generos.cs" />
+    <Compile Include="Migrations\202002100750071_generos.designer.cs">
+      <DependentUpon>202002100750071_generos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Categorias.cs" />
     <Compile Include="Models\Clientes.cs" />
@@ -473,8 +486,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\DetalleCompra.cs" />
+    <Compile Include="Models\DetalleProyectos.cs" />
+    <Compile Include="Models\Estados.cs" />
+    <Compile Include="Models\Extras.cs" />
+    <Compile Include="Models\Generos.cs" />
     <Compile Include="Models\Productos.cs" />
     <Compile Include="Models\Proveedores.cs" />
+    <Compile Include="Models\Proyectos.cs" />
     <Compile Include="Models\Roles.cs" />
     <Compile Include="Models\Empleados.cs" />
     <Compile Include="Models\UnidadMedida.cs" />
@@ -516,6 +534,31 @@
     <Content Include="Views\Compras\CrearCompra.cshtml" />
     <Content Include="Views\Compras\Index.cshtml" />
     <Content Include="Views\DetalleCompras\Index.cshtml" />
+    <Content Include="Views\Clientes\Create.cshtml" />
+    <Content Include="Views\Clientes\Delete.cshtml" />
+    <Content Include="Views\Clientes\Details.cshtml" />
+    <Content Include="Views\Clientes\Edit.cshtml" />
+    <Content Include="Views\Clientes\Index.cshtml" />
+    <Content Include="Views\DetalleProyectos\Create.cshtml" />
+    <Content Include="Views\DetalleProyectos\Delete.cshtml" />
+    <Content Include="Views\DetalleProyectos\Details.cshtml" />
+    <Content Include="Views\DetalleProyectos\Edit.cshtml" />
+    <Content Include="Views\DetalleProyectos\Index.cshtml" />
+    <Content Include="Views\Estados\Create.cshtml" />
+    <Content Include="Views\Estados\Delete.cshtml" />
+    <Content Include="Views\Estados\Details.cshtml" />
+    <Content Include="Views\Estados\Edit.cshtml" />
+    <Content Include="Views\Estados\Index.cshtml" />
+    <Content Include="Views\Extras\Create.cshtml" />
+    <Content Include="Views\Extras\Delete.cshtml" />
+    <Content Include="Views\Extras\Details.cshtml" />
+    <Content Include="Views\Extras\Edit.cshtml" />
+    <Content Include="Views\Extras\Index.cshtml" />
+    <Content Include="Views\Proyectos\Create.cshtml" />
+    <Content Include="Views\Proyectos\Delete.cshtml" />
+    <Content Include="Views\Proyectos\Details.cshtml" />
+    <Content Include="Views\Proyectos\Edit.cshtml" />
+    <Content Include="Views\Proyectos\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -559,6 +602,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002052006545_add-migration AddCompras.resx">
       <DependentUpon>202002052006545_add-migration AddCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002100723161_proyectos.resx">
+      <DependentUpon>202002100723161_proyectos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002100750071_generos.resx">
+      <DependentUpon>202002100750071_generos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

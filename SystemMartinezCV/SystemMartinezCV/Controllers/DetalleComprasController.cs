@@ -16,10 +16,14 @@ namespace SystemMartinezCV.Controllers
         private Contexto db = new Contexto();
 
         // GET: DetalleCompras
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
             var detalleCompras = db.DetalleCompras.Include(d => d.Compras).Include(d => d.Productos);
-            return View(detalleCompras.ToList());
+            var datos = from x in detalleCompras
+                        where x.IdCompra == id
+                        select x;
+            var lista = datos.ToList();
+            return View(lista);
         }
 
         // GET: DetalleCompras/Details/5

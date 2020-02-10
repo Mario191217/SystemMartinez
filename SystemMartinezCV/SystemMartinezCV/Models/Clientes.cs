@@ -12,11 +12,15 @@ namespace SystemMartinezCV.Models
         public int IdCliente { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
+        public int IdGenero { get; set; }
+        public virtual Generos Generos { get; set; }
         public string Direccion { get; set; }
         public string DUI{ get; set; }
         public string Telefono{ get; set; }
         public string NRC{ get; set; }
         public string NIT{ get; set; }
         public string EstadoEliminar{ get; set; }
+
+        public virtual List<Proyectos> Proyectos { get; set; }
     }
 }

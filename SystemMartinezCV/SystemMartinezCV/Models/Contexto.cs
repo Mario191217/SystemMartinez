@@ -9,6 +9,10 @@ namespace SystemMartinezCV
 {
     public class Contexto : DbContext
     {
+        public Contexto() : base("VidrieriaMartinez")
+        {
+
+        }
         public DbSet<Usuarios> Usuarios { get; set; }
         public DbSet<Roles> Roles { get; set; }
         public DbSet<Empleados> Empleados { get; set; }
@@ -21,5 +25,15 @@ namespace SystemMartinezCV
         public System.Data.Entity.DbSet<SystemMartinezCV.Models.Compras> Compras { get; set; }
 
         public System.Data.Entity.DbSet<SystemMartinezCV.Models.DetalleCompra> DetalleCompras { get; set; }
+
+        public System.Data.Entity.DbSet<SystemMartinezCV.Models.Clientes> Clientes { get; set; }
+
+        public System.Data.Entity.DbSet<SystemMartinezCV.Models.DetalleProyectos> DetalleProyectos { get; set; }
+
+        public System.Data.Entity.DbSet<SystemMartinezCV.Models.Proyectos> Proyectos { get; set; }
+
+        public System.Data.Entity.DbSet<SystemMartinezCV.Models.Estados> Estados { get; set; }
+
+        public System.Data.Entity.DbSet<SystemMartinezCV.Models.Extras> Extras { get; set; }
     }
 }

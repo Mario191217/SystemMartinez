@@ -21,7 +21,8 @@ namespace SystemMartinezCV.Models
         public string AFP { get; set; }
 
         public string Email { get; set; }
-        public string Genero { get; set; }
+        public int IdGenero { get; set; }
+        public virtual Generos Generos { get; set; }
         
             [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
