@@ -4,10 +4,11 @@
     ViewBag.Title = "Lista";
 }
 
-<h2>Lista</h2>
+<center><h2>Compras</h2></center>
+<br />
 
-<p>
-    @Html.ActionLink("Create New", "CrearCompra",null,new { @class = "btn btn-info" })
+<p style="width:50%;">
+    @Html.ActionLink("Agregar", "CrearCompra", null, new { @class = "btn btn-primary btn-lg btn-block" })
 </p>
 <table class="table" style="background-color: #2C3E50; color: #fff;">
     <tr>
@@ -27,38 +28,40 @@
             @Html.DisplayNameFor(model => model.Descripcion)
         </th>
         @*<th>
-            @Html.DisplayNameFor(model => model.EstadoEliminar)
-        </th>*@
+                @Html.DisplayNameFor(model => model.EstadoEliminar)
+            </th>*@
         <th>Funciones</th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Proveedores.RazonSocial)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NFactura)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fecha)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaRegistro)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Descripcion)
-        </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.EstadoEliminar)
-        </td>*@
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.IdCompra }, new { @class = "btn btn-warning" }) |
-            @*@Html.ActionLink("Detalles", "Details","DetalleCompras", new { id=item.IdCompra }, null, new { @class = "btn btn-info" }) |*@
-            <a href="@Url.Action("Index","DetalleCompras",new { id=item.IdCompra })">Detalles</a>
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.IdCompra }, new { @class = "btn btn-danger" })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Proveedores.RazonSocial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NFactura)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaRegistro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.EstadoEliminar)
+                </td>*@
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.IdCompra }, new { @class = "btn btn-warning" }) |
+                @*@Html.ActionLink("Detalles", "Details","DetalleCompras", new { id=item.IdCompra }, null, new { @class = "btn btn-info" }) |*@
+                <a href="@Url.Action("Index","DetalleCompras",new { id=item.IdCompra })">Detalles</a>
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.IdCompra }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
 
 </table>
