@@ -36,5 +36,6 @@ namespace SystemMartinezCV.Models
         public DateTime FechaRegistro { get; set; }
 
         public virtual List<Usuarios> Usuarios { get; set; }
+        public virtual List<Proyectos> Proyectos { get; set; }
     }
 }

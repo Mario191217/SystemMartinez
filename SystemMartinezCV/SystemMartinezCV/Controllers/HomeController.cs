@@ -48,7 +48,7 @@ namespace SystemMartinezCV.Controllers
             var user = new Usuarios();
             user.Usuario = "Administrador";
             user.Clave = "1234".GetHashCode().ToString();
-            user.IdEmpleado = 5;
+            user.IdEmpleado = 1;
             user.IdRol = 1;
             db.Usuarios.Add(user);
             db.SaveChanges();

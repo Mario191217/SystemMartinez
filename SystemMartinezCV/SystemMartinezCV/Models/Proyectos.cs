@@ -20,8 +20,14 @@ namespace SystemMartinezCV.Models
         public DateTime FechaRegistro { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFin { get; set; }
+        /// 
+        public int IdEmpleado { get; set; }
+        public virtual Empleados Empleados { get; set; }
+        public double Comision { get; set; }
+        /// 
 
         public virtual List<DetalleProyectos> DetalleProyectos { get; set; }
         public virtual List<Extras> Extras { get; set; }
+        public virtual List<Abonos> Abonos { get; set; }
     }
 }
