@@ -4,79 +4,86 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<br />
+<div class="row">
+    <div class="col-sm-3">
+        <dl class="dl-horizontal jumbotron" style="background:#2C3E50; color: #fff">
+            <h4>Clientes</h4>
+            <hr />
+            <dt>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </dt>
 
-<div>
-    <h4>Clientes</h4>
+            <dd>
+                @Html.DisplayFor(model => model.Nombre)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Apellido)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Direccion)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Direccion)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DUI)
+            </dt>
+        </dl>
+    </div>
+
+    <div class="col-sm-3">
+        <dl class="jumbotron" style="background:#2C3E50; color: #fff">
+            <dd>
+                @Html.DisplayFor(model => model.DUI)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Telefono)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Telefono)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NRC)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NRC)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NIT)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NIT)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.EstadoEliminar)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.EstadoEliminar)
+            </dd>
+
+        </dl>
+    </div>
+    </div>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Apellido)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Apellido)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Direccion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Direccion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DUI)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DUI)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Telefono)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Telefono)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NRC)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NRC)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NIT)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NIT)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EstadoEliminar)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EstadoEliminar)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IdCliente }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    <p>
+        @Html.ActionLink("Editar", "Edit", new { id = Model.IdCliente }, new { @class = "btn btn-success" }) |
+        @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-info" })
+    </p>

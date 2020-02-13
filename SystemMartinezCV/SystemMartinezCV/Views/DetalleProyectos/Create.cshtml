@@ -4,136 +4,140 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
-<div class="form-horizontal">
-    <h4>DetalleProyectos</h4>
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="jumbotron" style="background-color: #2C3E50; color: #fff">
+        <center><h4 style="color:#fff">Empleados</h4></center>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.Existencias, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            <div class="checkbox">
-                @Html.EditorFor(model => model.Existencias)
-                @Html.ValidationMessageFor(model => model.Existencias, "", new { @class = "text-danger" })
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-row">
+            <div class="form-group ">
+                @Html.LabelFor(model => model.Existencias, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div>
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.Existencias)
+                        @Html.ValidationMessageFor(model => model.Existencias, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-4 mb-3" id="existencia">
+                @Html.LabelFor(model => model.Producto, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div>
+                    @Html.EditorFor(model => model.Producto, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Producto, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group col-md-4 mb-3" id="stock">
+                <div class="control-label col-md-2">
+                    <label for="IdProducto">Producto</label>
+                </div>
+                <div>
+                    @Html.DropDownList("IdProducto", null, htmlAttributes: new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group col-md-4 mb-3" id="factura">
+                <div class="control-label col-md-2">
+                    <label for="Codigo">Factura</label>
+                </div>
+                <div>
+                    <input type="text" name="codigo" id="codigo" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group col-md-4 mb-3" id="proveedor">
+                <div class="control-label col-md-2">
+                    <label for="Codigo">Proveedor</label>
+                </div>
+                <div>
+                    @Html.DropDownList("IdProveedor", null, htmlAttributes: new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-4 mb-3">
+                @Html.LabelFor(model => model.Cantidad, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div>
+                    @Html.EditorFor(model => model.Cantidad, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Cantidad, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group col-md-4 mb-3">
+                @Html.LabelFor(model => model.Precio, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div>
+                    @Html.EditorFor(model => model.Precio, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Precio, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="row">
+        <div class="form-group col-md-4 mb-3">
+            @Html.LabelFor(model => model.Total, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div>
+                @Html.EditorFor(model => model.Total, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Total, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group col-md-4 mb-3">
+            @Html.LabelFor(model => model.Comentario, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div>
+                @Html.EditorFor(model => model.Comentario, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Comentario, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group col-md-4 mb-3">
+            @Html.LabelFor(model => model.IdProyecto, "IdProyecto", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div>
+                @Html.DropDownList("IdProyecto", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.IdProyecto, "", new { @class = "text-danger" })
+            </div>
+        </div>
+            </div>
+        <div class="form-group">
+            <hr />
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Guardar" class="btn btn-success" style="width: 40%" />
+                @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-info" })
             </div>
         </div>
     </div>
-
-    <div class="form-group" id="existencia">
-        @Html.LabelFor(model => model.Producto, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Producto, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Producto, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group" id="stock">
-        <div class="control-label col-md-2">
-            <label for="IdProducto">Producto</label>
-        </div>
-        <div class="col-md-10">
-            @Html.DropDownList("IdProducto", null, htmlAttributes: new { @class = "form-control" })
-        </div>
-    </div>
-
-    <div class="form-group" id="factura">
-        <div class="control-label col-md-2">
-            <label for="Codigo">Factura N:</label>
-        </div>
-        <div class="col-md-10">
-            <input type="text" name="codigo" id="codigo" class="form-control" />
-        </div>
-    </div>
-
-    <div class="form-group" id="proveedor">
-        <div class="control-label col-md-2">
-            <label for="Codigo">Proveedor</label>
-        </div>
-        <div class="col-md-10">
-            @Html.DropDownList("IdProveedor", null, htmlAttributes: new { @class = "form-control" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Cantidad, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Cantidad, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Cantidad, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Precio, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Precio, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Precio, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Total, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Total, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Total, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Comentario, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Comentario, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Comentario, "", new { @class = "text-danger" })
-        </div>
-    </div>
+        }
 
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.IdProyecto, "IdProyecto", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownList("IdProyecto", null, htmlAttributes: new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.IdProyecto, "", new { @class = "text-danger" })
-        </div>
-    </div>
 
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Create" class="btn btn-default" />
-        </div>
-    </div>
-</div>
-}
+        @section check{
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
-@section check{
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("#stock").hide(); 
-            $("#Existencias").on("change", function () {
-                if ($(this).prop("checked") == true) {
-                    $("#stock").show();
-                    $("#factura").hide();
-                    $("#proveedor").hide();
-                    $("#existencia").hide();
-            }
-                else if ($(this).prop("checked") == false) {
+            <script type="text/javascript">
+                $(document).ready(function () {
                     $("#stock").hide();
-                    $("#factura").show();
-                    $("#proveedor").show();
-                    $("#existencia").show();
-            }
-            });
+                    $("#Existencias").on("change", function () {
+                        if ($(this).prop("checked") == true) {
+                            $("#stock").show();
+                            $("#factura").hide();
+                            $("#proveedor").hide();
+                            $("#existencia").hide();
+                        }
+                        else if ($(this).prop("checked") == false) {
+                            $("#stock").hide();
+                            $("#factura").show();
+                            $("#proveedor").show();
+                            $("#existencia").show();
+                        }
+                    });
 
-        });
-    </script>
-    
-}
+                });
+            </script>
+
+        }

@@ -4,12 +4,14 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
+<center>
+    <h2>DetallesProyectos</h2>
+</center>
+<br />
+<p style="width:50%">
+    @Html.ActionLink("Agregar", "Create", null, new { @class = "btn btn-primary btn-lg btn-block" })
 </p>
-<table class="table">
+<table class="table" style="background-color: #2C3E50; color: #fff;">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Proyectos.Proyecto)
@@ -35,35 +37,36 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Proyectos.Proyecto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Producto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Cantidad)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Precio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Total)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Comentario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Existencias)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdDetalleProyecto }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdDetalleProyecto }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdDetalleProyecto })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Proyectos.Proyecto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Producto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cantidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comentario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Existencias)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IdDetalleProyecto }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IdDetalleProyecto }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IdDetalleProyecto })
+            </td>
+        </tr>
+    }
 
 </table>
