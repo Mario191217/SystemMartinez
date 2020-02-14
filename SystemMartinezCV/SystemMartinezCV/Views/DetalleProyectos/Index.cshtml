@@ -5,7 +5,7 @@
 }
 
 <center>
-    <h2>DetallesProyectos</h2>
+    <h2>Detalles Proyectos</h2>
 </center>
 <br />
 <p style="width:50%">
@@ -62,9 +62,9 @@
                 @Html.DisplayFor(modelItem => item.Existencias)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.IdDetalleProyecto }) |
-                @Html.ActionLink("Details", "Details", new { id = item.IdDetalleProyecto }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.IdDetalleProyecto })
+                @Html.ActionLink("Edita", "Edit", new { id = item.IdDetalleProyecto }) |
+                @Html.ActionLink("Detalles", "Details", new { id = item.IdDetalleProyecto }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.IdDetalleProyecto })
             </td>
         </tr>
     }
