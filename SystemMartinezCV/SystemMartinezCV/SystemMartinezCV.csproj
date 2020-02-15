@@ -723,6 +723,10 @@
     <Compile Include="Migrations\202002111723093_mod.designer.cs">
       <DependentUpon>202002111723093_mod.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002151625109_db1.cs" />
+    <Compile Include="Migrations\202002151625109_db1.designer.cs">
+      <DependentUpon>202002151625109_db1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abonos.cs" />
     <Compile Include="Models\Categorias.cs" />
@@ -867,6 +871,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002111723093_mod.resx">
       <DependentUpon>202002111723093_mod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002151625109_db1.resx">
+      <DependentUpon>202002151625109_db1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

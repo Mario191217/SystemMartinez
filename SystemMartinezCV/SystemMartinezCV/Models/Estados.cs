@@ -11,5 +11,6 @@ namespace SystemMartinezCV.Models
         [Key]
         public int IdEstado { get; set; }
         public string Estado { get; set; }
+        public virtual List<Proyectos> Proyectos { get; set; }
     }
 }

@@ -10,7 +10,9 @@ namespace SystemMartinezCV.Models
     {
         [Key]
         public int IdProyecto { get; set; }
+        public int NumeroProyecto { get; set; }
         public string Proyecto { get; set; }
+        public string Descripcion { get; set; }
         /////////////////////////////////////////////////////
         public int IdCliente { get; set; }
         public virtual Clientes Clientes { get; set; }
@@ -24,7 +26,10 @@ namespace SystemMartinezCV.Models
         public int IdEmpleado { get; set; }
         public virtual Empleados Empleados { get; set; }
         public double Comision { get; set; }
+        public double Rentabilidad { get; set; }
         /// 
+        public int IdEstado { get; set; }
+        public virtual Estados Estados { get; set; }
 
         public virtual List<DetalleProyectos> DetalleProyectos { get; set; }
         public virtual List<Extras> Extras { get; set; }

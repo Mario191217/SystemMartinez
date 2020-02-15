@@ -125,6 +125,8 @@
                     $("#Existencias").on("change", function () {
                         if ($(this).prop("checked") == true) {
                             $("#stock").show();
+                            $("#stock").addClass();
+
                             $("#factura").hide();
                             $("#proveedor").hide();
                             $("#existencia").hide();
