@@ -11,7 +11,8 @@
     @Html.AntiForgeryToken()
 
     <div class="jumbotron" style="background-color: #2C3E50; color: #fff">
-        <h4 style="color:#fff">Agregar producto</h4>
+        <center> <h4 style="color:#fff">Agregar producto</h4></center>
+       
         <hr />
         <div class="form-row">
             <div class="form-group col-md-4 mb-3">
@@ -44,17 +45,16 @@
             
 
             <div class="form-group col-md-4 mb-3">
-                @Html.LabelFor(model => model.IdUnidadMedida, "IdUnidadMedida", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.IdUnidadMedida, "UnidadMedida", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div>
                     @Html.DropDownList("IdUnidadMedida", null, htmlAttributes: new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.IdUnidadMedida, "", new { @class = "text-danger" })
                 </div>
             </div>
 
-        </div>
-        <div class="form-row">
+        
             <div class="form-group col-md-4 mb-3">
-                @Html.LabelFor(model => model.IdCategoria, "IdCategoria", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.IdCategoria, "Categoria", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div>
                     @Html.DropDownList("IdCategoria", null, htmlAttributes: new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.IdCategoria, "", new { @class = "text-danger" })
@@ -69,6 +69,7 @@
                 </div>
             </div>
         </div>
+
         <hr />
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

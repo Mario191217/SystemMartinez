@@ -4,10 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
+<center><h2>Estado</h2></center>
+<br />
+<p style="width:50%;">
+    @Html.ActionLink("Agregar", "Create", null, new { @class = "btn btn-primary btn-lg btn-block", })
 </p>
 <table class="table">
     <tr>
@@ -17,17 +17,18 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Estado)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdEstado }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdEstado }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdEstado })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IdEstado }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IdEstado }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IdEstado })
+            </td>
+        </tr>
+    }
 
 </table>
