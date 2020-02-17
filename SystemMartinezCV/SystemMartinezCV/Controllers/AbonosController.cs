@@ -11,112 +11,112 @@ using SystemMartinezCV.Models;
 
 namespace SystemMartinezCV.Controllers
 {
-    public class ExtrasController : Controller
+    public class AbonosController : Controller
     {
         private Contexto db = new Contexto();
 
-        // GET: Extras
+        // GET: Abonos
         public ActionResult Index()
         {
-            var extras = db.Extras.Include(e => e.Proyectos);
-            return View(extras.ToList());
+            var abonos = db.Abonos.Include(a => a.Proyectos);
+            return View(abonos.ToList());
         }
 
-        // GET: Extras/Details/5
+        // GET: Abonos/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Extras extras = db.Extras.Find(id);
-            if (extras == null)
+            Abonos abonos = db.Abonos.Find(id);
+            if (abonos == null)
             {
                 return HttpNotFound();
             }
-            return View(extras);
+            return View(abonos);
         }
 
-        // GET: Extras/Create
+        // GET: Abonos/Create
         public ActionResult Create()
         {
             ViewBag.IdProyecto = new SelectList(db.Proyectos, "IdProyecto", "Proyecto");
             return View();
         }
 
-        // POST: Extras/Create
+        // POST: Abonos/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdExtra,Extra,Descripcion,Fecha,Precio,IdProyecto")] Extras extras)
+        public ActionResult Create([Bind(Include = "IdAbono,Codigo,Abono,Descripcion,IdProyecto")] Abonos abonos)
         {
             if (ModelState.IsValid)
             {
-                db.Extras.Add(extras);
+                db.Abonos.Add(abonos);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.IdProyecto = new SelectList(db.Proyectos, "IdProyecto", "Proyecto", extras.IdProyecto);
-            return View(extras);
+            ViewBag.IdProyecto = new SelectList(db.Proyectos, "IdProyecto", "Proyecto", abonos.IdProyecto);
+            return View(abonos);
         }
 
-        // GET: Extras/Edit/5
+        // GET: Abonos/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Extras extras = db.Extras.Find(id);
-            if (extras == null)
+            Abonos abonos = db.Abonos.Find(id);
+            if (abonos == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.IdProyecto = new SelectList(db.Proyectos, "IdProyecto", "Proyecto", extras.IdProyecto);
-            return View(extras);
+            ViewBag.IdProyecto = new SelectList(db.Proyectos, "IdProyecto", "Proyecto", abonos.IdProyecto);
+            return View(abonos);
         }
 
-        // POST: Extras/Edit/5
+        // POST: Abonos/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdExtra,Extra,Descripcion,Fecha,Precio,IdProyecto")] Extras extras)
+        public ActionResult Edit([Bind(Include = "IdAbono,Codigo,Abono,Descripcion,IdProyecto")] Abonos abonos)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(extras).State = EntityState.Modified;
+                db.Entry(abonos).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.IdProyecto = new SelectList(db.Proyectos, "IdProyecto", "Proyecto", extras.IdProyecto);
-            return View(extras);
+            ViewBag.IdProyecto = new SelectList(db.Proyectos, "IdProyecto", "Proyecto", abonos.IdProyecto);
+            return View(abonos);
         }
 
-        // GET: Extras/Delete/5
+        // GET: Abonos/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Extras extras = db.Extras.Find(id);
-            if (extras == null)
+            Abonos abonos = db.Abonos.Find(id);
+            if (abonos == null)
             {
                 return HttpNotFound();
             }
-            return View(extras);
+            return View(abonos);
         }
 
-        // POST: Extras/Delete/5
+        // POST: Abonos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Extras extras = db.Extras.Find(id);
-            db.Extras.Remove(extras);
+            Abonos abonos = db.Abonos.Find(id);
+            db.Abonos.Remove(abonos);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

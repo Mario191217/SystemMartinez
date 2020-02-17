@@ -4,14 +4,12 @@
     ViewBag.Title = "Index";
 }
 
-    <center>
-        <h2>Proyectos</h2>
-    </center>
- <br />
+<h2>Index</h2>
+
 <p>
-    @Html.ActionLink("Agregar", "Create", null, new { @class = "btn btn-primary btn-lg btn-block" })
+    @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table" style="background-color: #2C3E50; color: #fff;">
+<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Clientes.Nombre)
@@ -20,7 +18,16 @@
             @Html.DisplayNameFor(model => model.Empleados.Nombre)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Estados.Estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroProyecto)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Proyecto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.MontoFinal)
@@ -40,6 +47,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Comision)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rentabilidad)
+        </th>
         <th></th>
     </tr>
 
@@ -52,7 +62,16 @@
             @Html.DisplayFor(modelItem => item.Empleados.Nombre)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.Estados.Estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumeroProyecto)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Proyecto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.MontoFinal)
@@ -73,9 +92,12 @@
             @Html.DisplayFor(modelItem => item.Comision)
         </td>
         <td>
-            @Html.ActionLink("Edita", "Edit", new { id=item.IdProyecto }, new { @class = "btn btn-warning" } ) |
-            @Html.ActionLink("Detalles", "Details", new { id=item.IdProyecto }, new { @class = "btn btn-success" }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.IdProyecto }, new { @class = "btn btn-danger" })
+            @Html.DisplayFor(modelItem => item.Rentabilidad)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdProyecto }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdProyecto }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdProyecto })
         </td>
     </tr>
 }

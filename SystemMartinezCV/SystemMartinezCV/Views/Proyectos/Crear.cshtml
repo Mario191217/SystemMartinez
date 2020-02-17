@@ -1,0 +1,334 @@
+﻿
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+
+@*<div class="row">
+    <div class="col-sm-5">
+        <div class="card" style="background-color: #2C3E50; color: #fff;">
+            <div class="card-body">
+                <center><p>Proveedores</p></center>
+                <hr />
+                <div class="col-sm-5">
+                    <input type="number" placeholder="Código" name="codigo" id="codigo" class="form-control" />
+                </div><br />
+                <div class="col-sm-5">
+                    <input type="date" placeholder="Fecha: " name="fecha" id="fecha" class="form-control" />
+                </div>
+                <br /><br />
+                <div class="col-sm-offset-2 col-sm-10">
+                    <select name="idProveedor" class="form-control">
+                        @foreach (var proveedor in ViewBag.idProveedor)
+                        {
+                            <option value="@proveedor.IdProveedor">@proveedor.Representante</option>
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+
+@*<div class="col-sm-1"></div>
+    <div class="col-sm-5">
+        <div class="panel panel-primary">
+
+            <div class="card-header">
+                <center><h6>Producto</h6></center>
+            </div>
+            <div class="card" style="background-color: #2C3E50; color: #fff;">
+
+                    <div class="col-sm-5">
+
+                        <select name="idProducto" class="form-control">
+                            @foreach (var producto in ViewBag.idProducto)
+                            {
+                                <option value="@producto.IdProducto">@producto.Nombre</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="number" placeholder="idProducto" name="idPro" id="idPro" class="form-control" readonly />
+                    </div>
+
+
+                    <div class="form-group col-md-4 mb-3">
+                        <input type="text" placeholder="Dato" name="dato" id="dato" class="form-control" readonly />
+                    </div>
+                    <div class="col-sm-5">
+                        <input type="number" placeholder="cantidad" name="cantidad" id="cantidad" class="form-control" />
+                    </div>*@
+
+<center><h4>Crear Compra</h4></center>
+<br />
+<div class="row">
+
+    <div class="col-sm-3">
+        <div class="col-sm-10">
+            <label>Codigo</label>
+            <input type="number" placeholder="Código" name="codigo" id="codigo" class="form-control" />
+        </div>
+    </div>
+    <br />
+
+    <div class="col-sm-3">
+        <label>Fecha</label>
+        <input type="date" placeholder="Fecha: " name="fecha" id="fecha" class="form-control" />
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-sm-3">
+        <div class="col-sm-10">
+            <label>Producto</label>
+            <select name="idProducto" class="form-control">
+                @foreach (var producto in ViewBag.idProducto)
+                {
+                    <option value="@producto.IdProducto">@producto.Nombre</option>
+                }
+            </select>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <label>Cantidad de producto</label>
+        <input type="number" placeholder="cantidad" name="cantidad" id="cantidad" class="form-control" />
+    </div>
+    <div class="col-sm-3">
+        <label>Proveedor</label>
+        <select name="idProveedor" class="form-control">
+            @foreach (var proveedor in ViewBag.idProveedor)
+            {
+                <option value="@proveedor.IdProveedor">@proveedor.Representante</option>
+            }
+        </select>
+    </div>
+</div>
+<br />
+
+<div class="row">
+    <div class="col-sm-3">
+
+        <div class="col-sm-10">
+            <label>Precio</label>
+            <input type="number" placeholder="Precio" name="precio" id="precio" class="form-control" />
+            <input type="hidden" placeholder="idProducto" name="idPro" id="idPro" class="form-control" readonly />
+            <input type="hidden" placeholder="Dato" name="dato" id="dato" class="form-control" readonly />
+
+        </div>
+        <br />
+        <div class="col-sm-6">
+            <button id="btnEnviar" class="btn btn-info"><i class="fas fa-arrow-circle-down" style="width:100%; "></i></button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+@*<div class="row">
+    <div class="col-md-5">
+        <div class="panel panel-primary">
+
+            <div class="card-header">
+
+                <center><h6>Proveedor</h6></center>
+            </div>
+
+            <div class="card" style="background-color: #2C3E50; color: #fff;">
+                <hr />
+                <div class="col-md-12">
+                    <div class="col-sm-5">
+                        <input type="number" placeholder="Código" name="codigo" id="codigo" class="form-control" />
+                    </div>
+                    <br />
+
+                    <div class="col-sm-5">
+                        <input type="date" placeholder="Fecha: " name="fecha" id="fecha" class="form-control" />
+                    </div>
+                    <br />
+
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <select name="idProveedor" class="form-control">
+                            @foreach (var proveedor in ViewBag.idProveedor)
+                            {
+                                <option value="@proveedor.IdProveedor">@proveedor.Representante</option>
+                            }
+                        </select>
+                    </div>
+                    <hr />
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+
+
+
+
+
+
+<div class="col-md-12">
+    <br /><br />
+    <div class="panel panel-default">
+        <div class="card-header" style="background-color: #2C3E50; color: #fff;">
+            <center><h6>Detalles</h6></center>
+        </div>
+        <div class="card">
+            <table class="table table-bordered table-hover" id="tabla">
+                <thead class="alert-info" style="background-color: #2C3E50; color: #fff;">
+                    <tr>
+                        <td>#</td>
+                        <td>Nombre</td>
+                        <td>Cantidad</td>
+                        <td>Precio</td>
+                        <td>SubTotal</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody id="fila">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <input type="hidden" class="form-control" name="subt1" id="subt1" value="0" />
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td><button class="btn btn-success" name="btnEnviarF" id="btnEnviarF">Guardar</button></td>
+                    </tr>
+                </tfoot>
+                @*<div class="col-sm-offset-4 col-sm-4 form-inline">
+                    <label class="col-sm-3">Total: </label><input type="number" name="total" id="total" class="form-control col-sm-9" readonly />
+                </div>
+
+                <div class="col-sm-4">
+                    <button class="btn btn-success" name="btnEnviarF" id="btnEnviarF">Guardar</button>
+                </div>*@
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        //cargar code de producto
+        var IdProducto = $("select[name=idProducto]").val();
+            $("#idPro").val(IdProducto);
+        var Producto = $("select[name=idProducto] option:selected").text();
+            $("#dato").val(Producto);
+        //llenad o input
+            //$("#idPro").val(Producto);
+            $("select[name=idProducto]").change(function () {
+                var IdProducto = $("select[name=idProducto]").val();
+                //alert("ipdpro");
+                    $("#idPro").val(IdProducto);
+                var Producto = $("select[name=idProducto] option:selected").text();
+                    //$("#idProducto").val(Producto);
+                    $("#dato").val(Producto);
+            });
+        //guardar detalle compra
+        $("#btnEnviar").click(function () {
+
+            var id = $("#idPro").val();
+            var Producto = $("#idProducto").val();
+            var dato = $("#dato").val();
+            var cantidad = $("#cantidad").val();
+            var precio = $("#precio").val();
+            if (id == "" || Producto == "" || dato == "" || cantidad == "" || precio == "") {
+                alert("Faltan algunos datos.");
+            }
+            else {
+                var subtt1 = $("#subt1").val();
+                var subtotal = (cantidad * precio);
+                var contador = $("#fila").html();
+                var HTML = "<tr><td class='id'>" + id + "</td><td>" + dato + "</td><td>" + cantidad + "</td><td>" + precio + "</td><td>" + subtotal + "</td><td class='no'><button type='button' name='btnDelete' id='btnDelete' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-trash'></span></button></td></tr> ";
+                    $("#fila").html(contador + HTML);
+                    $("#idPro").val("");
+                    $("#dato").val("");
+                    $("#cantidad").val("");
+                    $("#precio").val("");
+                var total = parseFloat(subtt1)+ parseFloat(subtotal);
+                    $("#subt1").val(total)
+                    $("#total").val(total)
+            }
+        });
+        //Elimnar filas
+        $('body').on('click', 'button#btnDelete', function () {
+            //manejo de totales
+            var col = $(this).parents('tr');
+            var subTotalEliminar = col.find("td:eq(4)").text();
+            var totalAC = $("#subt1").val();
+            var total1 = parseFloat(totalAC) - parseFloat(subTotalEliminar);
+            $("#subt1").val(total1);
+            $("#total").val(total1);
+            //removiendo fila
+            $(this).parents('tr').remove();
+        });
+        //enviar factura
+            $("#btnEnviarF").click(function () {
+                var IdProveedor = $("select[name=idProveedor]").val();
+                var Codigo = $("#codigo").val();
+                var Fecha = $("#fecha").val();
+
+
+                if (IdProveedor == "" || Codigo == "" || Fecha == "") {
+                    alert("Faltan algunos datos de la factura.");
+                }
+                else {
+                    $.ajaxSetup({ async: false });
+                    //cargando datos tabla primaria
+                    var urlCompra = '@Url.Action("AddFactura", "Compras")';
+                    var dataCompra = { IdProveedor: IdProveedor, NFactura: Codigo, Fecha: Fecha};
+                        $.post(urlCompra, dataCompra)
+                            .done(function (data) {
+                                //alert("Compra Creada con exito")
+                            })
+                            .fail(function (data) {
+                                console.log("Error: " + data.responseText);
+                            }).
+                            always(function () {
+                            });
+                        //creando detalleCompra
+                        $(".id").parent("tr").find("td:eq(0)").each(function () {
+                            var columna = $(this).parents('tr');
+                            var idProducto = columna.find("td:eq(0)").text();
+                            var Nombre = columna.find("td:eq(1)").text();
+                            var Cantidad = columna.find("td:eq(2)").text();
+                            var Precio = columna.find("td:eq(3)").text();
+                            var Total = columna.find("td:eq(4)").text();
+                            //var TotalP = columna.find("td:eq(5)").text();
+                            var urlDetalle = '@Url.Action("Detalle", "Compras")';
+                            var dataDetalle = { IdProducto: idProducto, Cantidad: Cantidad, PrecioUnitario: Precio, Total: Total };
+
+                            $.post(urlDetalle, dataDetalle)
+                                .done(function (data) {
+                                })
+                                .fail(function (data) {
+                                    console.log("Error: " + data.responseText);
+                                }).
+                                always(function () {
+                                });
+
+                        });
+                        var url = '@Url.Action("Index", "Compras")';
+                        $(location).attr('href', url);
+                    }
+                });
+    });
+        //Boton eliminar
+                @*$("#btnCancelar").click(function () {
+                    var url = '@Url.Action("Index")';
+                    $(location).attr('href', url);
+                });*@
+</script>
