@@ -60,6 +60,35 @@ namespace SystemMartinezCV.Controllers
             return View(clientes);
         }
 
+        //vistas parcial para crear deste modal
+        public ActionResult CreateP()
+        {
+            ViewBag.IdGenero = new SelectList(db.Generos, "IdGenero", "Genero");
+            return PartialView();
+        }
+
+        private ActionResult ParcialView()
+        {
+            throw new NotImplementedException();
+        }
+
+        // POST: Clientes/Create
+        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
+        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateP(Clientes clientes)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Clientes.Add(clientes);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return PartialView(clientes);
+        }
+
         // GET: Clientes/Edit/5
         public ActionResult Edit(int? id)
         {

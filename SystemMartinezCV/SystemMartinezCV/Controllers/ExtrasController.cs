@@ -49,7 +49,7 @@ namespace SystemMartinezCV.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdExtra,Extra,Descripcion,Fecha,Precio,IdProyecto")] Extras extras)
+        public ActionResult Create([Bind(Include = "IdExtra,Extra,Descripcion,Precio,IdProyecto")] Extras extras)
         {
             if (ModelState.IsValid)
             {
@@ -83,7 +83,7 @@ namespace SystemMartinezCV.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdExtra,Extra,Descripcion,Fecha,Precio,IdProyecto")] Extras extras)
+        public ActionResult Edit([Bind(Include = "IdExtra,Extra,Descripcion,Precio,IdProyecto")] Extras extras)
         {
             if (ModelState.IsValid)
             {
