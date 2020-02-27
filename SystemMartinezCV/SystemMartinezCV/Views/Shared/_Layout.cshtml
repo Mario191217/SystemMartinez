@@ -20,12 +20,29 @@
 
 
     <!-- Font Awesome JS -->
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
     <!--Jquery-->
- 
+
+
+        <script type="text/javascript" src="js/jquery.mask.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#Dui").mask("00000000-0")
+                $("#Nit").mask("0000-000000-000-0")
+                $("#NIT").mask("0000-000000-000-0")
+                $("#Telefono").mask("0000-0000")
+                $("#TelefonoEmergencia").mask("0000-0000")
+                $("#Fecha").mask("00/00/0000")
+                $("#Tarjeta").mask("0000-0000000-0000")
+            })
+        </script>
+
+
+  
 </head>
 
 <body>
@@ -74,13 +91,13 @@
                                 <a href="@Url.Action("Index","Compras")"><i class="fas fa-cart-arrow-down"></i> Compras</a>
                             </li>
                             <li>
-                                <a href="#">Compras</a>
+                                <a href="#">Facturas</a>
                             </li>
                         </ul>
                     </li>
 
                     <li class="activado">
-                        <a href="#">
+                        <a href="@Url.Action("Index","Compras")">
                             <i class="icon d fas fa-file-alt"></i>   Ventas<i class="icon i fas fa-chevron-down"></i>
                         </a>
                         <ul>
@@ -193,7 +210,7 @@
 
             <script src="~/Scripts/popper.min.js"></script>
 
-            <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+            @*<script src="~/Scripts/jquery-3.4.1.min.js"></script>*@
             <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
             <script src="~/Scripts/bootstrap.min.js"></script>
             <script src="~/Scripts/main.js"></script>
@@ -236,6 +253,26 @@
                         },
                         responsive: true
                     });
+                });
+            </script>
+            <script type="text/javascript">
+                $(document).ready(function(){
+
+                    $("#Fecha").datepicker();
+                
+
+                $("#Dui").on('keydown', function (event) {
+                    //alert("ed");
+                    if (event.keyCode == 8 || event.keyCode == 37 || event.keyCode == 39) {
+
+                    } else {
+                        inputval = $(this).val();
+                        var string = inputval.replace(/[^0-9])/g, "");
+                        var bloque1 = string.substring(0, 8);
+                        var string = (bloque1 + "-");
+                        $(this).val(string);
+                    }
+                });
                 });
             </script>
         </div>
