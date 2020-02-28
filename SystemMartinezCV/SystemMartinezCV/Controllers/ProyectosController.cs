@@ -15,14 +15,14 @@ namespace SystemMartinezCV.Controllers
     {
         private Contexto db = new Contexto();
 
-        // GET: Proyectos
+        // GET: Proyectos1
         public ActionResult Index()
         {
-            var proyectos = db.Proyectos.Include(p => p.Clientes).Include(p => p.Empleados).Include(p => p.Estados);
+            var proyectos = db.Proyectos.Include(p => p.Clientes).Include(p => p.Empleados);
             return View(proyectos.ToList());
         }
 
-        // GET: Proyectos/Details/5
+        // GET: Proyectos1/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,21 +37,20 @@ namespace SystemMartinezCV.Controllers
             return View(proyectos);
         }
 
-        // GET: Proyectos/Create
+        // GET: Proyectos1/Create
         public ActionResult Create()
         {
             ViewBag.IdCliente = new SelectList(db.Clientes, "IdCliente", "Nombre");
             ViewBag.IdEmpleado = new SelectList(db.Empleados, "IdEmpleado", "Nombre");
-            ViewBag.IdEstado = new SelectList(db.Estados, "IdEstado", "Estado");
             return View();
         }
 
-        // POST: Proyectos/Create
+        // POST: Proyectos1/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdProyecto,NumeroProyecto,Proyecto,Descripcion,IdCliente,MontoFinal,Ubicacion,FechaRegistro,FechaInicio,FechaFin,IdEmpleado,Comision,Rentabilidad,IdEstado")] Proyectos proyectos)
+        public ActionResult Create([Bind(Include = "IdProyecto,Proyecto,IdCliente,MontoFinal,Ubicacion,FechaRegistro,FechaInicio,FechaFin,IdEmpleado,Comision")] Proyectos proyectos)
         {
             if (ModelState.IsValid)
             {
@@ -62,11 +61,10 @@ namespace SystemMartinezCV.Controllers
 
             ViewBag.IdCliente = new SelectList(db.Clientes, "IdCliente", "Nombre", proyectos.IdCliente);
             ViewBag.IdEmpleado = new SelectList(db.Empleados, "IdEmpleado", "Nombre", proyectos.IdEmpleado);
-            ViewBag.IdEstado = new SelectList(db.Estados, "IdEstado", "Estado", proyectos.IdEstado);
             return View(proyectos);
         }
 
-        // GET: Proyectos/Edit/5
+        // GET: Proyectos1/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -80,16 +78,15 @@ namespace SystemMartinezCV.Controllers
             }
             ViewBag.IdCliente = new SelectList(db.Clientes, "IdCliente", "Nombre", proyectos.IdCliente);
             ViewBag.IdEmpleado = new SelectList(db.Empleados, "IdEmpleado", "Nombre", proyectos.IdEmpleado);
-            ViewBag.IdEstado = new SelectList(db.Estados, "IdEstado", "Estado", proyectos.IdEstado);
             return View(proyectos);
         }
 
-        // POST: Proyectos/Edit/5
+        // POST: Proyectos1/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdProyecto,NumeroProyecto,Proyecto,Descripcion,IdCliente,MontoFinal,Ubicacion,FechaRegistro,FechaInicio,FechaFin,IdEmpleado,Comision,Rentabilidad,IdEstado")] Proyectos proyectos)
+        public ActionResult Edit([Bind(Include = "IdProyecto,Proyecto,IdCliente,MontoFinal,Ubicacion,FechaRegistro,FechaInicio,FechaFin,IdEmpleado,Comision")] Proyectos proyectos)
         {
             if (ModelState.IsValid)
             {
@@ -99,11 +96,10 @@ namespace SystemMartinezCV.Controllers
             }
             ViewBag.IdCliente = new SelectList(db.Clientes, "IdCliente", "Nombre", proyectos.IdCliente);
             ViewBag.IdEmpleado = new SelectList(db.Empleados, "IdEmpleado", "Nombre", proyectos.IdEmpleado);
-            ViewBag.IdEstado = new SelectList(db.Estados, "IdEstado", "Estado", proyectos.IdEstado);
             return View(proyectos);
         }
 
-        // GET: Proyectos/Delete/5
+        // GET: Proyectos1/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -118,7 +114,7 @@ namespace SystemMartinezCV.Controllers
             return View(proyectos);
         }
 
-        // POST: Proyectos/Delete/5
+        // POST: Proyectos1/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

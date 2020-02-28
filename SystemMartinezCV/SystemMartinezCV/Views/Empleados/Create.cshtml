@@ -3,24 +3,16 @@
 @{
     ViewBag.Title = "Create";
 }
-    @*<style>
-        .control-label{
-            width:100%
-        }
-        *{
-            border:1px solid black
-        }
-    </style>*@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
 
 
-
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
 
     <div class="jumbotron" style="background-color: #2C3E50; color: #fff">
         <center><h4 style="color:#fff">Empleados</h4></center>
-        
+
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
@@ -51,6 +43,7 @@
         </div>
         <div class="form-row">
             <div class="form-group col-md-4 mb-3">
+               
                 @Html.LabelFor(model => model.Dui, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div>
                     @Html.EditorFor(model => model.Dui, new { htmlAttributes = new { @class = "form-control" } })
@@ -100,11 +93,11 @@
         </div>
 
         <div class="form-row">
-            
 
-            <div class="form-group">
+
+            <div class="form-group col-md-4 mb-3">
                 @Html.LabelFor(model => model.IdGenero, "IdGenero", htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
+                <div>
                     @Html.DropDownList("IdGenero", null, htmlAttributes: new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.IdGenero, "", new { @class = "text-danger" })
                 </div>
@@ -136,46 +129,39 @@
             </div>
 
             @*<div class="form-group">
-                @Html.LabelFor(model => model.EstadoEliminar, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.EstadoEliminar, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.EstadoEliminar, "", new { @class = "text-danger" })
-                </div>
-            </div>*@
+                    @Html.LabelFor(model => model.EstadoEliminar, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.EstadoEliminar, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.EstadoEliminar, "", new { @class = "text-danger" })
+                    </div>
+                </div>*@
 
         </div>
         <hr />
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Guardar" class="btn btn-success" style="width: 40%" />
-                @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-info"})
+                @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-info" })
             </div>
         </div>
     </div>
 
-    }
-
-
-@section mask{
-
-    <script type="text/javascript">
-        $(function () {
-
-            $("#Fecha").datepicker();
-        });
-
-        $("#Dui").on('keydown', function (event) {
-            //alert("ed");
-            if (event.keyCode == 8 || event.keyCode == 37 || event.keyCode == 39) {
-
-            } else {
-                inputval = $(this).val();
-                var string = inputval.replace(/[^0-9])/g, "");
-                var bloque1 = string.substring(0, 8);
-                var string = (bloque1 + "-");
-                $(this).val(string);
-            }
-        });
-    </script>
-
 }
+
+
+@*@section datepicker{
+
+
+    <script type="text/javascript" src="js/jquery.mask.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#Dui").mask("00000000-0")
+            $("#Nit").mask("0000-000000-000-0")
+            $("#Tel").mask("0000-0000")
+            $("#Fecha").mask("00/00/0000")
+            $("#Tarjeta").mask("0000-0000000-0000")
+        })
+    </script>
+   
+
+}*@

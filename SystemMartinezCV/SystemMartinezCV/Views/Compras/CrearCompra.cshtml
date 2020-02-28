@@ -62,69 +62,73 @@
                         <input type="number" placeholder="cantidad" name="cantidad" id="cantidad" class="form-control" />
                     </div>*@
 
-<center><h4>Crear Compra</h4></center>
-<br />
-<div class="row">
 
-    <div class="col-sm-3">
-        <div class="col-sm-10">
-            <label>Codigo</label>
-            <input type="number" placeholder="Código" name="codigo" id="codigo" class="form-control" />
-        </div>
-    </div>
-    <br />
+    <div class="jumbotron" style="background-color: #2C3E50; color: #fff;">
+       <center><h4>Crear Compra</h4></center> 
+        <hr />
+        <br />
+        <div class="row">
 
-    <div class="col-sm-3">
-        <label>Fecha</label>
-        <input type="date" placeholder="Fecha: " name="fecha" id="fecha" class="form-control" />
-    </div>
-</div>
-<br />
-<div class="row">
-    <div class="col-sm-3">
-        <div class="col-sm-10">
-            <label>Producto</label>
-            <select name="idProducto" class="form-control">
-                @foreach (var producto in ViewBag.idProducto)
-                {
-                    <option value="@producto.IdProducto">@producto.Nombre</option>
-                }
-            </select>
-        </div>
-    </div>
-    <div class="col-sm-3">
-        <label>Cantidad de producto</label>
-        <input type="number" placeholder="cantidad" name="cantidad" id="cantidad" class="form-control" />
-    </div>
-    <div class="col-sm-3">
-        <label>Proveedor</label>
-        <select name="idProveedor" class="form-control">
-            @foreach (var proveedor in ViewBag.idProveedor)
-            {
-                <option value="@proveedor.IdProveedor">@proveedor.Representante</option>
-            }
-        </select>
-    </div>
-</div>
-<br />
+            <div class="col-sm-3">
+                <div class="col-sm-10">
+                    <label>Codigo</label>
+                    <input type="number" placeholder="Código" name="codigo" id="codigo" class="form-control" />
+                </div>
+            </div>
+            <br />
 
-<div class="row">
-    <div class="col-sm-3">
-
-        <div class="col-sm-10">
-            <label>Precio</label>
-            <input type="number" placeholder="Precio" name="precio" id="precio" class="form-control" />
-            <input type="hidden" placeholder="idProducto" name="idPro" id="idPro" class="form-control" readonly />
-            <input type="hidden" placeholder="Dato" name="dato" id="dato" class="form-control" readonly />
-
+            <div class="col-sm-3">
+                <label>Fecha</label>
+                <input type="date" placeholder="Fecha: " name="fecha" id="fecha" class="form-control" />
+            </div>
         </div>
         <br />
-        <div class="col-sm-6">
-            <button id="btnEnviar" class="btn btn-info"><i class="fas fa-arrow-circle-down" style="width:100%; "></i></button>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="col-sm-10">
+                    <label>Producto</label>
+                    <select name="idProducto" class="form-control">
+                        @foreach (var producto in ViewBag.idProducto)
+                        {
+                            <option value="@producto.IdProducto">@producto.Nombre</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <label>Cantidad de producto</label>
+                <input type="number" placeholder="cantidad" name="cantidad" id="cantidad" class="form-control" />
+            </div>
+            <div class="col-sm-3">
+                <label>Proveedor</label>
+                <select name="idProveedor" class="form-control">
+                    @foreach (var proveedor in ViewBag.idProveedor)
+                    {
+                        <option value="@proveedor.IdProveedor">@proveedor.Representante</option>
+                    }
+                </select>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="col-sm-3">
+
+                <div class="col-sm-10">
+                    <label>Precio</label>
+                    <input type="number" placeholder="Precio" name="precio" id="precio" class="form-control" />
+                    <input type="hidden" placeholder="idProducto" name="idPro" id="idPro" class="form-control" readonly />
+                    <input type="hidden" placeholder="Dato" name="dato" id="dato" class="form-control" readonly />
+
+                </div>
+                <br />
+                <div class="col-sm-6">
+                    <button id="btnEnviar" class="btn btn-info"><i class="fas fa-arrow-circle-down" style="width:100%; "></i></button>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-
 
 
 
@@ -208,12 +212,12 @@
                     </tr>
                 </tfoot>
                 @*<div class="col-sm-offset-4 col-sm-4 form-inline">
-                    <label class="col-sm-3">Total: </label><input type="number" name="total" id="total" class="form-control col-sm-9" readonly />
-                </div>
+                        <label class="col-sm-3">Total: </label><input type="number" name="total" id="total" class="form-control col-sm-9" readonly />
+                    </div>
 
-                <div class="col-sm-4">
-                    <button class="btn btn-success" name="btnEnviarF" id="btnEnviarF">Guardar</button>
-                </div>*@
+                    <div class="col-sm-4">
+                        <button class="btn btn-success" name="btnEnviarF" id="btnEnviarF">Guardar</button>
+                    </div>*@
             </table>
         </div>
     </div>

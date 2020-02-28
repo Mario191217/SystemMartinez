@@ -549,6 +549,7 @@
     <Content Include="Scripts\jquery-ui-1.12.1.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
     <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery.mask.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -654,7 +655,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AbonosController.cs" />
     <Compile Include="Controllers\CategoriasController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\ComprasController.cs" />
@@ -663,7 +663,6 @@
     <Compile Include="Controllers\EmpleadosController.cs" />
     <Compile Include="Controllers\EstadosController.cs" />
     <Compile Include="Controllers\ExtrasController.cs" />
-    <Compile Include="Controllers\GestionProyectosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductosController.cs" />
     <Compile Include="Controllers\ProveedoresController.cs" />
@@ -728,14 +727,6 @@
     <Compile Include="Migrations\202002151625109_db1.cs" />
     <Compile Include="Migrations\202002151625109_db1.designer.cs">
       <DependentUpon>202002151625109_db1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002171410290_ptm.cs" />
-    <Compile Include="Migrations\202002171410290_ptm.designer.cs">
-      <DependentUpon>202002171410290_ptm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002281203173_costo.cs" />
-    <Compile Include="Migrations\202002281203173_costo.designer.cs">
-      <DependentUpon>202002281203173_costo.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abonos.cs" />
@@ -802,33 +793,28 @@
     <Content Include="Views\Clientes\Details.cshtml" />
     <Content Include="Views\Clientes\Edit.cshtml" />
     <Content Include="Views\Clientes\Index.cshtml" />
-    <Content Include="Views\Estados\Create.cshtml" />
-    <Content Include="Views\Estados\Delete.cshtml" />
-    <Content Include="Views\Estados\Details.cshtml" />
-    <Content Include="Views\Estados\Edit.cshtml" />
-    <Content Include="Views\Estados\Index.cshtml" />
-    <Content Include="Views\Compras\Factura.cshtml" />
-    <Content Include="Views\Abonos\Create.cshtml" />
-    <Content Include="Views\Abonos\Delete.cshtml" />
-    <Content Include="Views\Abonos\Details.cshtml" />
-    <Content Include="Views\Abonos\Edit.cshtml" />
-    <Content Include="Views\Abonos\Index.cshtml" />
     <Content Include="Views\DetalleProyectos\Create.cshtml" />
     <Content Include="Views\DetalleProyectos\Delete.cshtml" />
     <Content Include="Views\DetalleProyectos\Details.cshtml" />
     <Content Include="Views\DetalleProyectos\Edit.cshtml" />
     <Content Include="Views\DetalleProyectos\Index.cshtml" />
+    <Content Include="Views\Estados\Create.cshtml" />
+    <Content Include="Views\Estados\Delete.cshtml" />
+    <Content Include="Views\Estados\Details.cshtml" />
+    <Content Include="Views\Estados\Edit.cshtml" />
+    <Content Include="Views\Estados\Index.cshtml" />
     <Content Include="Views\Extras\Create.cshtml" />
     <Content Include="Views\Extras\Delete.cshtml" />
     <Content Include="Views\Extras\Details.cshtml" />
     <Content Include="Views\Extras\Edit.cshtml" />
     <Content Include="Views\Extras\Index.cshtml" />
+    <Content Include="Views\Compras\Factura.cshtml" />
     <Content Include="Views\Proyectos\Create.cshtml" />
     <Content Include="Views\Proyectos\Delete.cshtml" />
     <Content Include="Views\Proyectos\Details.cshtml" />
     <Content Include="Views\Proyectos\Edit.cshtml" />
     <Content Include="Views\Proyectos\Index.cshtml" />
-    <Content Include="Views\GestionProyectos\Index.cshtml" />
+    <Content Include="Views\Shared\ModalCliente.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -890,12 +876,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002151625109_db1.resx">
       <DependentUpon>202002151625109_db1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002171410290_ptm.resx">
-      <DependentUpon>202002171410290_ptm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002281203173_costo.resx">
-      <DependentUpon>202002281203173_costo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
