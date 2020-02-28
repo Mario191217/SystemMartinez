@@ -663,6 +663,7 @@
     <Compile Include="Controllers\EmpleadosController.cs" />
     <Compile Include="Controllers\EstadosController.cs" />
     <Compile Include="Controllers\ExtrasController.cs" />
+    <Compile Include="Controllers\GestionProyectosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductosController.cs" />
     <Compile Include="Controllers\ProveedoresController.cs" />
@@ -731,6 +732,10 @@
     <Compile Include="Migrations\202002171410290_ptm.cs" />
     <Compile Include="Migrations\202002171410290_ptm.designer.cs">
       <DependentUpon>202002171410290_ptm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002281203173_costo.cs" />
+    <Compile Include="Migrations\202002281203173_costo.designer.cs">
+      <DependentUpon>202002281203173_costo.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abonos.cs" />
@@ -823,7 +828,7 @@
     <Content Include="Views\Proyectos\Details.cshtml" />
     <Content Include="Views\Proyectos\Edit.cshtml" />
     <Content Include="Views\Proyectos\Index.cshtml" />
-    <Content Include="Views\Proyectos\Crear.cshtml" />
+    <Content Include="Views\GestionProyectos\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -888,6 +893,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002171410290_ptm.resx">
       <DependentUpon>202002171410290_ptm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002281203173_costo.resx">
+      <DependentUpon>202002281203173_costo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -18,6 +18,7 @@ namespace SystemMartinezCV.Models
         public virtual Clientes Clientes { get; set; }
         /////////////////////////////////////////////////////
         public double MontoFinal { get; set; }
+        public double Costo { get; set; }
         public string Ubicacion { get; set; }
         public DateTime FechaRegistro { get; set; }
         public DateTime FechaInicio { get; set; }
