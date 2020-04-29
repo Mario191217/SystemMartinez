@@ -4,12 +4,14 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
+<center>
+    <h2>Proyectos</h2>
+</center>
+<br />
+<p style="width:50%;">
+    @Html.ActionLink("Agregar", "Create", null, new { @class = "btn btn-primary btn-lg btn-block" })
 </p>
-<table class="table">
+@*<table class="table" style="background-color: #2C3E50; color: #fff;">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Clientes.Nombre)
@@ -18,19 +20,16 @@
             @Html.DisplayNameFor(model => model.Empleados.Nombre)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NumeroProyecto)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Proyecto)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.MontoFinal)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Costo)
+            @Html.DisplayNameFor(model => model.Ubicacion)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Ubicacion)
+            @Html.DisplayNameFor(model => model.FechaRegistro)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.FechaInicio)
@@ -39,49 +38,106 @@
             @Html.DisplayNameFor(model => model.FechaFin)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Rentabilidad)
+            @Html.DisplayNameFor(model => model.Comision)
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Clientes.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Empleados.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NumeroProyecto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Proyecto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MontoFinal)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Costo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ubicacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaInicio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaFin)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Rentabilidad)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdProyecto }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdProyecto }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdProyecto })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Clientes.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Empleados.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Proyecto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MontoFinal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ubicacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaRegistro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaInicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaFin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comision)
+            </td>
+            <td>
+                @Html.ActionLink("Edita", "Edit", new { id = item.IdProyecto }, new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("Detalles", "Details", new { id = item.IdProyecto }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.IdProyecto }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
 
-</table>
+</table>*@
+
+<div class="col-md-12">
+    <br /><br />
+    <div class="panel panel-default">
+        <div class="card-header" style="background-color: #2C3E50; color: #fff;">
+            <center><h6>Detalles</h6></center>
+        </div>
+        <div class="card">
+            <table class="table table-bordered table-hover" id="tabla">
+                <thead class="alert-info" style="background-color: #2C3E50; color: #fff;">
+                    <tr>
+                        <td>Cliente</td>
+                        <td>Proyecto</td>
+                        <td>Ubicacion</td>
+                        <td>Fecha Inicio</td>
+                        <td>Fecha Fin</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody id="fila">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <input type="hidden" class="form-control" name="subt1" id="subt1" value="0" />
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+                @*<tfoot>
+                        <tr>
+                            <td><button class="btn btn-success" name="btnEnviarF" id="btnEnviarF">Guardar</button></td>
+                        </tr>
+                    </tfoot>*@
+                @*<div class="col-sm-offset-4 col-sm-4 form-inline">
+                        <label class="col-sm-3">Total: </label><input type="number" name="total" id="total" class="form-control col-sm-9" readonly />
+                    </div>
+
+                    <div class="col-sm-4">
+                        <button class="btn btn-success" name="btnEnviarF" id="btnEnviarF">Guardar</button>
+                    </div>*@
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+                    $("#tabla").DataTable({
+                        language: {
+                            url: '../../Scripts/Spanish.json'
+                        },
+                        responsive: true
+                    });
+                });
+</script>
