@@ -668,6 +668,7 @@
     <Compile Include="Controllers\ProductosController.cs" />
     <Compile Include="Controllers\ProveedoresController.cs" />
     <Compile Include="Controllers\ProyectosController.cs" />
+    <Compile Include="Controllers\SubproyectosController.cs" />
     <Compile Include="Controllers\UnidadMedidasController.cs" />
     <Compile Include="Migrations\202001150750240_InitialCreate.cs" />
     <Compile Include="Migrations\202001150750240_InitialCreate.designer.cs">
@@ -729,9 +730,13 @@
     <Compile Include="Migrations\202002151625109_db1.designer.cs">
       <DependentUpon>202002151625109_db1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002281501450_add-migration AddProject.cs" />
-    <Compile Include="Migrations\202002281501450_add-migration AddProject.designer.cs">
-      <DependentUpon>202002281501450_add-migration AddProject.cs</DependentUpon>
+    <Compile Include="Migrations\202003091340152_sub.cs" />
+    <Compile Include="Migrations\202003091340152_sub.designer.cs">
+      <DependentUpon>202003091340152_sub.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003091344180_subP.cs" />
+    <Compile Include="Migrations\202003091344180_subP.designer.cs">
+      <DependentUpon>202003091344180_subP.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abonos.cs" />
@@ -754,6 +759,7 @@
     <Compile Include="Models\Proyectos.cs" />
     <Compile Include="Models\Roles.cs" />
     <Compile Include="Models\Empleados.cs" />
+    <Compile Include="Models\Subproyectos.cs" />
     <Compile Include="Models\UnidadMedida.cs" />
     <Compile Include="Models\Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -798,11 +804,6 @@
     <Content Include="Views\Clientes\Details.cshtml" />
     <Content Include="Views\Clientes\Edit.cshtml" />
     <Content Include="Views\Clientes\Index.cshtml" />
-    <Content Include="Views\DetalleProyectos\Create.cshtml" />
-    <Content Include="Views\DetalleProyectos\Delete.cshtml" />
-    <Content Include="Views\DetalleProyectos\Details.cshtml" />
-    <Content Include="Views\DetalleProyectos\Edit.cshtml" />
-    <Content Include="Views\DetalleProyectos\Index.cshtml" />
     <Content Include="Views\Estados\Create.cshtml" />
     <Content Include="Views\Estados\Delete.cshtml" />
     <Content Include="Views\Estados\Details.cshtml" />
@@ -814,13 +815,24 @@
     <Content Include="Views\Extras\Edit.cshtml" />
     <Content Include="Views\Extras\Index.cshtml" />
     <Content Include="Views\Compras\Factura.cshtml" />
+    <Content Include="Views\Shared\ModalCliente.cshtml" />
+    <Content Include="Views\GestionProyectos\Index.cshtml" />
     <Content Include="Views\Proyectos\Create.cshtml" />
     <Content Include="Views\Proyectos\Delete.cshtml" />
     <Content Include="Views\Proyectos\Details.cshtml" />
     <Content Include="Views\Proyectos\Edit.cshtml" />
     <Content Include="Views\Proyectos\Index.cshtml" />
-    <Content Include="Views\Shared\ModalCliente.cshtml" />
-    <Content Include="Views\GestionProyectos\Index.cshtml" />
+    <Content Include="Views\Subproyectos\Create.cshtml" />
+    <Content Include="Views\Subproyectos\Delete.cshtml" />
+    <Content Include="Views\Subproyectos\Details.cshtml" />
+    <Content Include="Views\Subproyectos\Edit.cshtml" />
+    <Content Include="Views\Subproyectos\Index.cshtml" />
+    <Content Include="Views\DetalleProyectos\Create.cshtml" />
+    <Content Include="Views\DetalleProyectos\Delete.cshtml" />
+    <Content Include="Views\DetalleProyectos\Details.cshtml" />
+    <Content Include="Views\DetalleProyectos\Edit.cshtml" />
+    <Content Include="Views\DetalleProyectos\Index.cshtml" />
+    <Content Include="Views\GestionProyectos\General.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -883,8 +895,11 @@
     <EmbeddedResource Include="Migrations\202002151625109_db1.resx">
       <DependentUpon>202002151625109_db1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002281501450_add-migration AddProject.resx">
-      <DependentUpon>202002281501450_add-migration AddProject.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202003091340152_sub.resx">
+      <DependentUpon>202003091340152_sub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003091344180_subP.resx">
+      <DependentUpon>202003091344180_subP.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

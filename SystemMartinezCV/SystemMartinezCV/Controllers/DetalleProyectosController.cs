@@ -18,7 +18,7 @@ namespace SystemMartinezCV.Controllers
         // GET: DetalleProyectos
         public ActionResult Index()
         {
-            var detalleProyectos = db.DetalleProyectos.Include(d => d.Proyectos);
+            var detalleProyectos = db.DetalleProyectos.Include(d => d.SubProyectos).Include(d => d.UnidadMedida);
             return View(detalleProyectos.ToList());
         }
 
@@ -40,9 +40,8 @@ namespace SystemMartinezCV.Controllers
         // GET: DetalleProyectos/Create
         public ActionResult Create()
         {
-            ViewBag.IdProveedor = new SelectList(db.Proveedores, "IdProveedor", "RazonSocial");
-            ViewBag.IdProducto = new SelectList(db.Productos, "IdProducto", "Nombre");
-            ViewBag.IdProyecto = new SelectList(db.Proyectos, "IdProyecto", "Proyecto");
+            ViewBag.IdSubProyecto = new SelectList(db.Subproyectos, "IdSubProyecto", "Nombre");
+            ViewBag.IdUnidadMedida = new SelectList(db.unidadMedida, "IdUnidadMedida", "Unidad");
             return View();
         }
 
@@ -51,7 +50,7 @@ namespace SystemMartinezCV.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(DetalleProyectos detalleProyectos)
+        public ActionResult Create([Bind(Include = "IdDetalleProyecto,Fecha,Producto,Cantidad,Precio,Total,IdUnidadMedida,Comentario,Existencias,NumeroFactura,IdSubProyecto")] DetalleProyectos detalleProyectos)
         {
             if (ModelState.IsValid)
             {
@@ -60,7 +59,8 @@ namespace SystemMartinezCV.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.IdProyecto = new SelectList(db.Proyectos, "IdProyecto", "Proyecto", detalleProyectos.IdProyecto);
+            ViewBag.IdSubProyecto = new SelectList(db.Subproyectos, "IdSubProyecto", "Nombre", detalleProyectos.IdSubProyecto);
+            ViewBag.IdUnidadMedida = new SelectList(db.unidadMedida, "IdUnidadMedida", "Unidad", detalleProyectos.IdUnidadMedida);
             return View(detalleProyectos);
         }
 
@@ -76,7 +76,8 @@ namespace SystemMartinezCV.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.IdProyecto = new SelectList(db.Proyectos, "IdProyecto", "Proyecto", detalleProyectos.IdProyecto);
+            ViewBag.IdSubProyecto = new SelectList(db.Subproyectos, "IdSubProyecto", "Nombre", detalleProyectos.IdSubProyecto);
+            ViewBag.IdUnidadMedida = new SelectList(db.unidadMedida, "IdUnidadMedida", "Unidad", detalleProyectos.IdUnidadMedida);
             return View(detalleProyectos);
         }
 
@@ -85,7 +86,7 @@ namespace SystemMartinezCV.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdDetalleProyecto,Producto,Cantidad,Precio,Total,Comentario,Existencias,IdProyecto")] DetalleProyectos detalleProyectos)
+        public ActionResult Edit([Bind(Include = "IdDetalleProyecto,Fecha,Producto,Cantidad,Precio,Total,IdUnidadMedida,Comentario,Existencias,NumeroFactura,IdSubProyecto")] DetalleProyectos detalleProyectos)
         {
             if (ModelState.IsValid)
             {
@@ -93,7 +94,8 @@ namespace SystemMartinezCV.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.IdProyecto = new SelectList(db.Proyectos, "IdProyecto", "Proyecto", detalleProyectos.IdProyecto);
+            ViewBag.IdSubProyecto = new SelectList(db.Subproyectos, "IdSubProyecto", "Nombre", detalleProyectos.IdSubProyecto);
+            ViewBag.IdUnidadMedida = new SelectList(db.unidadMedida, "IdUnidadMedida", "Unidad", detalleProyectos.IdUnidadMedida);
             return View(detalleProyectos);
         }
 

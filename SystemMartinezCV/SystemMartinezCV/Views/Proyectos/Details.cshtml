@@ -27,6 +27,22 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.Estados.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estados.Estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroProyecto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroProyecto)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.Proyecto)
         </dt>
 
@@ -35,11 +51,27 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.MontoFinal)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.MontoFinal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Costo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Costo)
         </dd>
 
         <dt>
@@ -82,8 +114,58 @@
             @Html.DisplayFor(model => model.Comision)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.Rentabilidad)
+        </dt>
+
+        <dd>
+            jhgh
+        </dd>   
     </dl>
 </div>
+<div>
+    <center>
+
+        @foreach (var item in ViewBag.sub)
+        {
+            if (item.IdProyecto == Model.IdProyecto)
+            {
+                @Html.Raw(item.Nombre);
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>
+                                Producto
+                            </th>
+                            <th>
+                                Cantidad
+                            </th>
+                            <th>
+                                Precio
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item2 in ViewBag.detalles)
+                        {
+                            if ((item2.IdSubProyecto == item.IdSubProyecto))
+                            {
+                        <tr>
+                            <td>@Html.Raw(item2.Producto)</td>
+                            <td>@Html.Raw(item2.Cantidad)</td>
+                            <td>@Html.Raw(item2.Precio)</td>
+                        </tr>
+                            }
+
+                        }
+                    </tbody>
+                </table>
+            }
+        }
+
+    </center>
+</div>
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.IdProyecto }) |
     @Html.ActionLink("Back to List", "Index")

@@ -6,17 +6,16 @@ using System.Web;
 
 namespace SystemMartinezCV.Models
 {
-    public class Extras
+    public class Subproyectos
     {
         [Key]
-        public int IdExtra { get; set; }
-        public string Extra { get; set; }
+        public int IdSubProyecto { get; set; }
+        public string Nombre { get; set; }
         public string Descripcion { get; set; }
-        public DateTime Fecha { get; set; }
-        
-        public Nullable<double> Precio { get; set; }
-
         public int IdProyecto { get; set; }
         public virtual Proyectos Proyectos { get; set; }
+        public double Precio { get; set; }
+        public double Costo { get; set; }
+        public double Rentabilidad { get; set; }
     }
 }

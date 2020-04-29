@@ -7,13 +7,13 @@ namespace SystemMartinezCV.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class addmigrationAddProject : IMigrationMetadata
+    public sealed partial class sub : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addmigrationAddProject));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(sub));
         
         string IMigrationMetadata.Id
         {
-            get { return "202002281501450_add-migration AddProject"; }
+            get { return "202003091340152_sub"; }
         }
         
         string IMigrationMetadata.Source

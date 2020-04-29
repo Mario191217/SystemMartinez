@@ -13,6 +13,14 @@ namespace SystemMartinezCV.Controllers
         // GET: GestionProyectos
         public ActionResult Index()
         {
+            ViewBag.Productos = db.Productos.ToList();
+            ViewBag.Clientes = db.Clientes.ToList();
+            ViewBag.Empleados = db.Empleados.ToList();
+            return View();
+        }
+
+        public ActionResult General()
+        {
             ViewBag.Clientes = db.Clientes.ToList();
             ViewBag.Empleados = db.Empleados.ToList();
             return View();
@@ -35,15 +43,46 @@ namespace SystemMartinezCV.Controllers
             return monto * 0.04;
         }
 
-        public JsonResult AddProject(Proyectos proyectos )
+
+        [HttpPost]
+        public ActionResult AddProject(Proyectos proyectos )
         {
-            try 
+            proyectos.FechaRegistro = DateTime.Now;
+            proyectos.Comision = Comision(proyectos.MontoFinal);
+            proyectos.Rentabilidad = proyectos.MontoFinal - proyectos.Costo - proyectos.Comision;
+            proyectos.IdEstado = 1;
+            db.Proyectos.Add(proyectos);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
+
+        public JsonResult AddSubproject(Subproyectos subproyecto)
+        {
+            try
             {
-                proyectos.FechaRegistro = DateTime.Now;
-                proyectos.Comision = Comision(proyectos.MontoFinal);
-                proyectos.Rentabilidad = proyectos.MontoFinal - proyectos.Costo;
-                proyectos.IdEstado = 1;
-                db.Proyectos.Add(proyectos);
+                subproyecto.IdProyecto = (from x in db.Proyectos select x.IdProyecto).Max();
+                db.Subproyectos.Add(subproyecto);
+                db.SaveChanges();
+                return Json(true);
+            }
+            catch(Exception e)
+            {
+                return Json(false);
+            }
+        }
+
+        public JsonResult AddDetail(DetalleProyectos productos)
+        {
+            try
+            {
+                productos.Fecha = DateTime.Now;
+                productos.Total = productos.Precio * productos.Cantidad;
+                productos.Comentario = "comentario";
+                productos.Existencias = true;
+                productos.IdSubProyecto = (from x in db.Subproyectos select x.IdSubProyecto).Max();
+                productos.IdUnidadMedida = 1;
+                db.DetalleProyectos.Add(productos);
                 db.SaveChanges();
                 return Json(true);
             }
@@ -51,7 +90,6 @@ namespace SystemMartinezCV.Controllers
             {
                 return Json(false);
             }
-
         }
     }
 }

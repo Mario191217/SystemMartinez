@@ -4,17 +4,21 @@
     ViewBag.Title = "Index";
 }
 
-<center>
-    <h2>Detalles Proyectos</h2>
-</center>
-<br />
-<p style="width:50%">
-    @Html.ActionLink("Agregar", "Create", null, new { @class = "btn btn-primary btn-lg btn-block" })
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table" style="background-color: #2C3E50; color: #fff;">
+<table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Proyectos.Proyecto)
+            @Html.DisplayNameFor(model => model.SubProyectos.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnidadMedida.Unidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Producto)
@@ -34,39 +38,50 @@
         <th>
             @Html.DisplayNameFor(model => model.Existencias)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroFactura)
+        </th>
         <th></th>
     </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Proyectos.Proyecto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Producto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cantidad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Precio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Total)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Comentario)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Existencias)
-            </td>
-            <td>
-                @Html.ActionLink("Edita", "Edit", new { id = item.IdDetalleProyecto }) |
-                @Html.ActionLink("Detalles", "Details", new { id = item.IdDetalleProyecto }) |
-                @Html.ActionLink("Eliminar", "Delete", new { id = item.IdDetalleProyecto })
-            </td>
-        </tr>
-    }
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubProyectos.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnidadMedida.Unidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Producto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cantidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Precio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Total)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comentario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Existencias)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumeroFactura)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdDetalleProyecto }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdDetalleProyecto }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdDetalleProyecto })
+        </td>
+    </tr>
+}
 
 </table>

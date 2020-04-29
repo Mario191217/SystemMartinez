@@ -9,7 +9,7 @@ namespace SystemMartinezCV
 {
     public class Contexto : DbContext
     {
-        public Contexto() : base("Martinez")
+        public Contexto() : base("MartinezDB")
         {
 
         }
@@ -36,5 +36,7 @@ namespace SystemMartinezCV
         public System.Data.Entity.DbSet<SystemMartinezCV.Models.Estados> Estados { get; set; }
 
         public System.Data.Entity.DbSet<SystemMartinezCV.Models.Extras> Extras { get; set; }
+
+        public System.Data.Entity.DbSet<SystemMartinezCV.Models.Subproyectos> Subproyectos { get; set; }
     }
 }

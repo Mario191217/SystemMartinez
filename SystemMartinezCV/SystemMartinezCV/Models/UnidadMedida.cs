@@ -14,5 +14,6 @@ namespace SystemMartinezCV.Models
         public string Descripcion { get; set; }
 
         public virtual List<Productos> Productos { get; set; }
+        public virtual List<DetalleProyectos> DetalleProyectos { get; set; }
     }
 }

@@ -17,13 +17,15 @@ namespace SystemMartinezCV.Models
         public int Cantidad { get; set; }
         public double Precio { get; set; }
         public double Total { get; set; }
+        public int IdUnidadMedida { get; set; }
+        public virtual UnidadMedida UnidadMedida { get; set; }
         public string Comentario { get; set; }
         //validar compra o existencias en inventario
         // compra = 0 == false, inventario = 1== true
         public bool Existencias { get; set; }
         //solamente se agrega en caso de ser compra
         public string NumeroFactura { get; set; }
-        public int IdProyecto { get; set; }
-        public virtual Proyectos Proyectos { get; set; }
+        public int IdSubProyecto { get; set; }
+        public virtual Subproyectos SubProyectos { get; set; }
     }
 }

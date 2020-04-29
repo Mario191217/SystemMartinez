@@ -32,7 +32,7 @@ namespace SystemMartinezCV.Models
         public int IdEstado { get; set; }
         public virtual Estados Estados { get; set; }
 
-        public virtual List<DetalleProyectos> DetalleProyectos { get; set; }
+        public virtual List<Subproyectos> Subproyectos { get; set; }
         public virtual List<Extras> Extras { get; set; }
         public virtual List<Abonos> Abonos { get; set; }
     }
