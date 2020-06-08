@@ -670,73 +670,9 @@
     <Compile Include="Controllers\ProyectosController.cs" />
     <Compile Include="Controllers\SubproyectosController.cs" />
     <Compile Include="Controllers\UnidadMedidasController.cs" />
-    <Compile Include="Migrations\202001150750240_InitialCreate.cs" />
-    <Compile Include="Migrations\202001150750240_InitialCreate.designer.cs">
-      <DependentUpon>202001150750240_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001200150597_prov.cs" />
-    <Compile Include="Migrations\202001200150597_prov.designer.cs">
-      <DependentUpon>202001200150597_prov.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001211936382_model.cs" />
-    <Compile Include="Migrations\202001211936382_model.designer.cs">
-      <DependentUpon>202001211936382_model.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001231545583_db.cs" />
-    <Compile Include="Migrations\202001231545583_db.designer.cs">
-      <DependentUpon>202001231545583_db.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001231550185_bug.cs" />
-    <Compile Include="Migrations\202001231550185_bug.designer.cs">
-      <DependentUpon>202001231550185_bug.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001231617254_modelProductos.cs" />
-    <Compile Include="Migrations\202001231617254_modelProductos.designer.cs">
-      <DependentUpon>202001231617254_modelProductos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002031724155_precioProd.cs" />
-    <Compile Include="Migrations\202002031724155_precioProd.designer.cs">
-      <DependentUpon>202002031724155_precioProd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002041605421_prob.cs" />
-    <Compile Include="Migrations\202002041605421_prob.designer.cs">
-      <DependentUpon>202002041605421_prob.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002052006545_add-migration AddCompras.cs" />
-    <Compile Include="Migrations\202002052006545_add-migration AddCompras.designer.cs">
-      <DependentUpon>202002052006545_add-migration AddCompras.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002100723161_proyectos.cs" />
-    <Compile Include="Migrations\202002100723161_proyectos.designer.cs">
-      <DependentUpon>202002100723161_proyectos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002100750071_generos.cs" />
-    <Compile Include="Migrations\202002100750071_generos.designer.cs">
-      <DependentUpon>202002100750071_generos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002100756420_fgeneros.cs" />
-    <Compile Include="Migrations\202002100756420_fgeneros.designer.cs">
-      <DependentUpon>202002100756420_fgeneros.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002100834484_clienteId.cs" />
-    <Compile Include="Migrations\202002100834484_clienteId.designer.cs">
-      <DependentUpon>202002100834484_clienteId.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002111723093_mod.cs" />
-    <Compile Include="Migrations\202002111723093_mod.designer.cs">
-      <DependentUpon>202002111723093_mod.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002151625109_db1.cs" />
-    <Compile Include="Migrations\202002151625109_db1.designer.cs">
-      <DependentUpon>202002151625109_db1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003091340152_sub.cs" />
-    <Compile Include="Migrations\202003091340152_sub.designer.cs">
-      <DependentUpon>202003091340152_sub.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003091344180_subP.cs" />
-    <Compile Include="Migrations\202003091344180_subP.designer.cs">
-      <DependentUpon>202003091344180_subP.cs</DependentUpon>
+    <Compile Include="Migrations\202005212022176_qq.cs" />
+    <Compile Include="Migrations\202005212022176_qq.designer.cs">
+      <DependentUpon>202005212022176_qq.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abonos.cs" />
@@ -850,56 +786,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202001150750240_InitialCreate.resx">
-      <DependentUpon>202001150750240_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001200150597_prov.resx">
-      <DependentUpon>202001200150597_prov.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001211936382_model.resx">
-      <DependentUpon>202001211936382_model.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001231545583_db.resx">
-      <DependentUpon>202001231545583_db.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001231550185_bug.resx">
-      <DependentUpon>202001231550185_bug.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001231617254_modelProductos.resx">
-      <DependentUpon>202001231617254_modelProductos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002031724155_precioProd.resx">
-      <DependentUpon>202002031724155_precioProd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002041605421_prob.resx">
-      <DependentUpon>202002041605421_prob.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002052006545_add-migration AddCompras.resx">
-      <DependentUpon>202002052006545_add-migration AddCompras.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002100723161_proyectos.resx">
-      <DependentUpon>202002100723161_proyectos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002100750071_generos.resx">
-      <DependentUpon>202002100750071_generos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002100756420_fgeneros.resx">
-      <DependentUpon>202002100756420_fgeneros.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002100834484_clienteId.resx">
-      <DependentUpon>202002100834484_clienteId.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002111723093_mod.resx">
-      <DependentUpon>202002111723093_mod.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002151625109_db1.resx">
-      <DependentUpon>202002151625109_db1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003091340152_sub.resx">
-      <DependentUpon>202003091340152_sub.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003091344180_subP.resx">
-      <DependentUpon>202003091344180_subP.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202005212022176_qq.resx">
+      <DependentUpon>202005212022176_qq.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

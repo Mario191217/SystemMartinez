@@ -9,7 +9,7 @@ namespace SystemMartinezCV
 {
     public class Contexto : DbContext
     {
-        public Contexto() : base("MartinezDB")
+        public Contexto() : base("mar")
         {
 
         }

@@ -10,7 +10,6 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "SystemMartinezCV.Contexto";
         }
 
         protected override void Seed(SystemMartinezCV.Contexto context)

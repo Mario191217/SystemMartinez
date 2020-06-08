@@ -7,13 +7,13 @@ namespace SystemMartinezCV.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class addmigrationAddCompras : IMigrationMetadata
+    public sealed partial class qq : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addmigrationAddCompras));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(qq));
         
         string IMigrationMetadata.Id
         {
-            get { return "202002052006545_add-migration AddCompras"; }
+            get { return "202005212022176_qq"; }
         }
         
         string IMigrationMetadata.Source
