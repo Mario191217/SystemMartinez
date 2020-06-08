@@ -11,7 +11,7 @@
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="~/Content/bootstrap.min.css">
-    @*<link rel="stylesheet" href="~/Content/Mod/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">*@
+    <link rel="stylesheet" href="~/Content/Mod/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="~/Content/Site.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -28,21 +28,24 @@
     <!--Jquery-->
 
 
-        <script type="text/javascript" src="js/jquery.mask.min.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $("#Dui").mask("00000000-0")
-                $("#Nit").mask("0000-000000-000-0")
-                $("#NIT").mask("0000-000000-000-0")
-                $("#Telefono").mask("0000-0000")
-                $("#TelefonoEmergencia").mask("0000-0000")
-                $("#Fecha").mask("00/00/0000")
-                $("#Tarjeta").mask("0000-0000000-0000")
-            })
-        </script>
-
-
-  
+    <script type="text/javascript" src="js/jquery.mask.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#Dui").mask("00000000-0")
+            $("#Nit").mask("0000-000000-000-0")
+            $("#NIT").mask("0000-000000-000-0")
+            $("#Telefono").mask("0000-0000")
+            $("#TelefonoEmergencia").mask("0000-0000")
+            $("#Fecha").mask("00/00/0000")
+            $("#Tarjeta").mask("0000-0000000-0000")
+        })
+    </script>
+    <style>
+        body {
+            overflow-x: hidden;
+            background: #139BAE;         
+        }
+    </style>
 </head>
 
 <body>
@@ -154,13 +157,11 @@
         <!-- Page Content  -->
         <div id="content">
 
-            <nav class="navbar navbar-expand-lg ">
+            <nav class="navbar navbar-expand">
                 <div class="container-fluid">
 
                     <button type="button" id="sidebarCollapse" class="btn btn-info">
                         <i class="fa fa-bars"></i>
-
-
                     </button>
                     <button class="btn btn-info d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-align-justify"></i>
@@ -204,7 +205,7 @@
                 </div>
             </nav>
 
-            <div id="content" class="p-4 p-md-5 pt-5" style="padding: 0.3rem!important; background-color:turquoise">
+            <div id="content" @*class="p-4 p-md-5 pt-5" style="padding: 0.3rem!important; background-color:#ff6a00;*@">
                 @RenderBody()
             </div>
 
@@ -287,11 +288,7 @@
             </script>
         </div>
         </div>
-    <style>
-        body {
-         /*   overflow-x: hidden;*/
-        }
-    </style>
+
 </body>
 
 </html>
